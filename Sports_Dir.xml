@@ -1,0 +1,26 @@
+directory mode 181
+non directory mode 182
+
+<name>K1m05 On-Demand</name>
+<link>https://raw.github.com/xbmctalk/MashUpK1m05/master/OnDemandDir.xml</link>
+<thumbnail>k1m05OD</thumbnail>
+<mode>245</mode>
+
+<name>Hackermil's Main Event</name>
+<link>https://raw.github.com/xbmctalk/HackerMilsMovieStash/master/Fight%20Club/Directories/Main%20Event%20Replays%20HD.xml</link>
+<thumbnail>mainevent</thumbnail>
+<mode>236</mode>
+
+<name>Buzzy Sports</name>
+<link>https://raw.github.com/xbmctalk/MashSports/master/Mashsprt.xml</link>
+<thumbnail>buzzysports</thumbnail>
+<mode>181</mode>
+
+<name>K1m05 Sports</name>
+<link>https://raw.github.com/xbmctalk/MashUpK1m05/master/k1m05's%20playlist/sportsk1.xml</link>
+<thumbnail>k1m05</thumbnail>
+<mode>182</mode>
+
+
+
+

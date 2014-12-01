@@ -1,0 +1,18 @@
+directory mode 235
+non directory mode 236
+
+
+<name>Demon88 3D Movies</name>
+<link>https://raw.githubusercontent.com/dm88/Demon88/master/3DMovies.xml</link>
+<thumbnail>3d</thumbnail>
+<mode>236</mode>
+
+<name>Staael1982 3D Movies</name>
+<link>https://raw.github.com/xbmctalk/Staael1982/master/3D.xml</link>
+<thumbnail>3d</thumbnail>
+<mode>236</mode>
+
+<name>TNPB 3D Movies</name>
+<link>https://raw.github.com/xbmctalk/MashUpTNPB/master/3D%20Movies.xml</link>
+<thumbnail>3d</thumbnail>
+<mode>236</mode>
