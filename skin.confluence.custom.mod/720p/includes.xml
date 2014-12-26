@@ -45,30 +45,29 @@
 		<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 	</include>
 	<include name="DefaultInitialSetup">
-		<onload condition="IsEmpty(Skin.String(UPnPServer))">Skin.SetString(UPnPServer,XBMC)</onload>
-		<onload condition="System.Platform.Android + !Skin.HasSetting(InitialSetUpRun)">Skin.Setbool(EnableMinSpec)</onload>
-		<onload condition="System.HasAddon(script.raspbmc.settings) + !Skin.HasSetting(InitialSetUpRun)">Skin.Setbool(EnableMinSpec)</onload>
-		<onload condition="!System.HasAddon(script.globalsearch) | Skin.HasSetting(UPnP_Mode)">Skin.Setbool(HideHomeSearch)</onload>
-		<onload condition="!System.HasAddon(script.randomandlastitems) | Skin.HasSetting(UPnP_Mode)">Skin.Setbool(DisableScriptPlayList)</onload>
-		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetString(WeatherFanartDir,special://skin/backgrounds/weather/)</onload>
-		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetString(UsrGenreFanartDir,special://skin/backgrounds/moviegenre/)</onload>
-		<onload condition="Skin.HasSetting(EnableMinSpec) + !Skin.HasSetting(InitialSetUpRun)">Skin.Setbool(GlobalBackground)</onload>
-		<onload condition="Skin.HasSetting(EnableMinSpec) + !Skin.HasSetting(InitialSetUpRun)">Skin.Setbool(HideBusyAnimation)</onload>
-		<onload condition="Skin.HasSetting(EnableMinSpec) + !Skin.HasSetting(InitialSetUpRun)">Skin.Setbool(MediaShortDescription)</onload>
-		<onload condition="Skin.HasSetting(EnableMinSpec) + !Skin.HasSetting(InitialSetUpRun)">Skin.Setbool(HideBackGroundFanart)</onload>
-		<onload condition="Skin.HasSetting(EnableMinSpec) + !Skin.HasSetting(InitialSetUpRun)">Skin.Setbool(ShowBackgroundVis)</onload>
-		<onload condition="Skin.HasSetting(EnableMinSpec) | Skin.HasSetting(UPnP_Mode)">Skin.Setbool(HideHomeStats)</onload>
-		<onload condition="Skin.HasSetting(EnableMinSpec) + !Skin.HasSetting(InitialSetUpRun)">Skin.Setbool(HideVisualizationCDart)</onload>
-		<onload condition="Skin.HasSetting(EnableMinSpec) + !Skin.HasSetting(InitialSetUpRun)">Skin.Setbool(HideVisualizationFanart)</onload>
-		<onload condition="Skin.HasSetting(EnableMinSpec) + !Skin.HasSetting(InitialSetUpRun)">Skin.Setbool(HideNextSongsInfo)</onload>
-		<onload condition="Skin.HasSetting(EnableMinSpec) + !Skin.HasSetting(InitialSetUpRun)">Skin.Setbool(HideXBMCIntro)</onload>
-		<onload condition="System.Date(11-24,1-6) + !Skin.HasSetting(InitialSetUpRun)">Skin.Setbool(HolidayEffects)</onload>
-		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetBool(ShowWeatherFanart)</onload>
-		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetBool(ShowMovieDBFanart)</onload>
-		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetBool(ShowTVShowDBFanart)</onload>
-		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetBool(ShowMusicDBFanart)</onload>
-		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetBool(ShowConcertDBFanart)</onload>
-		<onload condition="!Skin.HasSetting(InitialSetUpRun)">Skin.SetString(MPAACountryCert,$LOCALIZE[31701])</onload>
+		<onload condition="System.Platform.Android">Skin.Setbool(EnableMinSpec)</onload>
+		<onload condition="System.HasAddon(script.raspbmc.settings)">Skin.Setbool(EnableMinSpec)</onload>
+		<onload condition="!System.HasAddon(script.globalsearch)">Skin.Setbool(HideHomeSearch)</onload>
+		<onload condition="!System.HasAddon(script.randomandlastitems)">Skin.Setbool(DisableScriptPlayList)</onload>
+		<onload>Skin.SetString(WeatherFanartDir,special://skin/backgrounds/weather/)</onload>
+		<onload>Skin.SetString(UsrGenreFanartDir,special://skin/backgrounds/moviegenre/)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(GlobalBackground)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(HideBusyAnimation)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(MediaShortDescription)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(HideBackGroundFanart)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(ShowBackgroundVis)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(HideHomeStats)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(HideVisualizationCDart)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(HideVisualizationFanart)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(HideNextSongsInfo)</onload>
+		<onload condition="Skin.HasSetting(EnableMinSpec)">Skin.Setbool(HideXBMCIntro)</onload>
+		<onload condition="System.Date(11-24,1-6)">Skin.Setbool(HolidayEffects)</onload>
+		<onload>Skin.SetBool(ShowWeatherFanart)</onload>
+		<onload>Skin.SetBool(ShowMovieDBFanart)</onload>
+		<onload>Skin.SetBool(ShowTVShowDBFanart)</onload>
+		<onload>Skin.SetBool(ShowMusicDBFanart)</onload>
+		<onload>Skin.SetBool(ShowConcertDBFanart)</onload>
+		<onload>Skin.SetString(MPAACountryCert,$LOCALIZE[31701])</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Label,$LOCALIZE[8])</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Path,ActivateWindow(Weather))</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Sub,None)</onload>
@@ -91,45 +90,37 @@
 		<onload condition="System.GetBool(pvrmanager.enabled)">Skin.SetString(HomeItem.3.Type,LiveTV)</onload>
 		<onload condition="System.GetBool(pvrmanager.enabled)">Skin.SetString(HomeItem.3.Fanart,special://skin/backgrounds/homescreen/tv.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.4.Label,$LOCALIZE[3])</onload>
-		<onload>Skin.SetString(HomeItem.4.Path,$VAR[VideoFilesCmd])</onload>
+		<onload>Skin.SetString(HomeItem.4.Path,ActivateWindow(Videos,Files,return))</onload>
 		<onload>Skin.SetString(HomeItem.4.Sub,Videos)</onload>
 		<onload>Skin.SetString(HomeItem.4.Addon,None)</onload>
-		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.4.Widget,UnWatched)</onload>
+		<onload>Skin.SetString(HomeItem.4.Widget,UnWatched)</onload>
 		<onload>Skin.SetString(HomeItem.4.Type,Videos)</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.4.Live,LiveContent)</onload>
 		<onload>Skin.SetString(HomeItem.4.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
-		<onload condition="Library.HasContent(Movies) | Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.5.Label,$LOCALIZE[20342])</onload>
-		<onload condition="Library.HasContent(Movies) | Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.5.Path,$VAR[MoviesTitleCmd])</onload>
-		<onload condition="Library.HasContent(Movies) | Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.5.Sub,Movies)</onload>
-		<onload condition="Library.HasContent(Movies) | Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.5.Addon,None)</onload>
+		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Label,$LOCALIZE[20342])</onload>
+		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Path,ActivateWindow(Videos,MovieTitles,return))</onload>
+		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Sub,Movies)</onload>
+		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Addon,None)</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Widget,SuggestedMovies)</onload>
-		<onload condition="Library.HasContent(Movies) | Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.5.Type,Movies)</onload>
+		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Type,Movies)</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Live,LiveContent)</onload>
-		<onload condition="Library.HasContent(Movies) | Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.5.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
-		<onload condition="Library.HasContent(TVShows) | Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.6.Label,$LOCALIZE[20343])</onload>
-		<onload condition="Library.HasContent(TVShows) | Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.6.Path,$VAR[TVShowTitleCmd])</onload>
-		<onload condition="Library.HasContent(TVShows) | Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.6.Sub,TVShows)</onload>
-		<onload condition="Library.HasContent(TVShows) | Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.6.Addon,None)</onload>
+		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
+		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Label,$LOCALIZE[20343])</onload>
+		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Path,ActivateWindow(Videos,TVShowTitles,return))</onload>
+		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Sub,TVShows)</onload>
+		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Addon,None)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Widget,SuggestedEpisodes)</onload>
-		<onload condition="Library.HasContent(TVShows) | Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.6.Type,TVShows)</onload>
+		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Type,TVShows)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Live,LiveContent)</onload>
-		<onload condition="Library.HasContent(TVShows) | Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.6.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
-		<onload condition="!Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.7.Label,$LOCALIZE[31332])</onload>
-		<onload condition="!Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.7.Path,ActivateWindow(VideoLibrary,"special://skin/extras/Playlists/GenreFamily.xsp",return))</onload>
-		<onload condition="!Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.7.PlayList,special://skin/extras/Playlists/GenreFamily.xsp)</onload>
-		<onload condition="!Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.7.Sub,Movies)</onload>
-		<onload condition="!Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.7.Addon,None)</onload>
-		<onload condition="!Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.7.Widget,PlayListVideo)</onload>
-		<onload condition="!Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.7.Type,PlayListVideo)</onload>
-		<onload condition="!Skin.HasSetting(UPnP_Mode)">Skin.SetString(HomeItem.7.Fanart,special://skin/backgrounds/homescreen/playlist.jpg)</onload>
-		<onload condition="Skin.HasSetting(UPnP_Mode)">Skin.Reset(HomeItem.7.Label)</onload>
-		<onload condition="Skin.HasSetting(UPnP_Mode)">Skin.Reset(HomeItem.7.Path)</onload>
-		<onload condition="Skin.HasSetting(UPnP_Mode)">Skin.Reset(HomeItem.7.PlayList)</onload>
-		<onload condition="Skin.HasSetting(UPnP_Mode)">Skin.Reset(HomeItem.7.Sub)</onload>
-		<onload condition="Skin.HasSetting(UPnP_Mode)">Skin.Reset(HomeItem.7.Addon)</onload>
-		<onload condition="Skin.HasSetting(UPnP_Mode)">Skin.Reset(HomeItem.7.Widget)</onload>
-		<onload condition="Skin.HasSetting(UPnP_Mode)">Skin.Reset(HomeItem.7.Type)</onload>
-		<onload condition="Skin.HasSetting(UPnP_Mode)">Skin.Reset(HomeItem.7.Fanart)</onload>
+		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
+		<onload>Skin.SetString(HomeItem.7.Label,$LOCALIZE[31332])</onload>
+		<onload>Skin.SetString(HomeItem.7.Path,ActivateWindow(VideoLibrary,"special://skin/extras/Playlists/GenreFamily.xsp",return))</onload>
+		<onload>Skin.SetString(HomeItem.7.PlayList,special://skin/extras/Playlists/GenreFamily.xsp)</onload>
+		<onload>Skin.SetString(HomeItem.7.Sub,Movies)</onload>
+		<onload>Skin.SetString(HomeItem.7.Addon,None)</onload>
+		<onload>Skin.SetString(HomeItem.7.Widget,PlayListVideo)</onload>
+		<onload>Skin.SetString(HomeItem.7.Type,PlayListVideo)</onload>
+		<onload>Skin.SetString(HomeItem.7.Fanart,special://skin/backgrounds/homescreen/playlist.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.8.Label,Virgin)</onload>
 		<onload>Skin.SetString(HomeItem.8.Path,PlayMedia("special://skin/extras/Streaming/Virgin.strm"))</onload>
 		<onload>Skin.SetString(HomeItem.8.Sub,None)</onload>
@@ -138,10 +129,10 @@
 		<onload>Skin.SetString(HomeItem.8.Type,Streaming)</onload>
 		<onload>Skin.SetString(HomeItem.8.Fanart,special://skin/backgrounds/homescreen/musicvideos.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.9.Label,$LOCALIZE[2])</onload>
-		<onload>Skin.SetString(HomeItem.9.Path,$VAR[MusicLibraryCmd])</onload>
+		<onload>Skin.SetString(HomeItem.9.Path,ActivateWindow(Music))</onload>
 		<onload>Skin.SetString(HomeItem.9.Sub,Music)</onload>
 		<onload>Skin.SetString(HomeItem.9.Addon,None)</onload>
-		<onload condition="Library.HasContent(Music)">Skin.SetString(HomeItem.9.Widget,SuggestedAlbums)</onload>
+		<onload>Skin.SetString(HomeItem.9.Widget,SuggestedAlbums)</onload>
 		<onload>Skin.SetString(HomeItem.9.Type,Music)</onload>
 		<onload condition="Library.HasContent(Music)">Skin.SetString(HomeItem.9.Live,LiveContent)</onload>
 		<onload>Skin.SetString(HomeItem.9.Fanart,special://skin/backgrounds/homescreen/music.jpg)</onload>
@@ -155,14 +146,12 @@
 		<onload>Skin.SetString(HomeItem.10.Fanart,special://skin/backgrounds/homescreen/programs.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.11.Fanart,special://skin/backgrounds/homescreen/playdisc.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.12.Fanart,special://skin/backgrounds/homescreen/settings.jpg)</onload>
-		<onload>Skin.SetString(HomeItem.10.Sub,Settings)</onload>
 		<onload>Skin.SetString(HomeItem.12.Addon,None)</onload>
 		<onload>Skin.SetString(HomeItem.12.Widget,None)</onload>
 		<onload>Skin.SetString(SearchBtnBackground,special://skin/backgrounds/homescreen/search.jpg)</onload>
 		<onload>Skin.SetString(PowerBtnBackground,special://skin/backgrounds/homescreen/shutdown.jpg)</onload>
 		<onload>Skin.SetString(FavBtnBackground,special://skin/backgrounds/homescreen/favourite.jpg)</onload>
 		<onload>Skin.SetString(HolidayThemePath,special://skin/extras/Holiday/xmastree.jpg)</onload>
-		<onload>Skin.Reset(ToggleUPnPMode)</onload>
 		<onload>Skin.SetBool(InitialSetUpRun)</onload>
 	</include>
 	<include name="WrapHomeMainMenu">
@@ -465,7 +454,7 @@
 				<onclick>ActivateWindow(Settings)</onclick>
 				<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 				<thumb>$INFO[Skin.String(HomeItem.12.FanArt)]</thumb>
-				<property name="SubMenu">$INFO[Skin.String(HomeItem.12.Sub)]</property>
+				<property name="SubMenu">Settings</property>
 				<property name="HiLiteItem">Settings</property>
 				<property name="AddOnSet">$INFO[Skin.String(HomeItem.12.Addon)]</property>
 				<property name="WidgetSet">$INFO[Skin.String(HomeItem.12.Widget)]</property>
@@ -596,10 +585,8 @@
 				<onleft condition="Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">84</onleft>
 				<onleft condition="!Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)">50</onleft>
 				<onright>81</onright>
-				<onup condition="!Window.IsActive(script-videoextras-main.xml)">50</onup>
-				<onup condition="Window.IsActive(script-videoextras-main.xml)">51</onup>
-				<ondown condition="!Window.IsActive(script-videoextras-main.xml)">50</ondown>
-				<ondown condition="Window.IsActive(script-videoextras-main.xml)">51</ondown>
+				<onup>50</onup>
+				<ondown>50</ondown>
 				<visible>!Skin.HasSetting(DisableFloorVolumeButtons) + Player.HasMedia</visible>
 			</control>
 			<control type="image">
@@ -627,10 +614,8 @@
 				<texturenofocus border="5">floor_button.png</texturenofocus>
 				<onleft>80</onleft>
 				<onright>82</onright>
-				<onup condition="!Window.IsActive(script-videoextras-main.xml)">50</onup>
-				<onup condition="Window.IsActive(script-videoextras-main.xml)">51</onup>
-				<ondown condition="!Window.IsActive(script-videoextras-main.xml)">50</ondown>
-				<ondown condition="Window.IsActive(script-videoextras-main.xml)">51</ondown>
+				<onup>50</onup>
+				<ondown>50</ondown>
 				<visible>!Skin.HasSetting(DisableFloorVolumeButtons) + Player.HasMedia</visible>
 			</control>
 			<control type="image">
@@ -656,10 +641,8 @@
 				<texturenofocus border="5">floor_button.png</texturenofocus>
 				<onleft>81</onleft>
 				<onright>83</onright>
-				<onup condition="!Window.IsActive(script-videoextras-main.xml)">50</onup>
-				<onup condition="Window.IsActive(script-videoextras-main.xml)">51</onup>
-				<ondown condition="!Window.IsActive(script-videoextras-main.xml)">50</ondown>
-				<ondown condition="Window.IsActive(script-videoextras-main.xml)">51</ondown>
+				<onup>50</onup>
+				<ondown>50</ondown>
 			</control>
 			<control type="image">
 				<description>Back Icon</description>
@@ -684,10 +667,8 @@
 				<texturenofocus border="5">floor_button.png</texturenofocus>
 				<onleft>82</onleft>
 				<onright>50</onright>
-				<onup condition="!Window.IsActive(script-videoextras-main.xml)">50</onup>
-				<onup condition="Window.IsActive(script-videoextras-main.xml)">51</onup>
-				<ondown condition="!Window.IsActive(script-videoextras-main.xml)">50</ondown>
-				<ondown condition="Window.IsActive(script-videoextras-main.xml)">51</ondown>
+				<onup>50</onup>
+				<ondown>50</ondown>
 			</control>
 			<control type="image">
 				<description>Home Icon</description>
@@ -1065,7 +1046,7 @@
 				<texturenofocus>OSDChannelUPNF.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>601</onright>
-				<onup>610</onup>
+				<onup>612</onup>
 				<ondown>611</ondown>
 				<onclick>XBMC.PlayerControl(Previous)</onclick>
 			</control>
@@ -1079,7 +1060,7 @@
 				<texturenofocus>OSDChannelDownNF.png</texturenofocus>
 				<onleft>600</onleft>
 				<onright>603</onright>
-				<onup>610</onup>
+				<onup>612</onup>
 				<ondown>611</ondown>
 				<onclick>XBMC.PlayerControl(Next)</onclick>
 			</control>
@@ -1093,7 +1074,7 @@
 				<texturenofocus>OSDStopNF.png</texturenofocus>
 				<onleft>601</onleft>
 				<onright>604</onright>
-				<onup>610</onup>
+				<onup>612</onup>
 				<ondown>611</ondown>
 				<onclick>down</onclick>
 				<onclick>XBMC.PlayerControl(Stop)</onclick>
@@ -1111,7 +1092,7 @@
 				<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
 				<onleft>603</onleft>
 				<onright>605</onright>
-				<onup>610</onup>
+				<onup>612</onup>
 				<ondown>606</ondown>
 				<onback>50</onback>
 				<onclick>XBMC.PlayerControl(Play)</onclick>
@@ -1128,7 +1109,7 @@
 				<texturenofocus>OSDRecordOffNF.png</texturenofocus>
 				<onleft>604</onleft>
 				<onright>50</onright>
-				<onup>610</onup>
+				<onup>612</onup>
 				<ondown>611</ondown>
 				<onclick>XBMC.PlayerControl(record)</onclick>
 				<enable>Player.CanRecord</enable>
@@ -1152,7 +1133,7 @@
 				<texturenofocus>OSDPrevTrackNF.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>606</onright>
-				<onup>610</onup>
+				<onup>612</onup>
 				<ondown>611</ondown>
 				<onback>50</onback>
 				<onclick>XBMC.PlayerControl(Previous)</onclick>
@@ -1167,7 +1148,7 @@
 				<texturenofocus>OSDRewindNF.png</texturenofocus>
 				<onleft>600</onleft>
 				<onright>603</onright>
-				<onup>610</onup>
+				<onup>612</onup>
 				<ondown>611</ondown>
 				<onback>50</onback>
 				<onclick>XBMC.PlayerControl(Rewind)</onclick>
@@ -1188,7 +1169,7 @@
 					<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
 					<onleft>606</onleft>
 					<onright>601</onright>
-					<onup>610</onup>
+					<onup>612</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 					<onclick>XBMC.PlayerControl(Play)</onclick>
@@ -1203,7 +1184,7 @@
 					<texturenofocus>OSDStopNF.png</texturenofocus>
 					<onleft>603</onleft>
 					<onright>607</onright>
-					<onup>610</onup>
+					<onup>612</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 					<onclick>down</onclick>
@@ -1219,7 +1200,7 @@
 					<texturenofocus>OSDForwardNF.png</texturenofocus>
 					<onleft>601</onleft>
 					<onright>602</onright>
-					<onup>610</onup>
+					<onup>612</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 					<onclick>XBMC.PlayerControl(Forward)</onclick>
@@ -1235,7 +1216,7 @@
 					<texturenofocus>OSDNextTrackNF.png</texturenofocus>
 					<onleft>607</onleft>
 					<onright>604</onright>
-					<onup>610</onup>
+					<onup>612</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 					<onclick>XBMC.PlayerControl(Next)</onclick>
@@ -1255,7 +1236,7 @@
 					<onclick>XBMC.PlayerControl(Repeat)</onclick>
 					<onleft>602</onleft>
 					<onright>605</onright>
-					<onup>610</onup>
+					<onup>612</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 				</control>
@@ -1327,7 +1308,7 @@
 					<onclick>XBMC.PlayerControl(Random)</onclick>
 					<onleft>604</onleft>
 					<onright>50</onright>
-					<onup>610</onup>
+					<onup>612</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 				</control>
@@ -1976,7 +1957,7 @@
 			<include>Window_OpenClose_Animation</include>
 			<include>VisibleFadeEffect</include>
 			<visible>IsEmpty(Player.Art(fanart)) | Skin.HasSetting(HideVisualizationFanart) | !IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
-			<visible>Window.IsVisible(home)</visible>
+			<visible>Window.IsVisible(home) | !Skin.HasSetting(AllowSlideShowArt)</visible>
 			<control type="image">
 				<description>Default Global Background Image</description>
 				<include>Dimensions_Fullscreen</include>
@@ -2216,7 +2197,7 @@
 				<timeperimage>9000</timeperimage>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>Skin.HasSetting(AllowSlideShowArt) + !IsEmpty(Window.Property(ArtistSlideshowRunning)) + !Skin.HasSetting(HideVisualizationFanart)</visible>
+				<visible>Skin.HasSetting(AllowSlideShowArt) + !Skin.HasSetting(HideVisualizationFanart)</visible>
 			</control>
 			<control type="image">
 				<description>Fanart Image for Artist</description>
@@ -2226,8 +2207,7 @@
 				<fadetime>600</fadetime>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>!Skin.HasSetting(AllowSlideShowArt) | [Skin.HasSetting(AllowSlideShowArt) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowTransparent))]</visible>
-				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowVizExtraFanart) + IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
+				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + !Skin.HasSetting(AllowVizExtraFanart) + IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 			</control>
 			<control type="image">
 				<description>Physical Fanart Image for Artist</description>
@@ -2237,8 +2217,7 @@
 				<fadetime>600</fadetime>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>!Skin.HasSetting(AllowSlideShowArt) | [Skin.HasSetting(AllowSlideShowArt) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowTransparent))]</visible>
-				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowVizExtraFanart) + !IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
+				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + !Skin.HasSetting(AllowVizExtraFanart) + !IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 			</control>
 			<control type="multiimage">
 				<description>Artist ExtraFanArt Multi-image Background</description>
@@ -2251,8 +2230,7 @@
 				<timeperimage>9000</timeperimage>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>!Skin.HasSetting(AllowSlideShowArt) | [Skin.HasSetting(AllowSlideShowArt) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowTransparent))]</visible>
-				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
+				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)]</visible>
 			</control>
 			<control type="multiimage">
@@ -2266,8 +2244,7 @@
 				<timeperimage>9000</timeperimage>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>!Skin.HasSetting(AllowSlideShowArt) | [Skin.HasSetting(AllowSlideShowArt) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowTransparent))]</visible>
-				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + !IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
+				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + !IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)]</visible>
 			</control>
 			<visible>IsEmpty(Visualisation.Name) | stringcompare(Visualisation.Name,Waveform) | stringcompare(Visualisation.Name,DirectX Spectrum)</visible>
@@ -2287,7 +2264,7 @@
 				<timeperimage>9000</timeperimage>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>Skin.HasSetting(AllowSlideShowArt) + !IsEmpty(Window.Property(ArtistSlideshowRunning)) + !Skin.HasSetting(HideVisualizationFanart)</visible>
+				<visible>Skin.HasSetting(AllowSlideShowArt) + !Skin.HasSetting(HideVisualizationFanart)</visible>
 			</control>
 			<control type="image">
 				<description>Fanart Image for Artist</description>
@@ -2298,8 +2275,7 @@
 				<fadetime>600</fadetime>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>!Skin.HasSetting(AllowSlideShowArt) | [Skin.HasSetting(AllowSlideShowArt) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowTransparent))]</visible>
-				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowVizExtraFanart) + IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
+				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + !Skin.HasSetting(AllowVizExtraFanart) + IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 			</control>
 			<control type="image">
 				<description>Physical Fanart Image for Artist</description>
@@ -2310,8 +2286,7 @@
 				<fadetime>600</fadetime>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>!Skin.HasSetting(AllowSlideShowArt) | [Skin.HasSetting(AllowSlideShowArt) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowTransparent))]</visible>
-				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowVizExtraFanart) + !IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
+				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + !Skin.HasSetting(AllowVizExtraFanart) + !IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 			</control>
 			<control type="multiimage">
 				<description>Artist ExtraFanArt Multi-image Background</description>
@@ -2325,8 +2300,7 @@
 				<timeperimage>9000</timeperimage>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>!Skin.HasSetting(AllowSlideShowArt) | [Skin.HasSetting(AllowSlideShowArt) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowTransparent))]</visible>
-				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
+				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)]</visible>
 			</control>
 			<control type="multiimage">
@@ -2341,8 +2315,7 @@
 				<timeperimage>9000</timeperimage>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
-				<visible>!Skin.HasSetting(AllowSlideShowArt) | [Skin.HasSetting(AllowSlideShowArt) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowTransparent))]</visible>
-				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + !IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
+				<visible>Skin.HasSetting(AllowVizExtraFanart) + !Skin.HasSetting(HideVisualizationFanart) + !Skin.HasSetting(AllowSlideShowArt) + !IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)]</visible>
 			</control>
 			<visible>Skin.HasSetting(AllowTransparentFanart) + !IsEmpty(Visualisation.Name) + !stringcompare(Visualisation.Name,Waveform) + !stringcompare(Visualisation.Name,DirectX Spectrum)</visible>

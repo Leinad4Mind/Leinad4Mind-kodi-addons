@@ -72,8 +72,8 @@
 				<posy>100</posy>
 				<width>410</width>
 				<height>490</height>
-				<onleft>60</onleft>
-				<onright>60</onright>
+				<onleft condition="!Skin.HasSetting(KioskMode)">60</onleft>
+				<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
 				<onup>11</onup>
 				<ondown>11</ondown>
 				<viewtype label="535">list</viewtype>

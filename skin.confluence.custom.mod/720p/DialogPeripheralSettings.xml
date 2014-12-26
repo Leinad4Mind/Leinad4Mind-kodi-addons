@@ -73,7 +73,7 @@
 			<itemgap>5</itemgap>
 			<pagecontrol>60</pagecontrol>
 			<onleft>28</onleft>
-			<onright>60</onright>
+			<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
 			<onup>28</onup>
 			<ondown>28</ondown>
 		</control>

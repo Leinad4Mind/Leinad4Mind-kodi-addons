@@ -138,7 +138,7 @@
 					<width>640</width>
 					<height>321</height>
 					<onleft>9000</onleft>
-					<onright>60</onright>
+					<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
 					<onup>450</onup>
 					<ondown>450</ondown>
 					<pagecontrol>60</pagecontrol>
@@ -213,7 +213,7 @@
 					<width>640</width>
 					<height>321</height>
 					<onleft>9000</onleft>
-					<onright>60</onright>
+					<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
 					<onup>451</onup>
 					<ondown>451</ondown>
 					<pagecontrol>60</pagecontrol>

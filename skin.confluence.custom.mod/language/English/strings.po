@@ -15,6 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #Misc labels
 
 msgctxt "#31000"
@@ -59,11 +60,7 @@ msgctxt "#31011"
 msgid "XBMC"
 msgstr ""
 
-#empty strings from id 31012 to 31014
-
-msgctxt "#31015"
-msgid "Extras"
-msgstr ""
+#empty strings from id 31012 to 31015
 
 msgctxt "#31016"
 msgid "Shows"
@@ -911,19 +908,7 @@ msgctxt "#31231"
 msgid "User Button"
 msgstr ""
 
-msgctxt "#31232"
-msgid "Wide Recent Concerts"
-msgstr ""
-
-msgctxt "#31233"
-msgid "3D-Movies"
-msgstr ""
-
-msgctxt "#31234"
-msgid "System"
-msgstr ""
-
-#empty strings from id 31235 to 31299
+#empty strings from id 31232 to 31299
 #Extra labels
 
 msgctxt "#31300"
@@ -1480,7 +1465,7 @@ msgid "United States"
 msgstr ""
 
 msgctxt "#31701"
-msgid "Great Britian"
+msgid "Great Britain"
 msgstr ""
 
 msgctxt "#31702"
@@ -1562,11 +1547,7 @@ msgctxt "#31910"
 msgid "Map & Alerts"
 msgstr ""
 
-#empty strings from id 31911 to 31943
-
-msgctxt "#31944"
-msgid "Menu Label"
-msgstr ""
+#empty strings from id 31911 to 31944
 
 msgctxt "#31945"
 msgid "Use Live Backgrounds"

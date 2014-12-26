@@ -10,7 +10,9 @@
 				<width>690</width>
 				<height>561</height>
 				<onleft>2</onleft>
-				<onright>60</onright>
+                <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                <onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+                <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 				<onup>50</onup>
 				<ondown>50</ondown>
 				<viewtype label="535">list</viewtype>
@@ -63,16 +65,6 @@
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
-						<visible>![System.HasAddon(script.videoextras) + Container.Content(Movies)]</visible>
-					</control>
-					<control type="image">
-						<posx>601</posx>
-						<posy>8</posy>
-						<width>26</width>
-						<height>26</height>
-						<fadetime>IconCrossfadeTime</fadetime>
-						<texture fallback="blank.png">$INFO[ListItem.DBID,special://profile/addon_data/script.videoextras/movies/,.png]</texture>
-						<visible>System.HasAddon(script.videoextras) + Window.IsVisible(Videos) + Container.Content(Movies)</visible>
 					</control>
 					<control type="image">
 						<posx>631</posx>
@@ -201,18 +193,8 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
-						<visible>![System.HasAddon(script.videoextras) + Container.Content(Movies)]</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
-					</control>
-					<control type="image">
-						<posx>601</posx>
-						<posy>8</posy>
-						<width>26</width>
-						<height>26</height>
-						<fadetime>IconCrossfadeTime</fadetime>
-						<texture fallback="blank.png">$INFO[ListItem.DBID,special://profile/addon_data/script.videoextras/movies/,.png]</texture>
-						<visible>System.HasAddon(script.videoextras) + Window.IsVisible(Videos) + Container.Content(Movies)</visible>
 					</control>
 					<control type="image">
 						<posx>625</posx>
@@ -318,7 +300,9 @@
 				<width>1080</width>
 				<height>558</height>
 				<onleft>2</onleft>
-				<onright>60</onright>
+                <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                <onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+                <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 				<onup>500</onup>
 				<ondown>500</ondown>
 				<viewtype label="21371">list</viewtype>
@@ -534,7 +518,9 @@
 				<width>1080</width>
 				<height>550</height>
 				<onleft>2</onleft>
-				<onright>60</onright>
+                <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                <onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+                <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 				<onup>505</onup>
 				<ondown>505</ondown>
 				<viewtype label="$LOCALIZE[539]">list</viewtype>
@@ -611,7 +597,9 @@
 				<width>1080</width>
 				<height>561</height>
 				<onleft>2</onleft>
-				<onright>60</onright>
+                <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                <onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+                <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 				<onup>51</onup>
 				<ondown>51</ondown>
 				<viewtype label="537">list</viewtype>
@@ -678,7 +666,6 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
-						<visible>![System.HasAddon(script.videoextras) + Container.Content(Movies)]</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
 					</control>
@@ -691,15 +678,6 @@
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>!Skin.HasSetting(ViewSubTitleFlag)</visible>
-					</control>
-					<control type="image">
-						<posx>986</posx>
-						<posy>8</posy>
-						<width>26</width>
-						<height>26</height>
-						<fadetime>IconCrossfadeTime</fadetime>
-						<texture fallback="blank.png">$INFO[ListItem.DBID,special://profile/addon_data/script.videoextras/movies/,.png]</texture>
-						<visible>System.HasAddon(script.videoextras) + Window.IsVisible(Videos) + Container.Content(Movies)</visible>
 					</control>
 					<control type="image">
 						<posx>1016</posx>
@@ -820,7 +798,6 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
-						<visible>![System.HasAddon(script.videoextras) + Container.Content(Movies)]</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
 					</control>
@@ -833,15 +810,6 @@
 						<animation effect="slide" start="0,0" end="18,0" delay="0" time="0" condition="stringcompare(Skin.String(WatchStatusType),Hidden)">conditional</animation>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>!Skin.HasSetting(ViewSubTitleFlag)</visible>
-					</control>
-					<control type="image">
-						<posx>986</posx>
-						<posy>8</posy>
-						<width>26</width>
-						<height>26</height>
-						<fadetime>IconCrossfadeTime</fadetime>
-						<texture fallback="blank.png">$INFO[ListItem.DBID,special://profile/addon_data/script.videoextras/movies/,.png]</texture>
-						<visible>System.HasAddon(script.videoextras) + Window.IsVisible(Videos) + Container.Content(Movies)</visible>
 					</control>
 					<control type="image">
 						<posx>1016</posx>

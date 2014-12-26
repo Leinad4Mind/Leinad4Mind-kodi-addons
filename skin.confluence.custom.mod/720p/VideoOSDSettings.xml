@@ -88,8 +88,8 @@
 				<height>490</height>
 				<itemgap>5</itemgap>
 				<pagecontrol>60</pagecontrol>
-				<onleft>60</onleft>
-				<onright>60</onright>
+				<onleft condition="!Skin.HasSetting(KioskMode)">60</onleft>
+				<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
 				<onup>5</onup>
 				<ondown>5</ondown>
 			</control>

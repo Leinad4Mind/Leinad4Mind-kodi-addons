@@ -10,7 +10,8 @@
 				<width>760</width>
 				<height>561</height>
 				<onleft>2</onleft>
-				<onright>60</onright>
+				<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+				<onright condition="Skin.HasSetting(KioskMode)">2</onright>
 				<onup>560</onup>
 				<ondown>560</ondown>
 				<viewtype label="$LOCALIZE[4]">list</viewtype>

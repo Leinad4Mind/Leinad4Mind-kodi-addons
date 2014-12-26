@@ -335,8 +335,8 @@
 				<posy>310</posy>
 				<width>220</width>
 				<height>270</height>
-				<onleft>60</onleft>
-				<onright>60</onright>
+				<onleft condition="!Skin.HasSetting(KioskMode)">60</onleft>
+				<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 				<itemgap>2</itemgap>

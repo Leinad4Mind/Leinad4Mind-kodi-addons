@@ -82,7 +82,8 @@
 				<reverse>yes</reverse>
 				<onup>28</onup>
 				<ondown>5</ondown>
-				<onleft>60</onleft>
+				<onleft condition="!Skin.HasSetting(KioskMode)">60</onleft>
+				<onleft condition="Skin.HasSetting(KioskMode)">4</onleft>
 				<onright>4</onright>
 			</control>
 			<control type="label">
@@ -161,7 +162,8 @@
 				<height>241</height>
 				<onup>4</onup>
 				<onleft>3</onleft>
-				<onright>60</onright>
+				<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+				<onright condition="Skin.HasSetting(KioskMode)">3</onright>
 				<ondown>4</ondown>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>

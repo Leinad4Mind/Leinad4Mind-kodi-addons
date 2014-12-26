@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<onload condition="System.HasAddon(script.artistslideshow) + IsEmpty(Window.Property(ArtistSlideshowRunning)) + [Skin.HasSetting(AllowSlideShowArt) | Skin.HasSetting(AllowSlideShowBio)]">RunScript(script.artistslideshow, daemon=True)</onload>
+	<onload condition="System.HasAddon(script.artistslideshow) + IsEmpty(Window.Property(ArtistSlideshowRunning)) + [Skin.HasSetting(AllowSlideShowArt) | Skin.HasSetting(AllowSlideShowBio)]">RunScript(script.artistslideshow)</onload>
 	<defaultcontrol>-</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
-		<include>AlbumArtMusicVizWall</include>
+		<include condition="Skin.HasSetting(ShowBackgroundAlbumWall)">AlbumArtMusicVizWall</include>
 		<include condition="!Skin.HasSetting(ShowBackgroundAlbumWall)">MusicPlayingBottom</include>
 		<control type="visualisation" id="2">
 			<description>visualisation</description>
 			<include>Dimensions_Fullscreen</include>
 		</control>
 		<include condition="!Skin.HasSetting(ShowBackgroundAlbumWall)">MusicPlayingTop</include>
+		<!-- media infos -->
 		<control type="group">
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<visible>[Player.ShowInfo | Window.IsActive(MusicOSD) | Window.IsVisible(infodialog)] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
@@ -61,9 +62,6 @@
 					<include>CDArtSpinner</include>
 				</control>
 				<visible>!Skin.HasSetting(HideVisualizationCDart) + Skin.HasSetting(HideTraditionalCDart)</visible>
-				<visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshowTransparent))</visible>
-				<!--visible>!IsEmpty(Window.Property(ArtistSlideshowRunning))</visible-->
-				<!--visible>!IsEmpty(Window.Property(ArtistSlideshowTransparent))</visible-->
 			</control>
 			<control type="group">
 				<posx>10</posx>
@@ -250,6 +248,7 @@
 				</control>
 			</control>
 		</control>
+		<!-- codec & viz infos -->
 		<control type="group" id="0">
 			<posx>0</posx>
 			<posy>50</posy>

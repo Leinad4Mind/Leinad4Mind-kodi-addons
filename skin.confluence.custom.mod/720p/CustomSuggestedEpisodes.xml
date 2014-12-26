@@ -130,7 +130,8 @@
 				<height>400</height>
 				<onup>450</onup>
 				<onleft>Dialog.Close(2124)</onleft>
-				<onright>60</onright>
+                <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                <onright condition="Skin.HasSetting(KioskMode)">61</onright>
 				<ondown>450</ondown>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>

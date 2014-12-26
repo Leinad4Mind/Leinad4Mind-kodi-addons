@@ -101,7 +101,8 @@
 				<height>470</height>
 				<onup>20</onup>
 				<ondown>20</ondown>
-				<onleft>60</onleft>
+				<onleft condition="!Skin.HasSetting(KioskMode)">60</onleft>
+				<onleft condition="Skin.HasSetting(KioskMode)">9002</onleft>
 				<onright>9002</onright>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
@@ -288,7 +289,8 @@
 					<pulseonselect>no</pulseonselect>
 					<label>19074</label>
 					<onleft>20</onleft>
-					<onright>60</onright>
+					<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+					<onright condition="Skin.HasSetting(KioskMode)">20</onright>
 					<onup>9000</onup>
 					<ondown>8</ondown>
 				</control>
@@ -305,8 +307,9 @@
 					<texturefocus border="5">button-focus2.png</texturefocus>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<label>19201</label>
-					<onright>60</onright>
-					<onleft>20</onleft>
+                    <onleft>20</onleft>
+                    <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                    <onright condition="Skin.HasSetting(KioskMode)">20</onright>
 					<onup>7</onup>
 					<ondown>9</ondown>
 				</control>
@@ -321,7 +324,8 @@
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<label>19202</label>
 					<onleft>20</onleft>
-					<onright>60</onright>
+                    <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                    <onright condition="Skin.HasSetting(KioskMode)">20</onright>
 					<onup>8</onup>
 					<ondown>12</ondown>
 				</control>
@@ -351,7 +355,8 @@
 					<pulseonselect>no</pulseonselect>
 					<label>19206</label>
 					<onleft>20</onleft>
-					<onright>60</onright>
+                    <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                    <onright condition="Skin.HasSetting(KioskMode)">20</onright>
 					<onup>9</onup>
 					<ondown>13</ondown>
 				</control>
@@ -365,8 +370,9 @@
 					<texturefocus border="5">button-focus2.png</texturefocus>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<label>19200</label>
-					<onright>60</onright>
-					<onleft>20</onleft>
+                    <onleft>20</onleft>
+                    <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                    <onright condition="Skin.HasSetting(KioskMode)">20</onright>
 					<onup>12</onup>
 					<ondown>14</ondown>
 				</control>
@@ -387,7 +393,8 @@
 					<pulseonselect>no</pulseonselect>
 					<label>19267</label>
 					<onleft>20</onleft>
-					<onright>60</onright>
+                    <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                    <onright condition="Skin.HasSetting(KioskMode)">20</onright>
 					<onup>13</onup>
 					<ondown>30</ondown>
 				</control>
@@ -437,7 +444,8 @@
 					<align>center</align>
 					<label>19024</label>
 					<onleft>30</onleft>
-					<onright>60</onright>
+                    <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                    <onright condition="Skin.HasSetting(KioskMode)">20</onright>
 					<onup>14</onup>
 					<ondown>31</ondown>
 				</control>
@@ -454,7 +462,8 @@
 					<align>center</align>
 					<label>19023</label>
 					<onleft>30</onleft>
-					<onright>60</onright>
+                    <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                    <onright condition="Skin.HasSetting(KioskMode)">20</onright>
 					<onup>14</onup>
 					<ondown>31</ondown>
 				</control>
@@ -470,7 +479,8 @@
 					<align>center</align>
 					<label>19203</label>
 					<onleft>20</onleft>
-					<onright>60</onright>
+                    <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                    <onright condition="Skin.HasSetting(KioskMode)">20</onright>
 					<onup>30</onup>
 					<ondown>32</ondown>
 				</control>
@@ -486,7 +496,8 @@
 					<align>center</align>
 					<label>19211</label>
 					<onleft>20</onleft>
-					<onright>60</onright>
+                    <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                    <onright condition="Skin.HasSetting(KioskMode)">20</onright>
 					<onup>31</onup>
 					<ondown>33</ondown>
 				</control>
@@ -502,7 +513,8 @@
 					<align>center</align>
 					<label>19204</label>
 					<onleft>20</onleft>
-					<onright>60</onright>
+                    <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                    <onright condition="Skin.HasSetting(KioskMode)">20</onright>
 					<onup>32</onup>
 					<ondown>9000</ondown>
 				</control>

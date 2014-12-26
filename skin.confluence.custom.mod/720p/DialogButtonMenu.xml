@@ -280,7 +280,7 @@
 				<visible>System.HasShutdown + System.IsInhibit</visible>
 			</control>
 			<control type="button" id="14">
-				<description>Settings button</description>
+				<description>Skin Settings button</description>
 				<width>340</width>
 				<height>40</height>
 				<textcolor>grey2</textcolor>
@@ -290,10 +290,10 @@
 				<texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
 				<texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
 				<onclick>dialog.close(shutdownmenu)</onclick>
-				<onclick>ActivateWindow(Settings),return</onclick>
+				<onclick>ActivateWindow(SkinSettings),return</onclick>
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
-				<label>$LOCALIZE[5]</label>
+				<label>$LOCALIZE[166] $LOCALIZE[5]</label>
 				<visible>Skin.HasSetting(HideSytemMenuItem)</visible>
 			</control>
 			<control type="image" id="15">

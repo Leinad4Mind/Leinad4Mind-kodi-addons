@@ -14,7 +14,9 @@
 				<onleft>510</onleft>
 				<onright>510</onright>
 				<onup>2</onup>
-				<ondown>60</ondown>
+                <ondown condition="!Skin.HasSetting(KioskMode)">60</ondown>
+                <ondown condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</ondown>
+                <ondown condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</ondown>
 				<viewtype label="31032">wrap</viewtype>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
@@ -96,7 +98,9 @@
 				<width>432</width>
 				<height>576</height>
 				<onleft>2</onleft>
-				<onright>60</onright>
+                <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+                <onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+                <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 				<onup>514</onup>
 				<ondown>514</ondown>
 				<viewtype label="$LOCALIZE[31031]">list</viewtype>

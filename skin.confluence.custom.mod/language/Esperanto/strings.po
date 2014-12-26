@@ -35,7 +35,3 @@ msgstr "Serĉi"
 msgctxt "#31327"
 msgid "Resolution"
 msgstr "Distingivo"
-
-msgctxt "#31389"
-msgid "Enabled"
-msgstr "Enabled"

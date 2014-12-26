@@ -25,6 +25,7 @@
 				<animation effect="fade" time="200">VisibleChange</animation>
 				<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | VideoPlayer.Content(LiveTV)]</visible>
 			</control>
+			<!-- !LiveTV -->
 			<control type="group" id="100">
 				<left>120</left>
 				<top>55r</top>
@@ -180,6 +181,7 @@
 					<onclick>PlayerControl(Next)</onclick>
 				</control>
 			</control>
+			<!-- !LiveTV -->
 			<control type="group">
 				<left>560r</left>
 				<top>55r</top>
@@ -278,6 +280,7 @@
 					<animation effect="fade" start="100" end="50" time="100" condition="!VideoPlayer.HasMenu">Conditional</animation>
 				</control>
 			</control>
+			<!-- LiveTV -->
 			<control type="group" id="100">
 				<left>120</left>
 				<top>60r</top>
@@ -471,6 +474,7 @@
 					<onclick>Dialog.Close(VideoOSD)</onclick>
 				</control>
 			</control>
+			<!-- LiveTV -->
 			<control type="group">
 				<left>560r</left>
 				<top>60r</top>
@@ -677,6 +681,7 @@
 					<texture border="20,0,20,50">SubMenuBack-Footer.png</texture>
 				</control>
 			</control>
+			<!-- STEREOSCOPIC 3D !LiveTV -->
 			<control type="button" id="520">
 				<description>Fake button for mouse control</description>
 				<right>200</right>
@@ -775,6 +780,7 @@
 					<texture border="20,0,20,50">SubMenuBack-Footer.png</texture>
 				</control>
 			</control>
+			<!-- STEREOSCOPIC 3D LiveTV -->
 			<control type="button" id="570">
 				<description>Fake button for mouse control</description>
 				<right>145</right>
