@@ -1,5 +1,5 @@
 [B]2.0.8[/B]  [I]December 2014[/I]
-- Fix for Helix
+- Fix for Helix (By: Leinad4Mind)
 
 [B]2.0.7[/B]  [I]July 2014[/I]
 - Bugfix small issues

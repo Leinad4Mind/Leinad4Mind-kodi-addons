@@ -14,7 +14,7 @@
 	</extension>
 </addon>
 
-<addon id="skin.confluence.custom.mod" version="2.0.8" name="Confluence Customizable Mod" provider-name="Mudislander & Leinad4Mind">
+<addon id="skin.confluence.custom.mod" version="2.0.8" name="Confluence Customizable Mod" provider-name="Mudislander / Leinad4Mind">
   <requires>
 	<import addon="xbmc.gui" version="5.3.0"/>
 	<import addon="script.favourites" version="5.0.2"/>
