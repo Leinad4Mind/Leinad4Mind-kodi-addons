@@ -83,4 +83,18 @@
     <platform>all</platform>
   </extension>
 </addon>
+
+<addon id="repository.leinad4mind.xbmc" name="Leinad4Mind Repositório" version="1.0.4" provider-name="Leinad4Mind">
+	<extension point="xbmc.addon.repository" name="Leinad4Mind Add-on Repository">
+		<info compressed="false">http://raw.github.com/Leinad4Mind/Leinad4Mind-xbmc-addons/master/addons.xml</info>
+		<checksum>http://raw.github.com/Leinad4Mind/Leinad4Mind-xbmc-addons/master/addons.xml.md5</checksum>
+		<datadir zip="true">http://raw.github.com/Leinad4Mind/Leinad4Mind-xbmc-addons/master/repo</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Repositorio Leinad4Mind</summary>
+		<description>Addons de Leinad4Mind, contacto: leinad4talk@gmail.com</description>
+		<disclaimer></disclaimer>
+		<platform>all</platform>
+	</extension>
+</addon>
 </addons>
