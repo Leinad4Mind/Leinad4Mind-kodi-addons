@@ -1,5 +1,5 @@
-[B]2.0.4[/B]  [I]December 2014[/I]
-- Fix GUI
+[B]3.0.4[/B]  [I]December 2014[/I]
+- Fix GUI (By: Leinad4Mind)
 
 [B]2.0.3[/B]  [I]May 2014[/I]
 - New Style Addon Menu items
