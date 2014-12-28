@@ -1,0 +1,26 @@
+[B]2.0.7[/B]  [I]July 2014[/I]
+- Bugfix small issues
+
+[B]2.0.6[/B]  [I]June 2014[/I]
+- Update Lang Files
+- Added Support Script.video.extras
+- Added Wide Layout Recent Concerts Widget
+- Added 3D Movies Playlist
+- Added New System Submenu
+
+[B]2.0.5[/B]  [I]June 2014[/I]
+- Added UPnp Client Mode
+- Added Large Style Widgets
+
+[B]2.0.4[/B]  [I]May 2014[/I]
+- Added Home Power Button settings
+
+[B]2.0.3[/B]  [I]May 2014[/I]
+- New Style Addon Menu items
+- Updated Language Files
+
+[B]2.0.2[/B]  [I]Mar 2014[/I]
+- BugFix Nodes and Addon Menu items
+
+[B]2.0.0[/B]  [I]Mar 2014[/I]
+- Updated for Gotham
