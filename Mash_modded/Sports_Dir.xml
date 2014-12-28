@@ -6,11 +6,6 @@ non directory mode 182
 <thumbnail>staael2014</thumbnail>
 <mode>182</mode>
 
-<name>One242415 Sports</name>
-<link>http://gibraltar.watchkodi.com/Sports/Sports_Directory.xml</link>
-<thumbnail>one252515</thumbnail>
-<mode>236</mode>
-
 <name>Hackermil's Main Event</name>
 <link>https://raw.github.com/xbmctalk/HackerMilsMovieStash/master/Fight%20Club/Directories/Main%20Event%20Replays%20HD.xml</link>
 <thumbnail>mainevent</thumbnail>
@@ -31,5 +26,7 @@ non directory mode 182
 <thumbnail>buzzysports</thumbnail>
 <mode>181</mode>
 
-
-
+<name>One242415 Sports Movies</name>
+<link>http://gibraltar.watchkodi.com/Sports/Sports_Directory.xml</link>
+<thumbnail>one252515</thumbnail>
+<mode>236</mode>
