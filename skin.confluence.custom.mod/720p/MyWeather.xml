@@ -376,9 +376,7 @@
 					<width>600</width>
 					<height>541</height>
 					<onleft>9000</onleft>
-					<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
-					<onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-					<onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
+					<onright>60</onright>
 					<onup>50</onup>
 					<ondown>50</ondown>
 					<viewtype label="535">list</viewtype>
@@ -700,9 +698,7 @@
 							<width>600</width>
 							<height>541</height>
 							<onleft>9000</onleft>
-                            <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
-                            <onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-                            <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
+							<onright>60</onright>
 							<onup>51</onup>
 							<ondown>51</ondown>
 							<viewtype label="535">list</viewtype>
@@ -1400,9 +1396,7 @@
 							<width>600</width>
 							<height>541</height>
 							<onleft>9000</onleft>
-                            <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
-                            <onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-                            <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
+							<onright>60</onright>
 							<onup>52</onup>
 							<ondown>52</ondown>
 							<viewtype label="535">list</viewtype>

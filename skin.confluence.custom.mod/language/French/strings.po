@@ -52,6 +52,10 @@ msgctxt "#31010"
 msgid "Found"
 msgstr "Trouvé"
 
+msgctxt "#31011"
+msgid "XBMC"
+msgstr "XBMC"
+
 msgctxt "#31016"
 msgid "Shows"
 msgstr "Séries"
@@ -240,6 +244,10 @@ msgctxt "#31112"
 msgid "Options"
 msgstr "Options"
 
+msgctxt "#31114"
+msgid "Show System Power Button"
+msgstr "Montrer le bouton System Power"
+
 msgctxt "#31116"
 msgid "Select Submenu Set"
 msgstr "Sélectionner le type de sous-menu"
@@ -263,6 +271,10 @@ msgstr "TvTunes"
 msgctxt "#31128"
 msgid "Lyrics"
 msgstr "Paroles"
+
+msgctxt "#31130"
+msgid "SubMenu Item"
+msgstr "Sous-menu"
 
 msgctxt "#31132"
 msgid "Lyrics Add-on"
@@ -440,6 +452,10 @@ msgctxt "#31217"
 msgid "Search"
 msgstr "Recherche"
 
+msgctxt "#31218"
+msgid "Selected"
+msgstr "sélectionné"
+
 msgctxt "#31300"
 msgid "Current Temp"
 msgstr "Température actuelle"
@@ -576,6 +592,18 @@ msgctxt "#31356"
 msgid "Download Subtitles"
 msgstr "Télécharger les sous-titres"
 
+msgctxt "#31387"
+msgid "Watch as 2D"
+msgstr "Regarder en 2D"
+
+msgctxt "#31388"
+msgid "Change mode"
+msgstr "Changer de mode"
+
+msgctxt "#31389"
+msgid "Enabled"
+msgstr "Activé"
+
 msgctxt "#31391"
 msgid "Skin default with no Caps"
 msgstr "Par défaut sans majuscule"
@@ -623,6 +651,10 @@ msgstr "[B]CONFIGURER RÉGLAGES TV[/B][CR][CR]Changer les informations de plein 
 msgctxt "#31410"
 msgid "[B]CONFIGURE SERVICE SETTINGS[/B][CR][CR]Setup control of XBMC via UPnP and HTTP · Configure file sharing[CR]Enable Zeroconf · Configure AirPlay"
 msgstr "[B]CONFIGURATION DES PARAMÈTRES DE SERVICE[/B][CR][CR]Configurer le contrôle de XBMC en UPnP et HTTP · Configurer le partage de fichiers[CR]Activer Zeroconf · Configurer AirPlay"
+
+msgctxt "#31413"
+msgid "Local subtitle available"
+msgstr "Sous-titre disponible localement"
 
 msgctxt "#31421"
 msgid "Select your XBMC user Profile[CR]to login and continue"
@@ -789,7 +821,7 @@ msgid "United States"
 msgstr "États Unis"
 
 msgctxt "#31701"
-msgid "Great Britian"
+msgid "Great Britain"
 msgstr "Grande Bretagne"
 
 msgctxt "#31702"

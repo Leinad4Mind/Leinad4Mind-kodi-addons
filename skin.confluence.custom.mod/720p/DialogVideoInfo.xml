@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
+	<onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<onload condition="!Skin.HasSetting(HideTvTunes) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
 	<defaultcontrol always="true">8</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
@@ -933,9 +934,9 @@
 					</focusedlayout>
 				</control>
 				<control type="grouplist" id="9000">
-					<posx>210</posx>
+					<posx>295</posx>
 					<posy>660</posy>
-					<width>1030</width>
+					<width>860</width>
 					<height>40</height>
 					<itemgap>2</itemgap>
 					<align>center</align>
@@ -1011,6 +1012,37 @@
 						<onclick>XBMC.RunScript(script.tvtunes,mode=solo)</onclick>
 						<visible>!Skin.HasSetting(HideTvTunes) + System.HasAddon(script.tvtunes) + [Container.Content(TVShows) | Container.Content(movies)] + IsEmpty(Window(movieinformation).Property("TvTunes_HideVideoInfoButton"))</visible>
 					</control>
+					<control type="button" id="105">
+						<description>Extras</description>
+						<include>ButtonInfoDialogsCommonValues</include>
+						<label>31015</label>
+						<onclick>XBMC.RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
+						<visible>System.HasAddon(script.videoextras) + [Container.Content(movies) | Container.Content(episodes) | Container.Content(TVShows) | Container.Content(musicvideos)] + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
+					</control>
+				</control>
+				<control type="button">
+					<description>left Arrow</description>
+					<left>245</left>
+					<top>660</top>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-left.png</texturefocus>
+					<texturenofocus>arrow-big-left.png</texturenofocus>
+					<!--onclick>Control.Move(9000,-1)</onclick-->
+					<visible>Container(9000).HasPrevious</visible>
+					<include>VisibleFadeEffect</include>
+				</control>
+				<control type="button">
+					<description>right Arrow</description>
+					<left>1175</left>
+					<top>660</top>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-right.png</texturefocus>
+					<texturenofocus>arrow-big-right.png</texturenofocus>
+					<!--onclick>Control.Move(9000,1)</onclick-->
+					<visible>Container(9000).HasNext</visible>
+					<include>VisibleFadeEffect</include>
 				</control>
 			</control>
 		</control>

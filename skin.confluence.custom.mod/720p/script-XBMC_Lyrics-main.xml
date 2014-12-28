@@ -84,7 +84,6 @@
 				<height>4</height>
 				<texture>separator.png</texture>
 			</control>
-			<!-- ** Required ** Do not change <id> or <type> (Text box for lyrics) -->
 			<control type="textbox" id="100">
 				<description>textarea</description>
 				<posx>30</posx>
@@ -115,7 +114,6 @@
 				<showonepage>true</showonepage>
 				<visible>Control.IsVisible(100)</visible>
 			</control>
-			<!-- ** Required ** Do not change <id> or <type> (Smooth scrolling list for lyrics) -->
 			<control type="list" id="110">
 				<posx>30</posx>
 				<posy>130</posy>
@@ -200,7 +198,6 @@
 				<textcolor>white</textcolor>
 				<visible>Control.IsVisible(120) + ![Control.IsVisible(100) | Control.IsVisible(110)]</visible>
 			</control>
-			<!-- ** Required ** Do not change <id> or <type> (Song Chooser if it gets it wrong) -->
 			<control type="list" id="120">
 				<posx>30</posx>
 				<posy>170</posy>
@@ -303,7 +300,5 @@
 				<visible>false</visible>
 			</control>
 		</control>
-		<!-- ** Required ** Do not change <id> or <type> -->
-		<!-- ** Required ** Do not change <id> or <type> -->
 	</controls>
 </window>

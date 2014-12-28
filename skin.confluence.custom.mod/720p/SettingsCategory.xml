@@ -152,9 +152,7 @@
 				<itemgap>-1</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>3</onleft>
-				<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
-			    <onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">3</onright>
-                <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
+				<onright>60</onright>
 				<onup>5</onup>
 				<ondown>5</ondown>
 			</control>

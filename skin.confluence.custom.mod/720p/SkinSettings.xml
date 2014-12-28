@@ -4,6 +4,7 @@
 	<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
 	<onload condition="System.HasAddon(script.favourites)">XBMC.RunScript(script.favourites)</onload>
 	<onload>SetProperty(MenuItemActive,Settings,Home)</onload>
+	<onload condition="IsEmpty(Skin.String(UPnPServer))">Skin.SetString(UPnPServer,XBMC)</onload>
 	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701])">Control.Move(9008,1)</onload>
 	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703])">Control.Move(9008,2)</onload>
 	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706])">Control.Move(9008,3)</onload>
@@ -84,7 +85,7 @@
 				<posx>10</posx>
 				<posy>90</posy>
 				<width>260</width>
-				<height>481</height>
+				<height>501</height>
 				<onleft condition="Skin.HasSetting(DisableHomeReturnButtons)">9010</onleft>
 				<onleft condition="!Skin.HasSetting(DisableHomeReturnButtons)">83</onleft>
 				<onright>9010</onright>
@@ -92,12 +93,12 @@
 				<ondown>9000</ondown>
 				<pagecontrol>-</pagecontrol>
 				<scrolltime>300</scrolltime>
-				<itemlayout height="80" width="260">
+				<itemlayout height="70" width="260">
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>260</width>
-						<height>81</height>
+						<height>71</height>
 						<texture border="5">MenuItemNF.png</texture>
 					</control>
 					<control type="label">
@@ -123,12 +124,12 @@
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout height="80" width="260">
+				<focusedlayout height="70" width="260">
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>260</width>
-						<height>81</height>
+						<height>71</height>
 						<texture border="5">MenuItemFO.png</texture>
 						<animation effect="fade" start="100" end="30" time="100" condition="!Control.HasFocus(9000)">Conditional</animation>
 					</control>
@@ -182,6 +183,11 @@
 						<onclick>noop</onclick>
 					</item>
 					<item id="6">
+						<label>31231</label>
+						<label2>31112</label2>
+						<onclick>noop</onclick>
+					</item>
+					<item id="7">
 						<label>31109</label>
 						<label2>31172</label2>
 						<onclick>noop</onclick>
@@ -228,10 +234,73 @@
 					<onleft>9000</onleft>
 					<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
 					<onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-                    <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
+					<onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 					<onup>9001</onup>
 					<ondown>9001</ondown>
 					<control type="label" id="100">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31335</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="101">
+						<description>Disable UPnP Library Mode</description>
+						<width>750</width>
+						<height>40</height>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<label>31336</label>
+						<onclick>ActivateWindow(2127)</onclick>
+						<selected>Skin.HasSetting(UPnP_Mode)</selected>
+						<visible>Skin.HasSetting(UPnP_Mode)</visible>
+					</control>
+					<control type="radiobutton" id="102">
+						<description>Enable UPnP Library Mode</description>
+						<width>750</width>
+						<height>40</height>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<label>31336</label>
+						<onclick>ActivateWindow(2128)</onclick>
+						<selected>Skin.HasSetting(UPnP_Mode)</selected>
+						<visible>!Skin.HasSetting(UPnP_Mode)</visible>
+					</control>
+					<control type="button" id="104">
+						<description>UPnP Library Path</description>
+						<label>15311</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(UPnP_Path)][/COLOR]</label2>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>ActivateWindow(2128)</onclick>
+						<enable>Skin.HasSetting(UPnP_Mode)</enable>
+					</control>
+					<control type="button" id="105">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31342]</label>
+						<label2>[COLOR=selected]$VAR[UPnPServerType][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick condition="IsEmpty(Skin.String(UPnPServer))">Skin.SetString(UPnPServer,XBMC)</onclick>
+						<enable>Skin.HasSetting(UPnP_Mode)</enable>
+					</control>
+					<control type="label" id="106">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -241,7 +310,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="101">
+					<control type="radiobutton" id="107">
 						<description>Christmas Theme</description>
 						<width>750</width>
 						<height>40</height>
@@ -255,7 +324,7 @@
 						<selected>Skin.HasSetting(HolidayEffects)</selected>
 						<visible>System.Date(11-24,1-6)</visible>
 					</control>
-					<control type="radiobutton" id="102">
+					<control type="radiobutton" id="108">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -278,7 +347,7 @@
 						<onclick>Skin.Reset(AutoScroll)</onclick>
 						<selected>Skin.HasSetting(EnableMinSpec)</selected>
 					</control>
-					<control type="radiobutton" id="103">
+					<control type="radiobutton" id="109">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -290,7 +359,7 @@
 						<onclick>Skin.ToggleSetting(ABCKeyBoard)</onclick>
 						<selected>!Skin.HasSetting(ABCKeyBoard)</selected>
 					</control>
-					<control type="radiobutton" id="104">
+					<control type="radiobutton" id="110">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -302,7 +371,7 @@
 						<onclick>Skin.ToggleSetting(HideSystemClock)</onclick>
 						<selected>!Skin.HasSetting(HideSystemClock)</selected>
 					</control>
-					<control type="radiobutton" id="105">
+					<control type="radiobutton" id="111">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -316,7 +385,7 @@
 						<enable>!Skin.HasSetting(EnableMinSpec)</enable>
 						<visible>!IsEmpty(Weather.Plugin)</visible>
 					</control>
-					<control type="radiobutton" id="106">
+					<control type="radiobutton" id="112">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -328,7 +397,7 @@
 						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
 						<selected>Skin.HasSetting(KioskMode)</selected>
 					</control>
-					<control type="radiobutton" id="107">
+					<control type="radiobutton" id="113">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -341,44 +410,7 @@
 						<enable>!Skin.HasSetting(EnableMinSpec)</enable>
 						<selected>!Skin.HasSetting(HideBusyAnimation)</selected>
 					</control>
-					<control type="radiobutton" id="108">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31671</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(DisableHomeReturnButtons)</onclick>
-						<selected>!Skin.HasSetting(DisableHomeReturnButtons)</selected>
-					</control>
-					<control type="radiobutton" id="109">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31675</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(DisableFloorVolumeButtons)</onclick>
-						<selected>!Skin.HasSetting(DisableFloorVolumeButtons)</selected>
-					</control>
-					<control type="radiobutton" id="110">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31677</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(SmallVolumeJump)</onclick>
-						<selected>!Skin.HasSetting(SmallVolumeJump)</selected>
-						<enable>!Skin.HasSetting(DisableFloorVolumeButtons)</enable>
-					</control>
-					<control type="radiobutton" id="111">
+					<control type="radiobutton" id="114">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -390,7 +422,7 @@
 						<onclick>Skin.ToggleSetting(ParentDirLabel)</onclick>
 						<selected>!Skin.HasSetting(ParentDirLabel)</selected>
 					</control>
-					<control type="radiobutton" id="112">
+					<control type="radiobutton" id="115">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -402,7 +434,7 @@
 						<onclick>Skin.ToggleSetting(MediaShortDescription)</onclick>
 						<selected>Skin.HasSetting(MediaShortDescription)</selected>
 					</control>
-					<control type="radiobutton" id="113">
+					<control type="radiobutton" id="116">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -414,7 +446,7 @@
 						<onclick>Skin.ToggleSetting(HideNumItemsCount)</onclick>
 						<selected>Skin.HasSetting(HideNumItemsCount)</selected>
 					</control>
-					<control type="radiobutton" id="114">
+					<control type="radiobutton" id="117">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -427,7 +459,7 @@
 						<enable>!Skin.HasSetting(EnableMinSpec)</enable>
 						<selected>Skin.HasSetting(HideBackGroundFanart)</selected>
 					</control>
-					<control type="radiobutton" id="115">
+					<control type="radiobutton" id="118">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -439,7 +471,7 @@
 						<onclick>Skin.ToggleSetting(HideEpisodeThumb)</onclick>
 						<selected>!Skin.HasSetting(HideEpisodeThumb)</selected>
 					</control>
-					<control type="radiobutton" id="116">
+					<control type="radiobutton" id="119">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -452,7 +484,7 @@
 						<enable>!Skin.HasSetting(EnableMinSpec)</enable>
 						<selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
 					</control>
-					<control type="label" id="117">
+					<control type="label" id="120">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -462,7 +494,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="118">
+					<control type="radiobutton" id="121">
 						<description>enable wrap around menu</description>
 						<width>750</width>
 						<height>40</height>
@@ -475,7 +507,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="119">
+					<control type="radiobutton" id="122">
 						<description>Raise Main Menu</description>
 						<width>750</width>
 						<height>40</height>
@@ -488,7 +520,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="120">
+					<control type="radiobutton" id="123">
 						<description>Enable PlayDisc</description>
 						<width>750</width>
 						<height>40</height>
@@ -501,7 +533,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="121">
+					<control type="radiobutton" id="124">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -513,31 +545,7 @@
 						<onclick>Skin.ToggleSetting(AutoHideSubMenu)</onclick>
 						<selected>!Skin.HasSetting(AutoHideSubMenu)</selected>
 					</control>
-					<control type="radiobutton" id="122">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31114</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(AutoHidePowerBtn)</onclick>
-						<selected>!Skin.HasSetting(AutoHidePowerBtn)</selected>
-					</control>
-                    <control type="radiobutton" id="123">
-                        <width>750</width>
-                        <height>40</height>
-                        <font>font13</font>
-                        <label>31225</label>
-                        <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
-                        <texturefocus>MenuItemFO.png</texturefocus>
-                        <texturenofocus>MenuItemNF.png</texturenofocus>
-                        <onclick>Skin.ToggleSetting(HideFavouritesBtn)</onclick>
-                        <selected>Skin.HasSetting(HideFavouritesBtn)</selected>
-                    </control>
-					<control type="radiobutton" id="124">
+					<control type="radiobutton" id="125">
 						<description>enable Now Playing Info</description>
 						<width>750</width>
 						<height>40</height>
@@ -549,8 +557,9 @@
 						<selected>!Skin.HasSetting(HideNowPlayingInfo)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>!Skin.HasSetting(EnableLargeWidget)</enable>
 					</control>
-					<control type="radiobutton" id="125">
+					<control type="radiobutton" id="126">
 						<description>Show System Stats</description>
 						<width>750</width>
 						<height>40</height>
@@ -563,35 +572,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="126">
-						<description>Show Suggested Media</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>31216</label>
-						<onclick>Skin.ToggleSetting(HideSuggestedMedia)</onclick>
-						<selected>!Skin.HasSetting(HideSuggestedMedia)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<enable>System.HasAddon(service.skin.widgets)</enable>
-					</control>
-					<control type="radiobutton" id="127">
-						<description>Show Global Search</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>31129</label>
-						<onclick>Skin.ToggleSetting(HideHomeSearch)</onclick>
-						<selected>!Skin.HasSetting(HideHomeSearch)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<enable>System.HasAddon(script.globalsearch)</enable>
-					</control>
-					<control type="button" id="128">
+					<control type="button" id="127">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -604,7 +585,7 @@
 						<enable>!Skin.HasSetting(HideHomeSearch)</enable>
 						<visible>System.HasAddon(script.globalsearch)</visible>
 					</control>
-					<control type="radiobutton" id="129">
+					<control type="radiobutton" id="128">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -630,6 +611,18 @@
 						<enable>!Skin.HasSetting(HideBackGroundFanart)</enable>
 					</control>
 					<control type="radiobutton" id="131">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31334</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(EnableLargeWidget)</onclick>
+						<selected>Skin.HasSetting(EnableLargeWidget)</selected>
+					</control>
+					<control type="radiobutton" id="132">
 						<description>RainDrop Effect</description>
 						<width>750</width>
 						<height>40</height>
@@ -643,7 +636,7 @@
 						<selected>Skin.HasSetting(HideRainDropEffect)</selected>
 						<enable>!Skin.HasSetting(EnableMinSpec)</enable>
 					</control>
-					<control type="label" id="132">
+					<control type="label" id="133">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -653,7 +646,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="133">
+					<control type="radiobutton" id="134">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -665,7 +658,7 @@
 						<onclick>Skin.ToggleSetting(AutoStartVisualization)</onclick>
 						<selected>Skin.HasSetting(AutoStartVisualization)</selected>
 					</control>
-					<control type="radiobutton" id="134">
+					<control type="radiobutton" id="135">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -677,7 +670,7 @@
 						<onclick>Skin.ToggleSetting(HideVisualizationCDart)</onclick>
 						<selected>!Skin.HasSetting(HideVisualizationCDart)</selected>
 					</control>
-					<control type="radiobutton" id="135">
+					<control type="radiobutton" id="136">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -690,7 +683,7 @@
 						<selected>!Skin.HasSetting(HideTraditionalCDart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationCDart)</enable>
 					</control>
-					<control type="radiobutton" id="136">
+					<control type="radiobutton" id="137">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -703,7 +696,7 @@
 						<onclick>Skin.SetBool(HideVisualizationFanart)</onclick>
 						<selected>Skin.HasSetting(ShowBackgroundAlbumWall)</selected>
 					</control>
-					<control type="radiobutton" id="137">
+					<control type="radiobutton" id="138">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -716,7 +709,7 @@
 						<onclick>Skin.Reset(ShowBackgroundAlbumWall)</onclick>
 						<selected>!Skin.HasSetting(HideVisualizationFanart)</selected>
 					</control>
-					<control type="radiobutton" id="138">
+					<control type="radiobutton" id="139">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -729,7 +722,7 @@
 						<selected>Skin.HasSetting(AnimateVizFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="139">
+					<control type="radiobutton" id="140">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -742,7 +735,7 @@
 						<selected>Skin.HasSetting(AllowTransparentFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="140">
+					<control type="radiobutton" id="141">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -756,7 +749,7 @@
 						<selected>Skin.HasSetting(AllowVizExtraFanart)</selected>
 						<enable>!Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="141">
+					<control type="radiobutton" id="142">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -770,7 +763,7 @@
 						<selected>Skin.HasSetting(AllowSlideShowArt)</selected>
 						<enable>System.HasAddon(script.artistslideshow) + !Skin.HasSetting(HideVisualizationFanart)</enable>
 					</control>
-					<control type="radiobutton" id="142">
+					<control type="radiobutton" id="143">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -783,7 +776,7 @@
 						<selected>Skin.HasSetting(AllowSlideShowBio)</selected>
 						<enable>System.HasAddon(script.artistslideshow)</enable>
 					</control>
-					<control type="button" id="143">
+					<control type="button" id="144">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -796,7 +789,7 @@
 						<enable>Skin.HasSetting(AllowSlideShowArt) | Skin.HasSetting(AllowSlideShowBio)</enable>
 						<visible>System.HasAddon(script.artistslideshow)</visible>
 					</control>
-					<control type="label" id="144">
+					<control type="label" id="145">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -806,7 +799,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="145">
+					<control type="radiobutton" id="146">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -818,7 +811,7 @@
 						<onclick>Skin.ToggleSetting(HideInfoStartOSD)</onclick>
 						<selected>!Skin.HasSetting(HideInfoStartOSD)</selected>
 					</control>
-					<control type="radiobutton" id="146">
+					<control type="radiobutton" id="147">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -830,7 +823,7 @@
 						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
 						<selected>!Skin.HasSetting(HidePauseInfo)</selected>
 					</control>
-					<control type="radiobutton" id="147">
+					<control type="radiobutton" id="148">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -842,7 +835,7 @@
 						<onclick>Skin.ToggleSetting(OSDInfoLogo)</onclick>
 						<selected>Skin.HasSetting(OSDInfoLogo)</selected>
 					</control>
-					<control type="radiobutton" id="148">
+					<control type="radiobutton" id="149">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -854,7 +847,7 @@
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>!Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>
-					<control type="label" id="149">
+					<control type="label" id="150">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -864,7 +857,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="150">
+					<control type="radiobutton" id="151">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -876,7 +869,7 @@
 						<onclick>Skin.ToggleSetting(HideYearTitle)</onclick>
 						<selected>!Skin.HasSetting(HideYearTitle)</selected>
 					</control>
-					<control type="radiobutton" id="151">
+					<control type="radiobutton" id="152">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -1234,9 +1227,7 @@
 					<itemgap>-1</itemgap>
 					<pagecontrol>60</pagecontrol>
 					<onleft>9000</onleft>
-                    <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
-                    <onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-                    <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
+					<onright>60</onright>
 					<onup>9002</onup>
 					<ondown>9002</ondown>
 					<control type="label" id="200">
@@ -1362,7 +1353,6 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.2,home)</onclick>
 						<onclick condition="Skin.String(HomeItem.2.Path)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
-						<!--onclick condition="!IsEmpty(Skin.String(HomeItem.2.Label))">Skin.SetString(HomeItem.2.Label)</onclick-->
 					</control>
 					<control type="button" id="208">
 						<width>750</width>
@@ -1447,7 +1437,6 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.3,home)</onclick>
 						<onclick condition="Skin.String(HomeItem.3.Path)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
-						<!--onclick condition="!IsEmpty(Skin.String(HomeItem.3.Label))">Skin.SetString(HomeItem.3.Label)</onclick-->
 					</control>
 					<control type="button" id="213">
 						<width>750</width>
@@ -1532,7 +1521,6 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.4,home)</onclick>
 						<onclick condition="Skin.String(HomeItem.4.Path)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
-						<!--onclick condition="!IsEmpty(Skin.String(HomeItem.4.Label))">Skin.SetString(HomeItem.4.Label)</onclick-->
 					</control>
 					<control type="button" id="218">
 						<width>750</width>
@@ -1617,7 +1605,6 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.5,home)</onclick>
 						<onclick condition="Skin.String(HomeItem.5.Path)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
-						<!--onclick condition="!IsEmpty(Skin.String(HomeItem.5.Label))">Skin.SetString(HomeItem.5.Label)</onclick-->
 					</control>
 					<control type="button" id="223">
 						<width>750</width>
@@ -1702,7 +1689,6 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.6,home)</onclick>
 						<onclick condition="Skin.String(HomeItem.6.Path)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
-						<!--onclick condition="!IsEmpty(Skin.String(HomeItem.6.Label))">Skin.SetString(HomeItem.6.Label)</onclick-->
 					</control>
 					<control type="button" id="228">
 						<width>750</width>
@@ -1787,7 +1773,6 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.7,home)</onclick>
 						<onclick condition="Skin.String(HomeItem.7.Path)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
-						<!--onclick condition="!IsEmpty(Skin.String(HomeItem.7.Label))">Skin.SetString(HomeItem.7.Label)</onclick-->
 					</control>
 					<control type="button" id="233">
 						<width>750</width>
@@ -1872,7 +1857,6 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.8,home)</onclick>
 						<onclick condition="Skin.String(HomeItem.8.Path)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
-						<!--onclick condition="!IsEmpty(Skin.String(HomeItem.8.Label))">Skin.SetString(HomeItem.8.Label)</onclick-->
 					</control>
 					<control type="button" id="238">
 						<width>750</width>
@@ -1957,7 +1941,6 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.9,home)</onclick>
 						<onclick condition="Skin.String(HomeItem.9.Path)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
-						<!--onclick condition="!IsEmpty(Skin.String(HomeItem.9.Label))">Skin.SetString(HomeItem.9.Label)</onclick-->
 					</control>
 					<control type="button" id="243">
 						<width>750</width>
@@ -2042,7 +2025,6 @@
 						<onclick>SetProperty(UsrSelectBtn,HomeItem.10,home)</onclick>
 						<onclick condition="Skin.String(HomeItem.10.Path)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
-						<!--onclick condition="!IsEmpty(Skin.String(HomeItem.10.Label))">Skin.SetString(HomeItem.10.Label)</onclick-->
 					</control>
 					<control type="button" id="248">
 						<width>750</width>
@@ -2130,6 +2112,20 @@
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
+						<label> - $LOCALIZE[31120]</label>
+						<label2>[COLOR=grey2]$VAR[UsrDefItemTwelveSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.12,home)</onclick>
+						<onclick>ActivateWindow(2116)</onclick>
+						<enable>!Skin.HasSetting(HideSytemMenuItem)</enable>
+					</control>
+					<control type="button" id="254">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
 						<label> - $LOCALIZE[31166]</label>
 						<label2>[COLOR=grey2]$VAR[UsrDefItemTwelveAddOnLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
@@ -2141,7 +2137,7 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<enable>!Skin.HasSetting(HideSytemMenuItem)</enable>
 					</control>
-					<control type="button" id="254">
+					<control type="button" id="255">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -2183,9 +2179,7 @@
 					<itemgap>-1</itemgap>
 					<pagecontrol>60</pagecontrol>
 					<onleft>9000</onleft>
-                    <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
-                    <onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-                    <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
+					<onright>60</onright>
 					<onup>9003</onup>
 					<ondown>9003</ondown>
 					<control type="label" id="300">
@@ -2293,7 +2287,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubVideos.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubVideos.6.Label)) + !stringcompare(Skin.String(SubVideos.6.Path),Hidden)">Skin.SetString(SubVideos.6.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="button" id="308">
 						<width>750</width>
@@ -2456,7 +2449,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.6.Label)) + !stringcompare(Skin.String(SubMovies.6.Path),Hidden)">Skin.SetString(SubMovies.6.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="button" id="320">
 						<width>750</width>
@@ -2471,7 +2463,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.7,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.7.Label)) + !stringcompare(Skin.String(SubMovies.7.Path),Hidden)">Skin.SetString(SubMovies.7.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="button" id="321">
 						<width>750</width>
@@ -2486,7 +2477,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.8,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.8.Label)) + !stringcompare(Skin.String(SubMovies.8.Path),Hidden)">Skin.SetString(SubMovies.8.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="button" id="322">
 						<width>750</width>
@@ -2501,7 +2491,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.9,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.9.Label)) + !stringcompare(Skin.String(SubMovies.9.Path),Hidden)">Skin.SetString(SubMovies.9.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="button" id="323">
 						<width>750</width>
@@ -2516,7 +2505,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubMovies.10,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMovies.10.Label)) + !stringcompare(Skin.String(SubMovies.10.Path),Hidden)">Skin.SetString(SubMovies.10.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="label" id="324">
 						<width>750</width>
@@ -2623,7 +2611,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubTVShows.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubTVShows.6.Label)) + !stringcompare(Skin.String(SubTVShows.6.Path),Hidden)">Skin.SetString(SubTVShows.6.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="button" id="332">
 						<width>750</width>
@@ -2786,7 +2773,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubConcerts.6.Label)) + !stringcompare(Skin.String(SubConcerts.6.Path),Hidden)">Skin.SetString(SubConcerts.6.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="button" id="344">
 						<width>750</width>
@@ -2801,7 +2787,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.7,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubConcerts.7.Label)) + !stringcompare(Skin.String(SubConcerts.7.Path),Hidden)">Skin.SetString(SubConcerts.7.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="button" id="345">
 						<width>750</width>
@@ -2816,7 +2801,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.8,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubConcerts.8.Label)) + !stringcompare(Skin.String(SubConcerts.8.Path),Hidden)">Skin.SetString(SubConcerts.8.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="button" id="346">
 						<width>750</width>
@@ -2831,7 +2815,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.9,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubConcerts.9.Label)) + !stringcompare(Skin.String(SubConcerts.9.Path),Hidden)">Skin.SetString(SubConcerts.9.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="button" id="347">
 						<width>750</width>
@@ -2846,7 +2829,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubConcerts.10,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubConcerts.10.Label)) + !stringcompare(Skin.String(SubConcerts.10.Path),Hidden)">Skin.SetString(SubConcerts.10.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="label" id="348">
 						<width>750</width>
@@ -2953,7 +2935,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.6.Label)) + !stringcompare(Skin.String(SubMusic.6.Path),Hidden)">Skin.SetString(SubMusic.6.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="button" id="356">
 						<width>750</width>
@@ -2968,7 +2949,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.7,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.7.Label)) + !stringcompare(Skin.String(SubMusic.7.Path),Hidden)">Skin.SetString(SubMusic.7.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="button" id="357">
 						<width>750</width>
@@ -2983,7 +2963,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.8,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.8.Label)) + !stringcompare(Skin.String(SubMusic.8.Path),Hidden)">Skin.SetString(SubMusic.8.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="button" id="358">
 						<width>750</width>
@@ -2998,7 +2977,6 @@
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.9,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.9.Label)) + !stringcompare(Skin.String(SubMusic.9.Path),Hidden)">Skin.SetString(SubMusic.9.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="button" id="359">
 						<width>750</width>
@@ -3013,9 +2991,182 @@
 						<onclick>SetProperty(UsrSelectBtn,SubMusic.10,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubMusic.10.Label)) + !stringcompare(Skin.String(SubMusic.10.Path),Hidden)">Skin.SetString(SubMusic.10.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 					<control type="label" id="360">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$VAR[UsersSubLiveTVName] $LOCALIZE[31120]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
+					</control>
+					<control type="button" id="361">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31192]</label>
+						<label2>[COLOR=white]$VAR[UsersSubLiveTVName][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(UserTVNameSubMenu)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
+					</control>
+					<control type="button" id="362">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 1</label>
+						<label2>[COLOR=selected]$VAR[SubMenuLiveTVOne][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.1,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.1.Label)) + !stringcompare(Skin.String(SubLiveTV.1.Path),Hidden)">Skin.SetString(SubLiveTV.1.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
+					</control>
+					<control type="button" id="363">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 2</label>
+						<label2>[COLOR=selected]$VAR[SubMenuLiveTVTwo][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.2,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.2.Label)) + !stringcompare(Skin.String(SubLiveTV.2.Path),Hidden)">Skin.SetString(SubLiveTV.2.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
+					</control>
+					<control type="button" id="364">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 3</label>
+						<label2>[COLOR=selected]$VAR[SubMenuLiveTVThree][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.3,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.3.Label)) + !stringcompare(Skin.String(SubLiveTV.3.Path),Hidden)">Skin.SetString(SubLiveTV.3.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
+					</control>
+					<control type="button" id="365">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 4</label>
+						<label2>[COLOR=selected]$VAR[SubMenuLiveTVFour][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.4,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.4.Label)) + !stringcompare(Skin.String(SubLiveTV.4.Path),Hidden)">Skin.SetString(SubLiveTV.4.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
+					</control>
+					<control type="button" id="366">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 5</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubLiveTV.5.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.5,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.5.Label)) + !stringcompare(Skin.String(SubLiveTV.5.Path),Hidden)">Skin.SetString(SubLiveTV.5.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
+					</control>
+					<control type="button" id="367">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 6</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubLiveTV.6.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.6,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.6.Label)) + !stringcompare(Skin.String(SubLiveTV.6.Path),Hidden)">Skin.SetString(SubLiveTV.6.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
+					</control>
+					<control type="button" id="368">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 7</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubLiveTV.7.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.7,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.7.Label)) + !stringcompare(Skin.String(SubLiveTV.7.Path),Hidden)">Skin.SetString(SubLiveTV.7.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
+					</control>
+					<control type="button" id="369">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 8</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubLiveTV.8.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.8,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.8.Label)) + !stringcompare(Skin.String(SubLiveTV.8.Path),Hidden)">Skin.SetString(SubLiveTV.8.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
+					</control>
+					<control type="button" id="370">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 9</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubLiveTV.9.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.9,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.9.Label)) + !stringcompare(Skin.String(SubLiveTV.9.Path),Hidden)">Skin.SetString(SubLiveTV.9.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
+					</control>
+					<control type="button" id="371">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 10</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubLiveTV.10.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.10,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.10.Label)) + !stringcompare(Skin.String(SubLiveTV.10.Path),Hidden)">Skin.SetString(SubLiveTV.10.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
+					</control>
+					<control type="label" id="372">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3025,7 +3176,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="361">
+					<control type="button" id="373">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3037,7 +3188,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserProgsSubMenu)</onclick>
 					</control>
-					<control type="button" id="362">
+					<control type="button" id="374">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3051,7 +3202,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.1.Label)) + !stringcompare(Skin.String(SubProg.1.Path),Hidden)">Skin.SetString(SubProg.1.Label)</onclick>
 					</control>
-					<control type="button" id="363">
+					<control type="button" id="375">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3065,7 +3216,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.2.Label)) + !stringcompare(Skin.String(SubProg.2.Path),Hidden)">Skin.SetString(SubProg.2.Label)</onclick>
 					</control>
-					<control type="button" id="364">
+					<control type="button" id="376">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3079,7 +3230,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.3.Label)) + !stringcompare(Skin.String(SubProg.3.Path),Hidden)">Skin.SetString(SubProg.3.Label)</onclick>
 					</control>
-					<control type="button" id="365">
+					<control type="button" id="377">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3093,7 +3244,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.4.Label)) + !stringcompare(Skin.String(SubProg.4.Path),Hidden)">Skin.SetString(SubProg.4.Label)</onclick>
 					</control>
-					<control type="button" id="366">
+					<control type="button" id="378">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3107,7 +3258,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.5.Label)) + !stringcompare(Skin.String(SubProg.5.Path),Hidden)">Skin.SetString(SubProg.5.Label)</onclick>
 					</control>
-					<control type="button" id="367">
+					<control type="button" id="379">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3120,9 +3271,8 @@
 						<onclick>SetProperty(UsrSelectBtn,SubProg.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.6.Label)) + !stringcompare(Skin.String(SubProg.6.Path),Hidden)">Skin.SetString(SubProg.6.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="368">
+					<control type="button" id="380">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3136,7 +3286,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.7.Label)) + !stringcompare(Skin.String(SubProg.7.Path),Hidden)">Skin.SetString(SubProg.7.Label)</onclick>
 					</control>
-					<control type="button" id="369">
+					<control type="button" id="381">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3150,7 +3300,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.8.Label)) + !stringcompare(Skin.String(SubProg.8.Path),Hidden)">Skin.SetString(SubProg.8.Label)</onclick>
 					</control>
-					<control type="button" id="370">
+					<control type="button" id="382">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3164,7 +3314,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.9.Label)) + !stringcompare(Skin.String(SubProg.9.Path),Hidden)">Skin.SetString(SubProg.9.Label)</onclick>
 					</control>
-					<control type="button" id="371">
+					<control type="button" id="383">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3178,7 +3328,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubProg.10.Label)) + !stringcompare(Skin.String(SubProg.10.Path),Hidden)">Skin.SetString(SubProg.10.Label)</onclick>
 					</control>
-					<control type="label" id="372">
+					<control type="label" id="384">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3188,7 +3338,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="373">
+					<control type="button" id="385">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3200,7 +3350,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserPicturesSubMenu)</onclick>
 					</control>
-					<control type="button" id="374">
+					<control type="button" id="386">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3214,7 +3364,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.1.Label)) + !stringcompare(Skin.String(SubPictures.1.Path),Hidden)">Skin.SetString(SubPictures.1.Label)</onclick>
 					</control>
-					<control type="button" id="375">
+					<control type="button" id="387">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3228,7 +3378,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.2.Label))">Skin.SetString(SubPictures.2.Label)</onclick>
 					</control>
-					<control type="button" id="376">
+					<control type="button" id="388">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3242,7 +3392,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.3.Label))">Skin.SetString(SubPictures.3.Label)</onclick>
 					</control>
-					<control type="button" id="377">
+					<control type="button" id="389">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3256,7 +3406,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.4.Label))">Skin.SetString(SubPictures.4.Label)</onclick>
 					</control>
-					<control type="button" id="378">
+					<control type="button" id="390">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3270,7 +3420,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.5.Label))">Skin.SetString(SubPictures.5.Label)</onclick>
 					</control>
-					<control type="button" id="379">
+					<control type="button" id="391">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3283,9 +3433,8 @@
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.6.Label))">Skin.SetString(SubPictures.6.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="380">
+					<control type="button" id="392">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3298,9 +3447,8 @@
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.7,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.7.Label))">Skin.SetString(SubPictures.7.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="381">
+					<control type="button" id="393">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3313,9 +3461,8 @@
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.8,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.8.Label))">Skin.SetString(SubPictures.8.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="382">
+					<control type="button" id="394">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3328,9 +3475,8 @@
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.9,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.9.Label))">Skin.SetString(SubPictures.9.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="383">
+					<control type="button" id="395">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3343,9 +3489,170 @@
 						<onclick>SetProperty(UsrSelectBtn,SubPictures.10,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.10.Label))">Skin.SetString(SubPictures.10.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="label" id="384">
+					<control type="label" id="396">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$VAR[UsersSubSystemName] $LOCALIZE[31120]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="397">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31192]</label>
+						<label2>[COLOR=white]$VAR[UsersSubSystemName][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(UserSystemSubMenu)</onclick>
+					</control>
+					<control type="button" id="398">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 1</label>
+						<label2>[COLOR=selected]$VAR[SubMenuSystemOne][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubSystem.1,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubSystem.1.Label)) + !stringcompare(Skin.String(SubSystem.1.Path),Hidden)">Skin.SetString(SubSystem.1.Label)</onclick>
+					</control>
+					<control type="button" id="399">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 2</label>
+						<label2>[COLOR=selected]$VAR[SubMenuSystemTwo][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubSystem.2,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubSystem.2.Label)) + !stringcompare(Skin.String(SubSystem.2.Path),Hidden)">Skin.SetString(SubSystem.2.Label)</onclick>
+					</control>
+					<control type="button" id="400">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 3</label>
+						<label2>[COLOR=selected]$VAR[SubMenuSystemThree][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubSystem.3,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubSystem.3.Label)) + !stringcompare(Skin.String(SubSystem.3.Path),Hidden)">Skin.SetString(SubSystem.3.Label)</onclick>
+					</control>
+					<control type="button" id="401">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 4</label>
+						<label2>[COLOR=selected]$VAR[SubMenuSystemFour][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubSystem.4,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubSystem.4.Label)) + !stringcompare(Skin.String(SubSystem.4.Path),Hidden)">Skin.SetString(SubSystem.4.Label)</onclick>
+					</control>
+					<control type="button" id="402">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 5</label>
+						<label2>[COLOR=selected]$VAR[SubMenuSystemFive][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubSystem.5,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubSystem.5.Label)) + !stringcompare(Skin.String(SubSystem.5.Path),Hidden)">Skin.SetString(SubSystem.5.Label)</onclick>
+					</control>
+					<control type="button" id="403">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 6</label>
+						<label2>[COLOR=selected]$VAR[SubMenuSystemSix][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubSystem.6,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubSystem.6.Label)) + !stringcompare(Skin.String(SubSystem.6.Path),Hidden)">Skin.SetString(SubSystem.6.Label)</onclick>
+					</control>
+					<control type="button" id="404">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 7</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubSystem.7.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubSystem.7,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubSystem.7.Label))">Skin.SetString(SubSystem.7.Label)</onclick>
+					</control>
+					<control type="button" id="405">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 8</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubSystem.8.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubSystem.8,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubSystem.8.Label))">Skin.SetString(SubSystem.8.Label)</onclick>
+					</control>
+					<control type="button" id="406">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 9</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubSystem.9.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubSystem.9,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubSystem.9.Label))">Skin.SetString(SubSystem.9.Label)</onclick>
+					</control>
+					<control type="button" id="407">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31130] - 10</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubSystem.10.Label)][/COLOR]</label2>
+						<textcolor>grey</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubSystem.10,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubSystem.10.Label))">Skin.SetString(SubSystem.10.Label)</onclick>
+					</control>
+					<control type="label" id="408">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3355,7 +3662,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="385">
+					<control type="button" id="409">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3367,7 +3674,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserSelectOneSubMenu)</onclick>
 					</control>
-					<control type="button" id="386">
+					<control type="button" id="410">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3381,7 +3688,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.1.Label))">Skin.SetString(UserSubOne.1.Label)</onclick>
 					</control>
-					<control type="button" id="387">
+					<control type="button" id="411">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3395,7 +3702,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.2.Label))">Skin.SetString(UserSubOne.2.Label)</onclick>
 					</control>
-					<control type="button" id="388">
+					<control type="button" id="412">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3409,7 +3716,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.3.Label))">Skin.SetString(UserSubOne.3.Label)</onclick>
 					</control>
-					<control type="button" id="389">
+					<control type="button" id="413">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3423,7 +3730,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.4.Label))">Skin.SetString(UserSubOne.4.Label)</onclick>
 					</control>
-					<control type="button" id="390">
+					<control type="button" id="414">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3437,7 +3744,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.5.Label))">Skin.SetString(UserSubOne.5.Label)</onclick>
 					</control>
-					<control type="button" id="391">
+					<control type="button" id="415">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3450,9 +3757,8 @@
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.6.Label))">Skin.SetString(UserSubOne.6.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="392">
+					<control type="button" id="416">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3465,9 +3771,8 @@
 						<onclick>SetProperty(UsrSelectBtn,UserSubOne.7,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.7.Label))">Skin.SetString(UserSubOne.7.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="393">
+					<control type="button" id="417">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3481,7 +3786,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.8.Label))">Skin.SetString(UserSubOne.8.Label)</onclick>
 					</control>
-					<control type="button" id="394">
+					<control type="button" id="418">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3495,7 +3800,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.9.Label))">Skin.SetString(UserSubOne.9.Label)</onclick>
 					</control>
-					<control type="button" id="395">
+					<control type="button" id="419">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3509,7 +3814,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubOne.10.Label))">Skin.SetString(UserSubOne.10.Label)</onclick>
 					</control>
-					<control type="label" id="396">
+					<control type="label" id="420">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3519,7 +3824,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="397">
+					<control type="button" id="421">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3531,7 +3836,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserSelectTwoSubMenu)</onclick>
 					</control>
-					<control type="button" id="398">
+					<control type="button" id="422">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3545,7 +3850,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.1.Label))">Skin.SetString(UserSubTwo.1.Label)</onclick>
 					</control>
-					<control type="button" id="399">
+					<control type="button" id="423">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3559,7 +3864,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.2.Label))">Skin.SetString(UserSubTwo.2.Label)</onclick>
 					</control>
-					<control type="button" id="400">
+					<control type="button" id="424">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3573,7 +3878,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.3.Label))">Skin.SetString(UserSubTwo.3.Label)</onclick>
 					</control>
-					<control type="button" id="401">
+					<control type="button" id="425">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3587,7 +3892,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.4.Label))">Skin.SetString(UserSubTwo.4.Label)</onclick>
 					</control>
-					<control type="button" id="402">
+					<control type="button" id="426">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3601,7 +3906,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.5.Label))">Skin.SetString(UserSubTwo.5.Label)</onclick>
 					</control>
-					<control type="button" id="403">
+					<control type="button" id="427">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3614,9 +3919,8 @@
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.6.Label))">Skin.SetString(UserSubTwo.6.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="404">
+					<control type="button" id="428">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3629,9 +3933,8 @@
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.7,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.7.Label))">Skin.SetString(UserSubTwo.7.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="405">
+					<control type="button" id="429">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3644,9 +3947,8 @@
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.8,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.8.Label))">Skin.SetString(UserSubTwo.8.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="406">
+					<control type="button" id="430">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3659,9 +3961,8 @@
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.9,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.9.Label))">Skin.SetString(UserSubTwo.9.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="407">
+					<control type="button" id="431">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3674,9 +3975,8 @@
 						<onclick>SetProperty(UsrSelectBtn,UserSubTwo.10,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubTwo.10.Label))">Skin.SetString(UserSubTwo.10.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="label" id="408">
+					<control type="label" id="432">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3686,7 +3986,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="409">
+					<control type="button" id="433">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3698,7 +3998,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserSelectThreeSubMenu)</onclick>
 					</control>
-					<control type="button" id="410">
+					<control type="button" id="434">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3712,7 +4012,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.1.Label))">Skin.SetString(UserSubThree.1.Label)</onclick>
 					</control>
-					<control type="button" id="411">
+					<control type="button" id="435">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3726,7 +4026,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.2.Label))">Skin.SetString(UserSubThree.2.Label)</onclick>
 					</control>
-					<control type="button" id="412">
+					<control type="button" id="436">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3740,7 +4040,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.3.Label))">Skin.SetString(UserSubThree.3.Label)</onclick>
 					</control>
-					<control type="button" id="413">
+					<control type="button" id="437">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3754,7 +4054,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.4.Label))">Skin.SetString(UserSubThree.4.Label)</onclick>
 					</control>
-					<control type="button" id="414">
+					<control type="button" id="438">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3768,7 +4068,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.5.Label))">Skin.SetString(UserSubThree.5.Label)</onclick>
 					</control>
-					<control type="button" id="415">
+					<control type="button" id="439">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3781,9 +4081,8 @@
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.6.Label))">Skin.SetString(UserSubThree.6.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="416">
+					<control type="button" id="440">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3796,9 +4095,8 @@
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.7,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.7.Label))">Skin.SetString(UserSubThree.7.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="417">
+					<control type="button" id="441">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3811,9 +4109,8 @@
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.8,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.8.Label))">Skin.SetString(UserSubThree.8.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="418">
+					<control type="button" id="442">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3826,9 +4123,8 @@
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.9,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.9.Label))">Skin.SetString(UserSubThree.9.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
-					<control type="button" id="419">
+					<control type="button" id="443">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3841,7 +4137,6 @@
 						<onclick>SetProperty(UsrSelectBtn,UserSubThree.10,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(UserSubThree.10.Label))">Skin.SetString(UserSubThree.10.Label)</onclick>
-						<!--enable>Skin.HasSetting(RaiseMainMenuBar) | Skin.HasSetting(AutoHidePowerBtn)</enable-->
 					</control>
 				</control>
 				<control type="scrollbar" id="60">
@@ -3871,9 +4166,7 @@
 						<itemgap>-1</itemgap>
 						<pagecontrol>60</pagecontrol>
 						<onleft>9000</onleft>
-                        <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
-                        <onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-                        <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
+						<onright>60</onright>
 						<onup>9004</onup>
 						<ondown>9004</ondown>
 						<control type="label" id="700">
@@ -3898,7 +4191,6 @@
 							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetString(UserSelectAddon.1.Label)</onclick>
 							<onclick>Skin.SetImage(Window(home).Property(UserSelectAddon)].fanart)</onclick>
-							<!--onclick>Skin.SetString($INFO[Window(home).Property(UserSelectAddon)].fanart,special://home/addons/$INFO[Skin.String(UserSelectAddon)]/fanart.jpg)</onclick-->
 						</control>
 						<control type="button" id="702">
 							<width>750</width>
@@ -6656,7 +6948,7 @@
 						<textcolor>white</textcolor>
 					</control>
 				</control>
-				<control type="grouplist" id="9006">
+				<control type="grouplist" id="9011">
 					<visible>Container(9000).Hasfocus(6)</visible>
 					<posx>290</posx>
 					<posy>60</posy>
@@ -6665,9 +6957,266 @@
 					<itemgap>-1</itemgap>
 					<pagecontrol>60</pagecontrol>
 					<onleft>9000</onleft>
-                    <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
-                    <onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-                    <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
+					<onright>60</onright>
+					<onup>9011</onup>
+					<ondown>9011</ondown>
+					<control type="label" id="800">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31226</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="801">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31671</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(DisableHomeReturnButtons)</onclick>
+						<selected>!Skin.HasSetting(DisableHomeReturnButtons)</selected>
+					</control>
+					<control type="radiobutton" id="802">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31675</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(DisableFloorVolumeButtons)</onclick>
+						<selected>!Skin.HasSetting(DisableFloorVolumeButtons)</selected>
+					</control>
+					<control type="radiobutton" id="803">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31677</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SmallVolumeJump)</onclick>
+						<selected>!Skin.HasSetting(SmallVolumeJump)</selected>
+						<enable>!Skin.HasSetting(DisableFloorVolumeButtons)</enable>
+					</control>
+					<control type="label" id="804">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31229</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="805">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31230</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideFavouritesBtn)</onclick>
+						<selected>Skin.HasSetting(HideFavouritesBtn)</selected>
+					</control>
+					<control type="radiobutton" id="806">
+						<description>Show Suggested Media</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>31216</label>
+						<onclick>Skin.ToggleSetting(HideSuggestedMedia)</onclick>
+						<selected>!Skin.HasSetting(HideSuggestedMedia)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>System.HasAddon(service.skin.widgets) + !Skin.HasSetting(UPnP_Mode)</enable>
+					</control>
+					<control type="radiobutton" id="807">
+						<description>Show Global Search</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>31129</label>
+						<onclick>Skin.ToggleSetting(HideHomeSearch)</onclick>
+						<selected>!Skin.HasSetting(HideHomeSearch)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>System.HasAddon(script.globalsearch)</enable>
+					</control>
+					<control type="label" id="810">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31227</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="811">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31114</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(AutoHidePowerBtn)</onclick>
+						<selected>!Skin.HasSetting(AutoHidePowerBtn)</selected>
+					</control>
+					<control type="radiobutton" id="812">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31228</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(PowerBtnCommand)</onclick>
+						<selected>IsEmpty(Skin.String(PowerBtnCommand))</selected>
+						<enable>!Skin.HasSetting(AutoHidePowerBtn)</enable>
+					</control>
+					<control type="radiobutton" id="813">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>13008</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(PowerBtnCommand,ShutDown)</onclick>
+						<selected>stringcompare(Skin.String(PowerBtnCommand),ShutDown)</selected>
+						<enable>!Skin.HasSetting(AutoHidePowerBtn)</enable>
+					</control>
+					<control type="radiobutton" id="814">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>13005</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(PowerBtnCommand,Powerdown)</onclick>
+						<selected>stringcompare(Skin.String(PowerBtnCommand),Powerdown)</selected>
+						<enable>!Skin.HasSetting(AutoHidePowerBtn)</enable>
+						<visible>System.CanPowerDown</visible>
+					</control>
+					<control type="radiobutton" id="815">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>13010</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(PowerBtnCommand,Hibernate)</onclick>
+						<selected>stringcompare(Skin.String(PowerBtnCommand),Hibernate)</selected>
+						<enable>!Skin.HasSetting(AutoHidePowerBtn)</enable>
+						<visible>System.CanHibernate</visible>
+					</control>
+					<control type="radiobutton" id="816">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>13011</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(PowerBtnCommand,Suspend)</onclick>
+						<selected>stringcompare(Skin.String(PowerBtnCommand),Suspend)</selected>
+						<enable>!Skin.HasSetting(AutoHidePowerBtn)</enable>
+						<visible>System.CanSuspend</visible>
+					</control>
+					<control type="radiobutton" id="817">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>13009</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(PowerBtnCommand,Quit)</onclick>
+						<selected>stringcompare(Skin.String(PowerBtnCommand),Quit)</selected>
+						<enable>!Skin.HasSetting(AutoHidePowerBtn)</enable>
+						<visible>System.Platform.Windows</visible>
+					</control>
+					<control type="radiobutton" id="818">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>20126</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(PowerBtnCommand,System.LogOff)</onclick>
+						<selected>stringcompare(Skin.String(PowerBtnCommand),System.LogOff)</selected>
+						<enable>!Skin.HasSetting(AutoHidePowerBtn)</enable>
+						<visible>System.HasLoginScreen | IntegerGreaterThan(System.ProfileCount,1)</visible>
+					</control>
+					<control type="radiobutton" id="819">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>10035</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(PowerBtnCommand,Reset)</onclick>
+						<selected>stringcompare(Skin.String(PowerBtnCommand),Reset)</selected>
+						<enable>!Skin.HasSetting(AutoHidePowerBtn)</enable>
+						<visible>System.CanReboot</visible>
+					</control>
+				</control>
+				<control type="scrollbar" id="60">
+					<posx>1060</posx>
+					<posy>60</posy>
+					<width>25</width>
+					<height>530</height>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+					<onleft>9011</onleft>
+					<onright condition="Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
+					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
+					<showonepage>true</showonepage>
+					<orientation>vertical</orientation>
+					<visible>Container(9000).Hasfocus(6)</visible>
+				</control>
+				<control type="grouplist" id="9006">
+					<visible>Container(9000).Hasfocus(7)</visible>
+					<posx>290</posx>
+					<posy>60</posy>
+					<width>750</width>
+					<height>530</height>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
 					<onup>9006</onup>
 					<ondown>9006</ondown>
 					<control type="label" id="600">
@@ -7062,7 +7611,7 @@
 					<onright condition="!Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
 					<showonepage>true</showonepage>
 					<orientation>vertical</orientation>
-					<visible>Container(9000).Hasfocus(6)</visible>
+					<visible>Container(9000).Hasfocus(7)</visible>
 				</control>
 			</control>
 		</control>

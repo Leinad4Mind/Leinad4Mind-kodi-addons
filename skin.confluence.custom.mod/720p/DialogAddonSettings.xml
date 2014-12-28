@@ -107,8 +107,7 @@
 			<onup>9</onup>
 			<ondown>9001</ondown>
 			<onleft>2</onleft>
-			<onright condition="!Skin.HasSetting(KioskMode)">30</onright>
-			<onright condition="Skin.HasSetting(KioskMode)">9</onright>
+			<onright>30</onright>
 		</control>
 		<control type="scrollbar" id="30">
 			<posx>765</posx>

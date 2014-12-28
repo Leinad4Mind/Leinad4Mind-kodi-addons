@@ -376,6 +376,10 @@ msgctxt "#31356"
 msgid "Download Subtitles"
 msgstr "Llwytho Isdeitlau i Lawr"
 
+msgctxt "#31389"
+msgid "Enabled"
+msgstr "Galluogwyd"
+
 msgctxt "#31391"
 msgid "Skin default with no Caps"
 msgstr "Croen rhagosodedig heb Brif Lythrennau"
@@ -420,6 +424,10 @@ msgctxt "#31410"
 msgid "[B]CONFIGURE SERVICE SETTINGS[/B][CR][CR]Setup control of XBMC via UPnP and HTTP · Configure file sharing[CR]Enable Zeroconf · Configure AirPlay"
 msgstr "[B]FFURFWEDDU GOSODIADAU GWASANAETHAU[/B][CR][CR]Gosod rheoli XBMC drwy UPnP a HTTP · Ffurfweddu rhannu ffeiliau[CR]Galluogi Zeroconf · Ffurfweddu AirPlay"
 
+msgctxt "#31413"
+msgid "Local subtitle available"
+msgstr "Isdeitlau lleol ar gael"
+
 msgctxt "#31421"
 msgid "Select your XBMC user Profile[CR]to login and continue"
 msgstr "Dewiswch eich Proffil[CR] defnyddiwr XBMC i fewngofnodi a pharhau"
@@ -463,6 +471,10 @@ msgstr "Dewisiadau Sianel"
 msgctxt "#31700"
 msgid "United States"
 msgstr "Yr Unol Daleithiau"
+
+msgctxt "#31701"
+msgid "Great Britain"
+msgstr "Prydain Fawr"
 
 msgctxt "#31702"
 msgid "Germany"

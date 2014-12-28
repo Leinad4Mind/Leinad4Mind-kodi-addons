@@ -6,8 +6,8 @@
 			<posy>70</posy>
 			<onup>9000</onup>
 			<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-            <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-            <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 			<control type="group">
 				<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Videos)</visible>
 				<include>HomeSubMenuCommonAnimation</include>
@@ -42,8 +42,8 @@
 					<onright>9010</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9010,-1)</onclick>
 					<visible>IntegerGreaterThan(Container(9010).NumItems,5) + Container(9010).HasPrevious</visible>
 				</control>
@@ -71,8 +71,8 @@
 					<onright>9010</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9010,1)</onclick>
 					<animation effect="slide" start="0,0" end="-205,0" time="0" condition="StringCompare(Container(9010).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="-410,0" time="0" condition="StringCompare(Container(9010).NumItems,3)">conditional</animation>
@@ -115,8 +115,8 @@
 					<onright>9011</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9011,-1)</onclick>
 					<visible>IntegerGreaterThan(Container(9011).NumItems,5) + Container(9011).HasPrevious</visible>
 				</control>
@@ -144,8 +144,8 @@
 					<onright>9011</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9011,1)</onclick>
 					<animation effect="slide" start="0,0" end="-205,0" time="0" condition="StringCompare(Container(9011).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="-410,0" time="0" condition="StringCompare(Container(9011).NumItems,3)">conditional</animation>
@@ -188,8 +188,8 @@
 					<onright>9012</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9012,-1)</onclick>
 					<visible>IntegerGreaterThan(Container(9012).NumItems,5) + Container(9012).HasPrevious</visible>
 				</control>
@@ -217,8 +217,8 @@
 					<onright>9012</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9012,1)</onclick>
 					<animation effect="slide" start="0,0" end="-205,0" time="0" condition="StringCompare(Container(9012).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="-410,0" time="0" condition="StringCompare(Container(9012).NumItems,3)">conditional</animation>
@@ -261,8 +261,8 @@
 					<onright>9013</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9013,-1)</onclick>
 					<visible>IntegerGreaterThan(Container(9013).NumItems,5) + Container(9013).HasPrevious</visible>
 				</control>
@@ -290,8 +290,8 @@
 					<onright>9013</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9013,1)</onclick>
 					<animation effect="slide" start="0,0" end="-205,0" time="0" condition="StringCompare(Container(9013).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="-410,0" time="0" condition="StringCompare(Container(9013).NumItems,3)">conditional</animation>
@@ -334,8 +334,8 @@
 					<onright>9014</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9014,-1)</onclick>
 					<visible>IntegerGreaterThan(Container(9014).NumItems,5) + Container(9014).HasPrevious</visible>
 				</control>
@@ -363,8 +363,8 @@
 					<onright>9014</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9014,1)</onclick>
 					<animation effect="slide" start="0,0" end="-205,0" time="0" condition="StringCompare(Container(9014).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="-410,0" time="0" condition="StringCompare(Container(9014).NumItems,3)">conditional</animation>
@@ -407,8 +407,8 @@
 					<onright>9015</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9015,-1)</onclick>
 					<visible>IntegerGreaterThan(Container(9015).NumItems,5) + Container(9015).HasPrevious</visible>
 				</control>
@@ -436,8 +436,8 @@
 					<onright>9015</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9015,1)</onclick>
 					<animation effect="slide" start="0,0" end="-205,0" time="0" condition="StringCompare(Container(9015).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="-410,0" time="0" condition="StringCompare(Container(9015).NumItems,3)">conditional</animation>
@@ -480,10 +480,9 @@
 					<onright>9016</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9016,-1)</onclick>
-					<!--onclick condition="system.getbool(input.enablemouse)">Control.Move(9016,1)</onclick-->
 					<visible>IntegerGreaterThan(Container(9016).NumItems,5) + Container(9016).HasPrevious</visible>
 				</control>
 				<control type="image">
@@ -510,8 +509,8 @@
 					<onright>9016</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9016,1)</onclick>
 					<animation effect="slide" start="0,0" end="-205,0" time="0" condition="StringCompare(Container(9016).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="-410,0" time="0" condition="StringCompare(Container(9016).NumItems,3)">conditional</animation>
@@ -554,8 +553,8 @@
 					<onright>9017</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9017,-1)</onclick>
 					<visible>IntegerGreaterThan(Container(9017).NumItems,5) + Container(9017).HasPrevious</visible>
 				</control>
@@ -583,8 +582,8 @@
 					<onright>9017</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9017,1)</onclick>
 					<animation effect="slide" start="0,0" end="-205,0" time="0" condition="StringCompare(Container(9017).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="-410,0" time="0" condition="StringCompare(Container(9017).NumItems,3)">conditional</animation>
@@ -627,8 +626,8 @@
 					<onright>9019</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9019,-1)</onclick>
 					<visible>IntegerGreaterThan(Container(9019).NumItems,5) + Container(9019).HasPrevious</visible>
 				</control>
@@ -656,8 +655,8 @@
 					<onright>9019</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9019,1)</onclick>
 					<animation effect="slide" start="0,0" end="-205,0" time="0" condition="StringCompare(Container(9019).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="-410,0" time="0" condition="StringCompare(Container(9019).NumItems,3)">conditional</animation>
@@ -700,8 +699,8 @@
 					<onright>9020</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9020,-1)</onclick>
 					<visible>IntegerGreaterThan(Container(9020).NumItems,5) + Container(9020).HasPrevious</visible>
 				</control>
@@ -729,8 +728,8 @@
 					<onright>9020</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9020,1)</onclick>
 					<animation effect="slide" start="0,0" end="-205,0" time="0" condition="StringCompare(Container(9020).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="-410,0" time="0" condition="StringCompare(Container(9020).NumItems,3)">conditional</animation>
@@ -773,8 +772,8 @@
 					<onright>9021</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9021,-1)</onclick>
 					<visible>IntegerGreaterThan(Container(9021).NumItems,5) + Container(9021).HasPrevious</visible>
 				</control>
@@ -802,8 +801,8 @@
 					<onright>9021</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9021,1)</onclick>
 					<animation effect="slide" start="0,0" end="-205,0" time="0" condition="StringCompare(Container(9021).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="-410,0" time="0" condition="StringCompare(Container(9021).NumItems,3)">conditional</animation>
@@ -846,8 +845,8 @@
 					<onright>9022</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9022,-1)</onclick>
 					<visible>IntegerGreaterThan(Container(9022).NumItems,5) + Container(9022).HasPrevious</visible>
 				</control>
@@ -875,8 +874,8 @@
 					<onright>9022</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9022,1)</onclick>
 					<animation effect="slide" start="0,0" end="-205,0" time="0" condition="StringCompare(Container(9022).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="-410,0" time="0" condition="StringCompare(Container(9022).NumItems,3)">conditional</animation>
@@ -919,8 +918,8 @@
 					<onright>9023</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9023,-1)</onclick>
 					<visible>IntegerGreaterThan(Container(9023).NumItems,5) + Container(9023).HasPrevious</visible>
 				</control>
@@ -948,8 +947,8 @@
 					<onright>9023</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9023,1)</onclick>
 					<animation effect="slide" start="0,0" end="-205,0" time="0" condition="StringCompare(Container(9023).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="-410,0" time="0" condition="StringCompare(Container(9023).NumItems,3)">conditional</animation>
@@ -992,8 +991,8 @@
 					<onright>9024</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9024,-1)</onclick>
 					<visible>IntegerGreaterThan(Container(9024).NumItems,5) + Container(9024).HasPrevious</visible>
 				</control>
@@ -1021,8 +1020,8 @@
 					<onright>9024</onright>
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 					<onclick>Control.Move(9024,1)</onclick>
 					<animation effect="slide" start="0,0" end="-205,0" time="0" condition="StringCompare(Container(9024).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="-410,0" time="0" condition="StringCompare(Container(9024).NumItems,3)">conditional</animation>
@@ -1044,8 +1043,8 @@
 		<orientation>Horizontal</orientation>
 		<onup>9000</onup>
 		<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">9002</ondown>
-        <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
-        <ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
+		<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + !Skin.HasSetting(HideFavouritesBtn)">21</ondown>
+		<ondown condition="!Skin.HasSetting(RaiseMainMenuBar) + Skin.HasSetting(HideFavouritesBtn) + !Skin.HasSetting(AutoHidePowerBtn)">20</ondown>
 	</include>
 	<include name="HomeSubMenuCommonAnimation">
 		<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out">Visible</animation>
@@ -1122,53 +1121,53 @@
 			<item>
 				<label>$VAR[SubMenuVideosOne]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubVideos.1.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(VideoSubMenu.1.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubVideos.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MovieTitles,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubVideos.1.Path))">$VAR[MoviesLibraryCmd]</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuVideosOne])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubVideos.1.Path))">ActivateWindow(Videos,MovieTitles,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubVideos.1.Path))">$VAR[MoviesLibraryCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubVideos.1.Path))">$INFO[Skin.String(SubVideos.1.Path)]</onclick>
-				<visible>Library.HasContent(Movies) | !IsEmpty(Skin.String(SubVideos.1.Path))</visible>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(Movies) | !IsEmpty(Skin.String(SubVideos.1.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubVideos.1.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuVideosTwo]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubVideos.2.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubVideos.2.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubVideos.2.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,TvShowTitles,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubVideos.2.Path))">Skin.SetString(HomeItemLastAction,$VAR[TVShowLibraryCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuVideosTwo])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubVideos.2.Path))">ActivateWindow(Videos,TvShowTitles,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubVideos.2.Path))">$VAR[TVShowLibraryCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubVideos.2.Path))">$INFO[Skin.String(SubVideos.2.Path)]</onclick>
-				<visible>Library.HasContent(TVShows) | !IsEmpty(Skin.String(SubVideos.2.Path))</visible>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(TVShows) | !IsEmpty(Skin.String(SubVideos.2.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubVideos.2.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuVideosThree]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubVideos.3.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubVideos.3.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubVideos.3.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoTitles,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubVideos.3.Path))">Skin.SetString(HomeItemLastAction,$VAR[ConcertsLibraryCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuVideosThree])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubVideos.3.Path))">ActivateWindow(Videos,MusicVideoTitles,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubVideos.3.Path))">$VAR[ConcertsLibraryCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubVideos.3.Path))">$INFO[Skin.String(SubVideos.3.Path)]</onclick>
-				<visible>Library.HasContent(MusicVideos) | !IsEmpty(Skin.String(SubVideos.3.Path))</visible>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(MusicVideos) | !IsEmpty(Skin.String(SubVideos.3.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubVideos.3.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuVideosFour]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubVideos.4.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubVideos.4.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubVideos.4.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,Files,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubVideos.4.Path))">$VAR[VideoFilesCmd]</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuVideosFour])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubVideos.4.Path))">ActivateWindow(Videos,Files,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubVideos.4.Path))">$VAR[VideoFilesCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubVideos.4.Path))">$INFO[Skin.String(SubVideos.4.Path)]</onclick>
 				<visible>!stringcompare(Skin.String(SubVideos.4.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuVideosFive]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubVideos.5.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubVideos.5.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubVideos.5.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,Root))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubVideos.5.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(sources://video/,Root))</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuVideosFive])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubVideos.5.Path))">ActivateWindow(Videos,Root)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubVideos.5.Path))">ActivateWindow(sources://video/,Root)</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubVideos.5.Path))">$INFO[Skin.String(SubVideos.5.Path)]</onclick>
 				<visible>Library.HasContent(Video) | !IsEmpty(Skin.String(SubVideos.5.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubVideos.5.Path),Hidden)</visible>
@@ -1222,62 +1221,67 @@
 			<item>
 				<label>$VAR[SubMenuMoviesOne]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubMovies.1.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubMovies.1.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMovies.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,RecentlyAddedMovies,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMovies.1.Path))">Skin.SetString(HomeItemLastAction,$VAR[MoviesRecentCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuMoviesOne])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubMovies.1.Path))">ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubMovies.1.Path))">$VAR[MoviesRecentCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubMovies.1.Path))">$INFO[Skin.String(SubMovies.1.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(Movies) | !IsEmpty(Skin.String(SubMovies.1.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubMovies.1.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuMoviesTwo]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubMovies.2.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubMovies.2.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMovies.2.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MovieSets,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMovies.2.Path))">Skin.SetString(HomeItemLastAction,$VAR[MoviesSetsCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuMoviesTwo])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubMovies.2.Path))">ActivateWindow(Videos,MovieSets,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubMovies.2.Path))">$VAR[MoviesSetsCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubMovies.2.Path))">$INFO[Skin.String(SubMovies.2.Path)]</onclick>
-				<visible>Library.HasContent(MovieSets) | !IsEmpty(Skin.String(SubMovies.2.Path))</visible>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(MovieSets) | !IsEmpty(Skin.String(SubMovies.2.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubMovies.2.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuMoviesThree]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubMovies.3.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubMovies.3.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMovies.3.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MovieTitles,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMovies.3.Path))">Skin.SetString(HomeItemLastAction,$VAR[MoviesTitleCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuMoviesThree])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubMovies.3.Path))">ActivateWindow(Videos,MovieTitles,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubMovies.3.Path))">$VAR[MoviesTitleCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubMovies.3.Path))">$INFO[Skin.String(SubMovies.3.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(Movies) | !IsEmpty(Skin.String(SubMovies.3.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubMovies.3.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuMoviesFour]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubMovies.4.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubMovies.4.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMovies.4.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MovieGenres,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMovies.4.Path))">Skin.SetString(HomeItemLastAction,$VAR[MoviesGenreCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuMoviesFour])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubMovies.4.Path))">ActivateWindow(Videos,MovieGenres,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubMovies.4.Path))">$VAR[MoviesGenreCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubMovies.4.Path))">$INFO[Skin.String(SubMovies.4.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(Movies) | !IsEmpty(Skin.String(SubMovies.4.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubMovies.4.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuMoviesFive]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubMovies.5.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubMovies.5.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMovies.5.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MovieTags,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMovies.5.Path))">Skin.SetString(HomeItemLastAction,$VAR[MoviesTagsCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuMoviesFive])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubMovies.5.Path))">ActivateWindow(Videos,MovieTags,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubMovies.5.Path))">$VAR[MoviesTagsCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubMovies.5.Path))">$INFO[Skin.String(SubMovies.5.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(Movies) | !IsEmpty(Skin.String(SubMovies.5.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubMovies.5.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuMoviesSix]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubMovies.6.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubMovies.6.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMovies.6.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(VideoLibrary,special://PlayListVideos/,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMovies.6.Path))">Skin.SetString(HomeItemLastAction,$VAR[MoviesPlayListCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuMoviesSix])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubMovies.6.Path))">ActivateWindow(VideoLibrary,special://PlayListVideos/,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubMovies.6.Path))">$VAR[MoviesPlayListCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubMovies.6.Path))">$INFO[Skin.String(SubMovies.6.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(Movies) | !IsEmpty(Skin.String(SubMovies.6.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubMovies.6.Path),Hidden)</visible>
 			</item>
 			<item>
@@ -1319,61 +1323,67 @@
 			<item>
 				<label>$VAR[SubMenuTVShowsOne]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubTVShows.1.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubTVShows.1.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubTVShows.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,library://video/inprogressshows.xml/,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubTVShows.1.Path))">Skin.SetString(HomeItemLastAction,$VAR[TVShowInProgressCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuTVShowsOne])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubTVShows.1.Path))">ActivateWindow(Videos,library://video/inprogressshows.xml/,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubTVShows.1.Path))">$VAR[TVShowInProgressCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubTVShows.1.Path))">$INFO[Skin.String(SubTVShows.1.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(TVShows) | !IsEmpty(Skin.String(SubTVShows.1.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubTVShows.1.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuTVShowsTwo]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubTVShows.2.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubTVShows.2.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubTVShows.2.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,RecentlyAddedEpisodes,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubTVShows.2.Path))">Skin.SetString(HomeItemLastAction,$VAR[TVShowRecentCmd]</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuTVShowsTwo])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubTVShows.2.Path))">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubTVShows.2.Path))">$VAR[TVShowRecentCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubTVShows.2.Path))">$INFO[Skin.String(SubTVShows.2.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(TVShows) | !IsEmpty(Skin.String(SubTVShows.2.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubTVShows.2.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuTVShowsThree]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubTVShows.3.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubTVShows.3.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubTVShows.3.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,TVShowTitles,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubTVShows.3.Path))">Skin.SetString(HomeItemLastAction,$VAR[TVShowTitleCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuTVShowsThree])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubTVShows.3.Path))">ActivateWindow(Videos,TVShowTitles,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubTVShows.3.Path))">$VAR[TVShowTitleCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubTVShows.3.Path))">$INFO[Skin.String(SubTVShows.3.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(TVShows) | !IsEmpty(Skin.String(SubTVShows.3.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubTVShows.3.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuTVShowsFour]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubTVShows.4.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubTVShows.4.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubTVShows.4.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,TVShowGenres,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubTVShows.4.Path))">Skin.SetString(HomeItemLastAction,$VAR[TVShowGenreCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuTVShowsFour])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubTVShows.4.Path))">ActivateWindow(Videos,TVShowGenres,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubTVShows.4.Path))">$VAR[TVShowGenreCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubTVShows.4.Path))">$INFO[Skin.String(SubTVShows.4.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(TVShows) | !IsEmpty(Skin.String(SubTVShows.4.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubTVShows.4.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuTVShowsFive]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubTVShows.5.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubTVShows.5.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubTVShows.5.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,TVShowTags, return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubTVShows.5.Path))">Skin.SetString(HomeItemLastAction,$VAR[TVShowTagsCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuTVShowsFive])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubTVShows.5.Path))">ActivateWindow(Videos,TVShowTags, return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubTVShows.5.Path))">$VAR[TVShowTagsCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubTVShows.5.Path))">$INFO[Skin.String(SubTVShows.5.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(TVShows) | !IsEmpty(Skin.String(SubTVShows.5.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubTVShows.5.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuTVShowsSix]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubTVShows.6.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubTVShows.6.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubTVShows.6.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,TVShowYears,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubTVShows.6.Path))">Skin.SetString(HomeItemLastAction,$VAR[TVShowYearsCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuTVShowsSix])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubTVShows.6.Path))">ActivateWindow(Videos,TVShowYears,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubTVShows.6.Path))">$VAR[TVShowYearsCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubTVShows.6.Path))">$INFO[Skin.String(SubTVShows.6.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(TVShows) | !IsEmpty(Skin.String(SubTVShows.6.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubTVShows.6.Path),Hidden)</visible>
 			</item>
 			<item>
@@ -1415,23 +1425,23 @@
 			<item>
 				<label>$VAR[SubMenuMusicOne]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubMusic.1.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubMusic.1.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMusic.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(MusicLibrary,Artists,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMusic.1.Path))">Skin.SetString(HomeItemLastAction,$VAR[MusicArtistsCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuMusicOne])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubMusic.1.Path))">ActivateWindow(MusicLibrary,Artists,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubMusic.1.Path))">$VAR[MusicArtistsCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubMusic.1.Path))">$INFO[Skin.String(SubMusic.1.Path)]</onclick>
-				<visible>Library.HasContent(Music) | !IsEmpty(Skin.String(SubMusic.1.Path))</visible>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(Music) | !IsEmpty(Skin.String(SubMusic.1.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubMusic.1.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuMusicTwo]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubMusic.2.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubMusic.2.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMusic.2.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(MusicLibrary,Albums,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMusic.2.Path))">Skin.SetString(HomeItemLastAction,$VAR[MusicAlbumsCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuMusicTwo])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubMusic.2.Path))">ActivateWindow(MusicLibrary,Albums,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubMusic.2.Path))">$VAR[MusicAlbumsCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubMusic.2.Path))">$INFO[Skin.String(SubMusic.2.Path)]</onclick>
-				<visible>Library.HasContent(Music) | !IsEmpty(Skin.String(SubMusic.2.Path))</visible>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(Music) | !IsEmpty(Skin.String(SubMusic.2.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubMusic.2.Path),Hidden)</visible>
 			</item>
 			<item>
@@ -1453,17 +1463,18 @@
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 				<onclick condition="IsEmpty(Skin.String(SubMusic.4.Path))">ActivateWindow(MusicFiles)</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubMusic.4.Path))">$INFO[Skin.String(SubMusic.4.Path)]</onclick>
+				<visible>!Skin.HasSetting(UPnP_Mode) + !IsEmpty(Skin.String(SubMusic.3.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubMusic.4.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuMusicFive]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubMusic.5.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubMusic.5.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMusic.5.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(MusicLibrary,root))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMusic.5.Path))">Skin.SetString(HomeItemLastAction,$VAR[MusicLibraryCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuMusicFive])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubMusic.5.Path))">ActivateWindow(MusicLibrary,root)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubMusic.5.Path))">$VAR[MusicLibraryCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubMusic.5.Path))">$INFO[Skin.String(SubMusic.5.Path)]</onclick>
-				<visible>Library.HasContent(Music) | !IsEmpty(Skin.String(SubMusic.5.Path))</visible>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(Music) | !IsEmpty(Skin.String(SubMusic.5.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubMusic.5.Path),Hidden)</visible>
 			</item>
 			<item>
@@ -1474,7 +1485,7 @@
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 				<onclick condition="IsEmpty(Skin.String(SubMusic.6.Path))">ActivateWindow(MusicLibrary,Addons,return)</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubMusic.6.Path))">$INFO[Skin.String(SubMusic.6.Path)]</onclick>
-				<visible>Library.HasContent(Music) | !IsEmpty(Skin.String(SubMusic.6.Path))</visible>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(Music) | !IsEmpty(Skin.String(SubMusic.6.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubMusic.6.Path),Hidden)</visible>
 			</item>
 			<item>
@@ -1483,7 +1494,7 @@
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$LOCALIZE[24001])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 				<onclick>ActivateWindow(MusicFiles,Addons,return)</onclick>
-				<visible>!Library.HasContent(Music) + IsEmpty(Skin.String(SubMusic.6.Path))</visible>
+				<visible>!Skin.HasSetting(UPnP_Mode) + !Library.HasContent(Music) + IsEmpty(Skin.String(SubMusic.6.Path))</visible>
 			</item>
 			<item>
 				<label>$INFO[Skin.String(SubMusic.7.Label)]</label>
@@ -1522,37 +1533,96 @@
 	<include name="HomeSubMenuSystem">
 		<content>
 			<item>
-				<label>20077</label>
+				<label>$VAR[SubMenuSystemOne]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubSystem.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(SkinSettings),return)</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubSystem.1.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.1.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuSystemOne])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindow(SkinSettings),return</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.1.Path))">ActivateWindow(SkinSettings),return</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubSystem.1.Path))">$INFO[Skin.String(SubSystem.1.Path)]</onclick>
+				<visible>!stringcompare(Skin.String(SubSystem.1.Path),Hidden)</visible>
 			</item>
 			<item>
-				<label>$VAR[OS-Label]</label>
+				<label>$VAR[SubMenuSystemTwo]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubSystem.2.Path))">Skin.SetString(HomeItemLastAction,$VAR[OS-Settings])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubSystem.2.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.2.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuSystemTwo])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="System.HasAddon(os.openelec.settings)">RunAddon(os.openelec.settings)</onclick>
-				<onclick condition="System.HasAddon(service.openelec.settings)">RunAddon(service.openelec.settings)</onclick>
-				<onclick condition="System.HasAddon(script.raspbmc.settings)">RunAddon(script.raspbmc.settings)</onclick>
-				<visible>System.HasAddon(os.openelec.settings) | System.HasAddon(service.openelec.settings) | System.HasAddon(script.raspbmc.settings)</visible>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.2.Path))">$VAR[OS-Settings]</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubSystem.2.Path))">$INFO[Skin.String(SubSystem.2.Path)]</onclick>
+				<visible>[!IsEmpty(Skin.String(SubSystem.2.Path)) + !stringcompare(Skin.String(SubSystem.2.Path),Hidden)]|[IsEmpty(Skin.String(SubSystem.2.Path)) + [System.HasAddon(os.openelec.settings) | System.HasAddon(service.openelec.settings) | System.HasAddon(script.raspbmc.settings)]]</visible>
 			</item>
 			<item>
-				<label>7</label>
+				<label>$VAR[SubMenuSystemThree]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubSystem.3.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(FileManager))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubSystem.3.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.3.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuSystemThree])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindow(FileManager)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.3.Path))">ActivateWindow(FileManager)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubSystem.3.Path))">$INFO[Skin.String(SubSystem.3.Path)]</onclick>
+				<visible>!stringcompare(Skin.String(SubSystem.3.Path),Hidden)</visible>
 			</item>
 			<item>
-				<label>10040</label>
+				<label>$VAR[SubMenuSystemFour]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubSystem.4.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(AddonBrowser),return)</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubSystem.4.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.4.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuSystemFour])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindow(AddonBrowser),return</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.4.Path))">ActivateWindow(AddonBrowser),return</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubSystem.4.Path))">$INFO[Skin.String(SubSystem.4.Path)]</onclick>
+				<visible>!stringcompare(Skin.String(SubSystem.4.Path),Hidden)</visible>
 			</item>
 			<item>
-				<label>13200</label>
+				<label>$VAR[SubMenuSystemFive]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubSystem.5.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Profiles))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubSystem.5.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.5.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuSystemFive])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindow(Profiles)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.5.Path))">ActivateWindow(Profiles)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubSystem.5.Path))">$INFO[Skin.String(SubSystem.5.Path)]</onclick>
+				<visible>!stringcompare(Skin.String(SubSystem.5.Path),Hidden)</visible>
 			</item>
 			<item>
-				<label>130</label>
+				<label>$VAR[SubMenuSystemSix]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubSystem.6.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(SystemInfo))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubSystem.6.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.6.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuSystemSix])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindow(SystemInfo)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.6.Path))">ActivateWindow(SystemInfo)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubSystem.6.Path))">$INFO[Skin.String(SubSystem.6.Path)]</onclick>
+				<visible>!stringcompare(Skin.String(SubSystem.6.Path),Hidden)</visible>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubSystem.7.Label)]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.7.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubSystem.7.Label)])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick>$INFO[Skin.String(SubSystem.7.Path)]</onclick>
+				<visible>!IsEmpty(Skin.String(SubSystem.7.Path))</visible>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubSystem.8.Label)]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.8.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubSystem.8.Label)])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick>$INFO[Skin.String(SubSystem.8.Path)]</onclick>
+				<visible>!IsEmpty(Skin.String(SubSystem.8.Path))</visible>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubSystem.9.Label)]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.9.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubSystem.9.Label)])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick>$INFO[Skin.String(SubSystem.9.Path)]</onclick>
+				<visible>!IsEmpty(Skin.String(SubSystem.9.Path))</visible>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubSystem.10.Label)]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.10.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubSystem.10.Label)])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick>$INFO[Skin.String(SubSystem.10.Path)]</onclick>
+				<visible>!IsEmpty(Skin.String(SubSystem.10.Path))</visible>
 			</item>
 		</content>
 	</include>
@@ -1660,32 +1730,92 @@
 	<include name="HomeSubMenuLiveTV">
 		<content>
 			<item>
-				<label>19023</label>
+				<label>$VAR[SubMenuLiveTVOne]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubLiveTV.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindowAndFocus(MyPVR, 32,0, 11,0))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.1.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.1.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuLiveTVOne])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindow(PVR)</onclick>
-				<onclick>Setfocus(32)</onclick>
-				<onclick>Setfocus(11)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubLiveTV.1.Path))">ActivateWindowAndFocus(MyPVR, 32,0, 11,0)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubLiveTV.1.Path))">$INFO[Skin.String(SubLiveTV.1.Path)]</onclick>
+				<visible>!stringcompare(Skin.String(SubLiveTV.1.Path),Hidden)</visible>
 			</item>
 			<item>
-				<label>19024</label>
+				<label>$VAR[SubMenuLiveTVTwo]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubLiveTV.2.Path))">Skin.SetString(HomeItemLastAction,ActivateWindowAndFocus(MyPVR, 33,0, 12,0))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.2.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.2.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuLiveTVTwo])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindow(PVR)</onclick>
-				<onclick>Setfocus(33)</onclick>
-				<onclick>Setfocus(12)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubLiveTV.2.Path))">ActivateWindowAndFocus(MyPVR, 33,0, 12,0)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubLiveTV.2.Path))">$INFO[Skin.String(SubLiveTV.2.Path)]</onclick>
+				<visible>!stringcompare(Skin.String(SubLiveTV.2.Path),Hidden)</visible>
 			</item>
 			<item>
-				<label>19163</label>
+				<label>$VAR[SubMenuLiveTVThree]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubLiveTV.3.Path))">Skin.SetString(HomeItemLastAction,ActivateWindowAndFocus(MyPVR, 34,0, 13,0))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.3.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.3.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuLiveTVThree])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindow(PVR)</onclick>
-				<onclick>Setfocus(34)</onclick>
-				<onclick>Setfocus(13)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubLiveTV.3.Path))">ActivateWindowAndFocus(MyPVR, 34,0, 13,0)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubLiveTV.3.Path))">$INFO[Skin.String(SubLiveTV.3.Path)]</onclick>
+				<visible>!stringcompare(Skin.String(SubLiveTV.3.Path),Hidden)</visible>
 			</item>
 			<item>
-				<label>19040</label>
+				<label>$VAR[SubMenuLiveTVFour]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubLiveTV.4.Path))">Skin.SetString(HomeItemLastAction,ActivateWindowAndFocus(MyPVR, 35,0, 14,0))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.4.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.4.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuLiveTVFour])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindow(PVR)</onclick>
-				<onclick>Setfocus(35)</onclick>
-				<onclick>Setfocus(14)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubLiveTV.4.Path))">ActivateWindowAndFocus(MyPVR, 35,0, 14,0)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubLiveTV.4.Path))">$INFO[Skin.String(SubLiveTV.4.Path)]</onclick>
+				<visible>!stringcompare(Skin.String(SubLiveTV.4.Path),Hidden)</visible>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubLiveTV.5.Label)]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.5.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.5.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubLiveTV.5.Label)])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick>$INFO[Skin.String(SubLiveTV.5.Path)]</onclick>
+				<visible>!IsEmpty(Skin.String(SubLiveTV.5.Path))</visible>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubLiveTV.6.Label)]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.6.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.6.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubLiveTV.6.Label)])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick>$INFO[Skin.String(SubLiveTV.6.Path)]</onclick>
+				<visible>!IsEmpty(Skin.String(SubLiveTV.6.Path))</visible>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubLiveTV.7.Label)]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.7.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.7.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubLiveTV.7.Label)])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick>$INFO[Skin.String(SubLiveTV.7.Path)]</onclick>
+				<visible>!IsEmpty(Skin.String(SubLiveTV.7.Path))</visible>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubLiveTV.8.Label)]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.8.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.8.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubLiveTV.8.Label)])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick>$INFO[Skin.String(SubLiveTV.8.Path)]</onclick>
+				<visible>!IsEmpty(Skin.String(SubLiveTV.8.Path))</visible>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubLiveTV.9.Label)]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.9.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.9.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubLiveTV.9.Label)])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick>$INFO[Skin.String(SubLiveTV.9.Path)]</onclick>
+				<visible>!IsEmpty(Skin.String(SubLiveTV.9.Path))</visible>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubLiveTV.10.Label)]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.10.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.10.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubLiveTV.10.Label)])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick>$INFO[Skin.String(SubLiveTV.10.Path)]</onclick>
+				<visible>!IsEmpty(Skin.String(SubLiveTV.10.Path))</visible>
 			</item>
 		</content>
 	</include>
@@ -1693,52 +1823,57 @@
 		<content>
 			<item>
 				<label>$VAR[SubMenuConcertsOne]</label>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,RecentlyAddedMusicVideos,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.1.Path))">Skin.SetString(HomeItemLastAction,$VAR[ConcertsRecentCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubConcerts.1.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubConcerts.1.Path)])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuConcertsOne])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubConcerts.1.Path))">ActivateWindow(Videos,RecentlyAddedMusicVideos,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubConcerts.1.Path))">$VAR[ConcertsRecentCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubConcerts.1.Path))">$INFO[Skin.String(SubConcerts.1.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(MusicVideos) | !IsEmpty(Skin.String(SubConcerts.1.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubConcerts.1.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuConcertsTwo]</label>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.2.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoTitles,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.2.Path))">Skin.SetString(HomeItemLastAction,$VAR[ConcertsTitleCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubConcerts.2.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubConcerts.2.Path)])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuConcertsTwo])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubConcerts.2.Path))">ActivateWindow(Videos,MusicVideoTitles,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubConcerts.2.Path))">$VAR[ConcertsTitleCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubConcerts.2.Path))">$INFO[Skin.String(SubConcerts.2.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(MusicVideos) | !IsEmpty(Skin.String(SubConcerts.2.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubConcerts.2.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuConcertsThree]</label>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.3.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoGenres,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.3.Path))">Skin.SetString(HomeItemLastAction,$VAR[ConcertsGenreCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubConcerts.3.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubConcerts.3.Path)])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuConcertsThree])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubConcerts.3.Path))">ActivateWindow(Videos,MusicVideoGenres,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubConcerts.3.Path))">$VAR[ConcertsGenreCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubConcerts.3.Path))">$INFO[Skin.String(SubConcerts.3.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(MusicVideos) | !IsEmpty(Skin.String(SubConcerts.3.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubConcerts.3.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuConcertsFour]</label>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.4.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoYears,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.4.Path))">Skin.SetString(HomeItemLastAction,$VAR[ConcertsYearsCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubConcerts.4.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubConcerts.4.Path)])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuConcertsFour])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubConcerts.4.Path))">ActivateWindow(Videos,MusicVideoYears,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubConcerts.4.Path))">$VAR[ConcertsYearsCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubConcerts.4.Path))">$INFO[Skin.String(SubConcerts.4.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(MusicVideos) | !IsEmpty(Skin.String(SubConcerts.4.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubConcerts.4.Path),Hidden)</visible>
 			</item>
 			<item>
 				<label>$VAR[SubMenuConcertsFive]</label>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.5.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoTags,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.5.Path))">Skin.SetString(HomeItemLastAction,$VAR[ConcertsTagsCmd])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubConcerts.5.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubConcerts.5.Path)])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuConcertsFive])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubConcerts.5.Path))">ActivateWindow(Videos,MusicVideoTags,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubConcerts.5.Path))">$VAR[ConcertsTagsCmd]</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubConcerts.5.Path))">$INFO[Skin.String(SubConcerts.5.Path)]</onclick>
+				<visible>Skin.HasSetting(UPnP_Mode) | Library.HasContent(MusicVideos) | !IsEmpty(Skin.String(SubConcerts.5.Path))</visible>
 				<visible>!stringcompare(Skin.String(SubConcerts.5.Path),Hidden)</visible>
 			</item>
 			<item>

@@ -52,6 +52,10 @@ msgctxt "#31010"
 msgid "Found"
 msgstr "Found"
 
+msgctxt "#31011"
+msgid "XBMC"
+msgstr "XBMC"
+
 msgctxt "#31016"
 msgid "Shows"
 msgstr "Shows"
@@ -548,6 +552,10 @@ msgctxt "#31356"
 msgid "Download Subtitles"
 msgstr "Download Subtitles"
 
+msgctxt "#31389"
+msgid "Enabled"
+msgstr "Уключана"
+
 msgctxt "#31391"
 msgid "Skin default with no Caps"
 msgstr "Перадвызначаны аздабленьнем без вялікіх літараў"
@@ -595,6 +603,10 @@ msgstr "[B]ЗЬМЯНІЦЬ НАЛАДЫ ТВ[/B][CR][CR]Зьмяніць зьв
 msgctxt "#31410"
 msgid "[B]CONFIGURE SERVICE SETTINGS[/B][CR][CR]Setup control of XBMC via UPnP and HTTP · Configure file sharing[CR]Enable Zeroconf · Configure AirPlay"
 msgstr "[B]ЗЬМЯНІЦЬ НАЛАДЫ СЭРВІСАЎ[/B][CR][CR]Наставіць кіраваньне XBMC праз UPnP ды HTTP · Наладзіць даступнасьць файлаў[CR]Дазволіць Zeroconf · Наставіць AirPlay"
+
+msgctxt "#31413"
+msgid "Local subtitle available"
+msgstr "Даступныя лакальныя субтытры"
 
 msgctxt "#31421"
 msgid "Select your XBMC user Profile[CR]to login and continue"
@@ -761,8 +773,8 @@ msgid "United States"
 msgstr "United States"
 
 msgctxt "#31701"
-msgid "Great Britian"
-msgstr "Great Britian"
+msgid "Great Britain"
+msgstr "Great Britain"
 
 msgctxt "#31702"
 msgid "Germany"

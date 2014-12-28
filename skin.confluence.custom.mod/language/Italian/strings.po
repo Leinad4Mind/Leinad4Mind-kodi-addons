@@ -240,6 +240,10 @@ msgctxt "#31128"
 msgid "Lyrics"
 msgstr "XBMC Testi Canzoni"
 
+msgctxt "#31129"
+msgid "Show Search Button"
+msgstr "Mostra il Bottone Cerca"
+
 msgctxt "#31132"
 msgid "Lyrics Add-on"
 msgstr "Add-on Testi"
@@ -247,6 +251,10 @@ msgstr "Add-on Testi"
 msgctxt "#31133"
 msgid "Subtitle Add-on"
 msgstr "Add-on Sottotitoli"
+
+msgctxt "#31134"
+msgid "Buttons"
+msgstr "Tasti"
 
 msgctxt "#31138"
 msgid "Hidden"
@@ -328,6 +336,10 @@ msgctxt "#31203"
 msgid "Choose Your Song"
 msgstr "Scegli la canzone"
 
+msgctxt "#31204"
+msgid "Settings level"
+msgstr "Livello impostazioni"
+
 msgctxt "#31205"
 msgid "Lyrics Source"
 msgstr "Sorgente Testi"
@@ -355,6 +367,10 @@ msgstr "Avviati Di Recente"
 msgctxt "#31217"
 msgid "Search"
 msgstr "Cerca"
+
+msgctxt "#31230"
+msgid "Hide Favourites Button"
+msgstr "Nascondi Bottone Preferiti"
 
 msgctxt "#31300"
 msgid "Current Temp"
@@ -395,6 +411,10 @@ msgstr "Scegli uno Scraper"
 msgctxt "#31314"
 msgid "Content Scanning Options"
 msgstr "Opzioni Scansione Contenuti"
+
+msgctxt "#31316"
+msgid "Up One Level"
+msgstr "Sali un livello"
 
 msgctxt "#31317"
 msgid "Set Fanart Path"
@@ -480,6 +500,18 @@ msgctxt "#31356"
 msgid "Download Subtitles"
 msgstr "Scarica Sottotitoli"
 
+msgctxt "#31387"
+msgid "Watch as 2D"
+msgstr "Guarda come 2D"
+
+msgctxt "#31388"
+msgid "Change mode"
+msgstr "Cambia modalità"
+
+msgctxt "#31389"
+msgid "Enabled"
+msgstr "Abilitato"
+
 msgctxt "#31391"
 msgid "Skin default with no Caps"
 msgstr "Predefinito della Skin senza maiuscole"
@@ -527,6 +559,10 @@ msgstr "[B]CONFIGURA IMPOSTAZIONI TV[/B][CR][CR]Cambia le informazioni a tutto s
 msgctxt "#31410"
 msgid "[B]CONFIGURE SERVICE SETTINGS[/B][CR][CR]Setup control of XBMC via UPnP and HTTP · Configure file sharing[CR]Enable Zeroconf · Configure AirPlay"
 msgstr "[B]CONFIGURA IMPOSTAZIONI DI RETE[/B][CR][CR]Imposta il controllo di XBMC via UPnP e HTTP · Configura la condivisione dei file[CR]Abilita Zeroconf · Configura AirPlay"
+
+msgctxt "#31413"
+msgid "Local subtitle available"
+msgstr "Sottotitolo locale disponibile"
 
 msgctxt "#31421"
 msgid "Select your XBMC user Profile[CR]to login and continue"
@@ -675,6 +711,10 @@ msgstr "Western"
 msgctxt "#31700"
 msgid "United States"
 msgstr "Stati Uniti"
+
+msgctxt "#31701"
+msgid "Great Britain"
+msgstr "Gran Bretagna"
 
 msgctxt "#31702"
 msgid "Germany"

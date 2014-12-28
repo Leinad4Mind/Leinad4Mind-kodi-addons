@@ -411,7 +411,6 @@
 				<visible>VideoPlayer.Content(LiveTV)</visible>
 			</control>
 		</control>
-		<!-- Music Info -->
 		<control type="image">
 			<description>gradient</description>
 			<posx>0</posx>
@@ -426,7 +425,6 @@
 			<visible>Player.HasAudio</visible>
 			<include>SmallMusicInfo</include>
 		</control>
-		<!-- Video Info -->
 		<control type="group">
 			<visible>Player.HasVideo</visible>
 			<include>SmallVideoInfo</include>

@@ -7,11 +7,6 @@
 	<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 	<controls>
 		<control type="group">
-			<!--
-			<animation effect="slide" end="-1025,-400" time="0" tween="back" easing="out" condition="Window.IsVisible(home) + !VideoPlayer.Content(Episodes)" reversible="true">Conditional</animation>
-			<animation effect="slide" end="-975,-400" time="0" tween="back" easing="out" condition="Window.IsVisible(home) + VideoPlayer.Content(Episodes)" reversible="true">Conditional</animation>
-			<animation effect="slide" end="0,175" time="0" tween="back" easing="out" condition="Window.IsVisible(home) + !Skin.HasSetting(RaiseMainMenuBar)" reversible="true">Conditional</animation>
-		-->
 			<posx>520r</posx>
 			<posy>-6</posy>
 			<control type="group">

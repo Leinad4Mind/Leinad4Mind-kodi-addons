@@ -28,7 +28,6 @@
 				<label>31043</label>
 			</control>
 		</control>
-		<!-- media infos -->
 		<control type="group">
 			<posx>20</posx>
 			<posy>180r</posy>

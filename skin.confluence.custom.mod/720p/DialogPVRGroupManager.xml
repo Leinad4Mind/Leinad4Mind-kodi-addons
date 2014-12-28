@@ -77,8 +77,7 @@
 						<onup>13</onup>
 						<ondown>13</ondown>
 						<onleft>29</onleft>
-						<onright condition="!Skin.HasSetting(KioskMode)">73</onright>
-						<onright condition="Skin.HasSetting(KioskMode)">11</onright>
+						<onright>73</onright>
 						<pagecontrol>73</pagecontrol>
 						<scrolltime>200</scrolltime>
 						<itemlayout height="45">
@@ -180,10 +179,8 @@
 						<height>450</height>
 						<onup>11</onup>
 						<ondown>11</ondown>
-						<onleft condition="!Skin.HasSetting(KioskMode)">73</onleft>
-						<onleft condition="Skin.HasSetting(KioskMode)">13</onleft>
-						<onright condition="!Skin.HasSetting(KioskMode)">71</onright>
-						<onright condition="Skin.HasSetting(KioskMode)">12</onright>
+						<onleft>73</onleft>
+						<onright>71</onright>
 						<pagecontrol>71</pagecontrol>
 						<scrolltime>200</scrolltime>
 						<itemlayout height="45">
@@ -299,10 +296,8 @@
 						<height>450</height>
 						<onup>12</onup>
 						<ondown>12</ondown>
-						<onleft condition="!Skin.HasSetting(KioskMode)">71</onleft>
-						<onleft condition="Skin.HasSetting(KioskMode)">11</onleft>
-						<onright condition="!Skin.HasSetting(KioskMode)">72</onright>
-						<onright condition="Skin.HasSetting(KioskMode)">26</onright>
+						<onleft>71</onleft>
+						<onright>72</onright>
 						<pagecontrol>72</pagecontrol>
 						<scrolltime>200</scrolltime>
 						<itemlayout height="45">
@@ -397,8 +392,7 @@
 					<itemgap>2</itemgap>
 					<align>center</align>
 					<orientation>horizontal</orientation>
-					<onleft condition="!Skin.HasSetting(KioskMode)">72</onleft>
-					<onleft condition="Skin.HasSetting(KioskMode)">12</onleft>
+					<onleft>72</onleft>
 					<onright>13</onright>
 					<onup>9000</onup>
 					<ondown>9000</ondown>

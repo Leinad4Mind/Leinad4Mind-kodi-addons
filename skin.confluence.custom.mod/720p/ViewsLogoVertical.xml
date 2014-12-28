@@ -10,9 +10,7 @@
 				<height>530</height>
 				<width>450</width>
 				<onleft>9000</onleft>
-                <onright condition="!Skin.HasSetting(KioskMode)">60</onright>
-                <onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">9000</onright>
-                <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
+				<onright>60</onright>
 				<onup>730</onup>
 				<ondown>730</ondown>
 				<pagecontrol>60</pagecontrol>

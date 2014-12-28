@@ -69,8 +69,8 @@
 				<posy>60</posy>
 				<width>720</width>
 				<height>495</height>
-				<onleft condition="!Skin.HasSetting(KioskMode)">60</onleft>
-				<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
+				<onleft>60</onleft>
+				<onright>60</onright>
 				<onup>2</onup>
 				<ondown>2</ondown>
 				<pagecontrol>60</pagecontrol>

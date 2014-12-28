@@ -52,6 +52,10 @@ msgctxt "#31010"
 msgid "Found"
 msgstr "Trouvé"
 
+msgctxt "#31011"
+msgid "XBMC"
+msgstr "XBMC"
+
 msgctxt "#31016"
 msgid "Shows"
 msgstr "Émissions"
@@ -832,6 +836,62 @@ msgctxt "#31217"
 msgid "Search"
 msgstr "Rechercher"
 
+msgctxt "#31218"
+msgid "Selected"
+msgstr "Sélectionné"
+
+msgctxt "#31219"
+msgid "Global Search"
+msgstr "Recherche globale"
+
+msgctxt "#31220"
+msgid "Edit Menu Item"
+msgstr "Modifier l'élément du menu"
+
+msgctxt "#31221"
+msgid "Enter XBMC Command"
+msgstr "Saisir une commande XBMC"
+
+msgctxt "#31222"
+msgid "Window"
+msgstr "Fenêtre"
+
+msgctxt "#31223"
+msgid "Installed Add-Ons"
+msgstr "Addiciels installés"
+
+msgctxt "#31224"
+msgid "User Favourites"
+msgstr "Favoris de l'utilisateur"
+
+msgctxt "#31225"
+msgid "Floor Button"
+msgstr "Bouton Plancher"
+
+msgctxt "#31226"
+msgid "Global Floor Buttons"
+msgstr "Boutons de plancher global"
+
+msgctxt "#31227"
+msgid "Power Button Settings"
+msgstr "Paramètres du bouton Alimentation"
+
+msgctxt "#31228"
+msgid "Power Button Activates Shutdown Menu"
+msgstr "Le bouton Alimentation active le menu d'extinction"
+
+msgctxt "#31229"
+msgid "Home Screen Buttons"
+msgstr "Boutons de l'écran d'accueil"
+
+msgctxt "#31230"
+msgid "Hide Favourites Button"
+msgstr "Cacher le bouton Favoris"
+
+msgctxt "#31231"
+msgid "User Button"
+msgstr "Bouton de l'utilisateur"
+
 msgctxt "#31300"
 msgid "Current Temp"
 msgstr "Température actuelle"
@@ -950,7 +1010,7 @@ msgstr "Ajouté récemment"
 
 msgctxt "#31329"
 msgid "[B]Timer set![/B] [COLOR=grey2] - System auto shutdown in[/COLOR]"
-msgstr "[B]Réglage de la minuterie![/B] [COLOR=grey2] - Extinction automatique du système dans[/COLOR]"
+msgstr "[B]Minuterie réglée![/B] [COLOR=grey2] - Extinction automatique du système dans[/COLOR]"
 
 msgctxt "#31330"
 msgid "Click button to play[CR][CR]Movie trailer"
@@ -967,6 +1027,38 @@ msgstr "Familial"
 msgctxt "#31333"
 msgid "Startup"
 msgstr "Démarrage"
+
+msgctxt "#31334"
+msgid "Enable Large Widget Layout"
+msgstr "Activer une disposition avec de grands widgets"
+
+msgctxt "#31335"
+msgid "Setup UPnP Library"
+msgstr "Configuration de la médiathèque UPnP"
+
+msgctxt "#31336"
+msgid "Enable UPnP Library Mode"
+msgstr "Activer le mode de la médiathèque UPnP"
+
+msgctxt "#31337"
+msgid "UPnP Error"
+msgstr "Erreur UPnP"
+
+msgctxt "#31338"
+msgid "Please Set Path to UPnP Server"
+msgstr "Veuillez définir le chemin vers le serveur UPnP"
+
+msgctxt "#31339"
+msgid "[COLOR=selected][B]Warning[/B][/COLOR] - Changing UPnp Settings will Reset Main Menu"
+msgstr "[COLOR=selected][B]Avertissement[/B][/COLOR] - Changer les paramètres UPnP réinitialisera le menu principal"
+
+msgctxt "#31341"
+msgid "UPnp Mode"
+msgstr "Mode UPnP"
+
+msgctxt "#31342"
+msgid "UPnp Server Type"
+msgstr "Type de serveur UPnP"
 
 msgctxt "#31351"
 msgid "Pause"
@@ -1072,6 +1164,18 @@ msgctxt "#31376"
 msgid "Enable System Weather"
 msgstr "Activer la météo du système"
 
+msgctxt "#31387"
+msgid "Watch as 2D"
+msgstr "Regarder en 2D"
+
+msgctxt "#31388"
+msgid "Change mode"
+msgstr "Changer le mode"
+
+msgctxt "#31389"
+msgid "Enabled"
+msgstr "Activé"
+
 msgctxt "#31390"
 msgid "Skin Default"
 msgstr "Valeur par défaut de l'habillage"
@@ -1124,6 +1228,10 @@ msgctxt "#31410"
 msgid "[B]CONFIGURE SERVICE SETTINGS[/B][CR][CR]Setup control of XBMC via UPnP and HTTP · Configure file sharing[CR]Enable Zeroconf · Configure AirPlay"
 msgstr "[B]CONFIGURER LES PARAMÈTRES DES SERVICES[/B][CR][CR]Configurer le contrôle de XBMC par UPnP et HTTP · Configurer le partage de fichiers[CR]Activer Zéroconf · Configurer AirPlay"
 
+msgctxt "#31413"
+msgid "Local subtitle available"
+msgstr "Sous-titres locaux disponibles"
+
 msgctxt "#31421"
 msgid "Select your XBMC user Profile[CR]to login and continue"
 msgstr "Sélectionnez votre profil d'utilisateur XBMC[CR]pour vous connecter et continuer"
@@ -1162,7 +1270,7 @@ msgstr "Groupe de chaînes"
 
 msgctxt "#31510"
 msgid "Timer Set"
-msgstr "Régler la minuterie"
+msgstr "Minuterie réglée"
 
 msgctxt "#31511"
 msgid "Channel Options"
@@ -1309,7 +1417,7 @@ msgid "United States"
 msgstr "États-Unis"
 
 msgctxt "#31701"
-msgid "Great Britian"
+msgid "Great Britain"
 msgstr "Grande-Bretagne"
 
 msgctxt "#31702"
@@ -1362,7 +1470,7 @@ msgstr "Prévisions pour la fin de semaine"
 
 msgctxt "#31904"
 msgid "10 Day Forecast"
-msgstr "Prévisions pour 10 jours"
+msgstr "Prévisions sur 10 jours"
 
 msgctxt "#31905"
 msgid "Forecast"

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
 	<include name="MediaNowPlaying">
-		<!-- Music Info -->
 		<control type="group">
 			<posx>0</posx>
 			<posy>60</posy>
@@ -80,7 +79,6 @@
 				<shadowcolor>black</shadowcolor>
 			</control>
 		</control>
-		<!-- LiveTV Info -->
 		<control type="group">
 			<posx>490r</posx>
 			<posy>70</posy>
@@ -225,7 +223,6 @@
 				</control>
 			</control>
 		</control>
-		<!-- Video Info -->
 		<control type="group">
 			<posx>0</posx>
 			<posy>50</posy>

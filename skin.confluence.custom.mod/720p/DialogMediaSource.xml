@@ -74,8 +74,7 @@
 			<height>225</height>
 			<onup>9001</onup>
 			<onleft>9000</onleft>
-			<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
-			<onright condition="Skin.HasSetting(KioskMode)">9000</onright>
+			<onright>60</onright>
 			<ondown>12</ondown>
 			<pagecontrol>60</pagecontrol>
 			<scrolltime>200</scrolltime>
@@ -161,8 +160,7 @@
 				<texturenofocus border="5">button-nofocus.png</texturenofocus>
 				<texturefocus border="5">button-focus.png</texturefocus>
 				<onup>18</onup>
-				<onleft condition="!Skin.HasSetting(KioskMode)">60</onleft>
-				<onleft condition="Skin.HasSetting(KioskMode)">10</onleft>
+				<onleft>60</onleft>
 				<onright>10</onright>
 				<ondown>13</ondown>
 			</control>
@@ -179,8 +177,7 @@
 				<texturenofocus border="5">button-nofocus.png</texturenofocus>
 				<texturefocus border="5">button-focus.png</texturefocus>
 				<onup>11</onup>
-				<onleft condition="!Skin.HasSetting(KioskMode)">60</onleft>
-				<onleft condition="Skin.HasSetting(KioskMode)">10</onleft>
+				<onleft>60</onleft>
 				<onright>10</onright>
 				<ondown>14</ondown>
 			</control>
@@ -197,8 +194,7 @@
 				<texturenofocus border="5">button-nofocus.png</texturenofocus>
 				<texturefocus border="5">button-focus.png</texturefocus>
 				<onup>13</onup>
-				<onleft condition="!Skin.HasSetting(KioskMode)">60</onleft>
-				<onleft condition="Skin.HasSetting(KioskMode)">10</onleft>
+				<onleft>60</onleft>
 				<onright>10</onright>
 				<ondown>12</ondown>
 			</control>

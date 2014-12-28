@@ -187,8 +187,7 @@
 				<posy>100</posy>
 				<width>400</width>
 				<height>540</height>
-				<onleft condition="!Skin.HasSetting(KioskMode)">30</onleft>
-				<onleft condition="Skin.HasSetting(KioskMode)">100</onleft>
+				<onleft>30</onleft>
 				<onright>9000</onright>
 				<onup>50</onup>
 				<ondown>50</ondown>
@@ -330,8 +329,7 @@
 				<width>400</width>
 				<height>550</height>
 				<onleft>9000</onleft>
-				<onright condition="!Skin.HasSetting(KioskMode)">31</onright>
-				<onright condition="Skin.HasSetting(KioskMode)">50</onright>
+				<onright>31</onright>
 				<onup>100</onup>
 				<ondown>100</ondown>
 				<viewtype label="">list</viewtype>

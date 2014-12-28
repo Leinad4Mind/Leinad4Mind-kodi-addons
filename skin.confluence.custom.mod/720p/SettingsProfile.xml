@@ -200,9 +200,7 @@
 				<width>760</width>
 				<height>540</height>
 				<onleft>4</onleft>
-				<onright condition="!Skin.HasSetting(KioskMode)">60</onright>
-				<onright condition="Skin.HasSetting(KioskMode) + Skin.HasSetting(DisableHomeReturnButtons)">4</onright>
-                <onright condition="Skin.HasSetting(KioskMode) + !Skin.HasSetting(DisableHomeReturnButtons)">82</onright>
+				<onright>60</onright>
 				<onup>53</onup>
 				<ondown>53</ondown>
 				<viewtype label="21371">list</viewtype>
