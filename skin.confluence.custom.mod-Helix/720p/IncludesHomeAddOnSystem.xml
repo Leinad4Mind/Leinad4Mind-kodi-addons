@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+	<include name="HomeAddonSystem">
+		<control type="group" id="9002">
+			<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+			<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+			<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+			<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9004</ondown>
+			<control type="fixedlist" id="700">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(700).NumItems,2) | StringCompare(Container(700).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetOne)</visible>
+				<onleft>700</onleft>
+				<onright>700</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9004</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetOne</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="703">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(703).NumItems,2) | StringCompare(Container(703).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetTwo)</visible>
+				<onleft>703</onleft>
+				<onright>703</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9004</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetTwo</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="704">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(704).NumItems,2) | StringCompare(Container(704).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetThree)</visible>
+				<onleft>704</onleft>
+				<onright>704</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9004</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetThree</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="705">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(705).NumItems,2) | StringCompare(Container(705).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetFour)</visible>
+				<onleft>705</onleft>
+				<onright>705</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9004</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetFour</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="706">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(706).NumItems,2) | StringCompare(Container(706).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetFive)</visible>
+				<onleft>706</onleft>
+				<onright>706</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9004</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetFive</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="707">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(707).NumItems,2) | StringCompare(Container(707).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetSix)</visible>
+				<onleft>707</onleft>
+				<onright>707</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9004</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetSix</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="708">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(708).NumItems,2) | StringCompare(Container(708).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetSeven)</visible>
+				<onleft>708</onleft>
+				<onright>708</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9004</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetSeven</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="709">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(709).NumItems,2) | StringCompare(Container(709).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetEight)</visible>
+				<onleft>709</onleft>
+				<onright>709</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9004</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetEight</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="710">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(710).NumItems,2) | StringCompare(Container(710).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetNine)</visible>
+				<onleft>710</onleft>
+				<onright>710</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9004</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetNine</include>
+				</content>
+			</control>
+			<control type="fixedlist" id="711">
+				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="StringCompare(Container(711).NumItems,2) | StringCompare(Container(711).NumItems,4)">conditional</animation>
+				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetTen)</visible>
+				<onleft>711</onleft>
+				<onright>711</onright>
+				<onup condition="Skin.HasSetting(RaiseMainMenuBar)">9001</onup>
+				<onup condition="!Skin.HasSetting(RaiseMainMenuBar)">9003</onup>
+				<ondown condition="Skin.HasSetting(RaiseMainMenuBar)">21</ondown>
+				<ondown condition="!Skin.HasSetting(RaiseMainMenuBar)">9004</ondown>
+				<include>HomeAddonsCommonLayout</include>
+				<content>
+					<include>HomeAddonSetTen</include>
+				</content>
+			</control>
+		</control>
+	</include>
+	<include name="HomeAddonsCommonLayout">
+		<include>Window_OpenClose_Animation</include>
+		<animation effect="slide" start="0,0" end="0,-195" time="0" condition="!Skin.HasSetting(RaiseMainMenuBar)">Conditional</animation>
+		<animation type="Visible">
+			<effect type="slide" start="0,30" end="0,0" delay="200" easing="out" tween="quadratic" time="200" />
+			<effect type="fade" start="0" end="100" delay="200" time="200" />
+		</animation>
+		<animation type="Hidden">
+			<effect type="zoom" start="100" end="70" center="auto" easing="in" tween="quadratic" time="300" />
+			<effect type="fade" start="100" end="0" time="300" />
+		</animation>
+		<hitrect x="0" y="530" w="1280" h="120" />
+		<posx>0</posx>
+		<posy>190r</posy>
+		<width>1280</width>
+		<height>200</height>
+		<pagecontrol>-</pagecontrol>
+		<scrolltime>300</scrolltime>
+		<focusposition>3</focusposition>
+		<movement>2</movement>
+		<orientation>Horizontal</orientation>
+		<itemlayout height="200" width="182">
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>180</width>
+				<height>120</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<bordertexture border="5">button-nofocus.png</bordertexture>
+				<bordersize>3</bordersize>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>120</posy>
+				<width>170</width>
+				<height>110</height>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture diffuse="diffuse_mirror2.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="label">
+				<posx>91</posx>
+				<posy>125</posy>
+				<width>180</width>
+				<height>20</height>
+				<font>font12</font>
+				<textcolor>grey2</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[MainItemLabel]</label>
+				<visible>!Skin.HasSetting(HideHomeAddonName)</visible>
+			</control>
+		</itemlayout>
+		<focusedlayout height="200" width="182">
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>180</width>
+				<height>120</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<bordertexture border="5">button-nofocus.png</bordertexture>
+				<bordersize>3</bordersize>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<visible>!ControlGroup(9002).HasFocus</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>180</width>
+				<height>120</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<bordertexture border="10">folder-focus.png</bordertexture>
+				<bordersize>6</bordersize>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<visible>ControlGroup(9002).HasFocus</visible>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>120</posy>
+				<width>170</width>
+				<height>110</height>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture diffuse="diffuse_mirror2.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="label">
+				<posx>91</posx>
+				<posy>125</posy>
+				<width>180</width>
+				<height>20</height>
+				<font>font12</font>
+				<textcolor>white</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[MainItemLabel]</label>
+				<visible>Control.HasFocus(9002)</visible>
+				<visible>!Skin.HasSetting(HideHomeAddonName)</visible>
+			</control>
+			<control type="label">
+				<posx>91</posx>
+				<posy>125</posy>
+				<width>180</width>
+				<height>20</height>
+				<font>font12</font>
+				<textcolor>grey2</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[MainItemLabel]</label>
+				<visible>!Control.HasFocus(9002)</visible>
+				<visible>!Skin.HasSetting(HideHomeAddonName)</visible>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="HomeAddonSetOne">
+		<item>
+			<label>$INFO[Skin.String(AddonSetOne.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetOne.1.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetOne.1.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetOne.1.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetOne.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetOne.2.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetOne.2.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetOne.2.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetOne.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetOne.3.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetOne.3.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetOne.3.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetOne.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetOne.4.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetOne.4.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetOne.4.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetOne.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetOne.5.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetOne.5.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetOne.5.Path))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonSetTwo">
+		<item>
+			<label>$INFO[Skin.String(AddonSetTwo.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTwo.1.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTwo.1.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTwo.1.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetTwo.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTwo.2.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTwo.2.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTwo.2.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetTwo.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTwo.3.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTwo.3.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTwo.3.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetTwo.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTwo.4.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTwo.4.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTwo.4.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetTwo.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTwo.5.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTwo.5.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTwo.5.Path))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonSetThree">
+		<item>
+			<label>$INFO[Skin.String(AddonSetThree.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetThree.1.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetThree.1.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetThree.1.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetThree.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetThree.2.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetThree.2.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetThree.2.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetThree.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetThree.3.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetThree.3.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetThree.3.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetThree.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetThree.4.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetThree.4.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetThree.4.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetThree.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetThree.5.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetThree.5.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetThree.5.Path))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonSetFour">
+		<item>
+			<label>$INFO[Skin.String(AddonSetFour.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFour.1.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFour.1.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFour.1.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFour.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFour.2.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFour.2.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFour.2.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFour.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFour.3.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFour.3.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFour.3.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFour.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFour.4.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFour.4.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFour.4.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFour.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFour.5.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFour.5.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFour.5.Path))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonSetFive">
+		<item>
+			<label>$INFO[Skin.String(AddonSetFive.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFive.1.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFive.1.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFive.1.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFive.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFive.2.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFive.2.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFive.2.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFive.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFive.3.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFive.3.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFive.3.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFive.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFive.4.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFive.4.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFive.4.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetFive.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetFive.5.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetFive.5.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetFive.5.Path))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonSetSix">
+		<item>
+			<label>$INFO[Skin.String(AddonSetSix.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetSix.1.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetSix.1.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetSix.1.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetSix.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetSix.2.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetSix.2.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetSix.2.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetSix.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetSix.3.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetSix.3.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetSix.3.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetSix.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetSix.4.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetSix.4.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetSix.4.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetSix.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetSix.5.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetSix.5.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetSix.5.Path))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonSetSeven">
+		<item>
+			<label>$INFO[Skin.String(AddonSetSeven.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetSeven.1.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetSeven.1.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetSeven.1.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetSeven.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetSeven.2.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetSeven.2.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetSeven.2.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetSeven.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetSeven.3.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetSeven.3.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetSeven.3.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetSeven.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetSeven.4.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetSeven.4.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetSeven.4.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetSeven.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetSeven.5.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetSeven.5.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetSeven.5.Path))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonSetEight">
+		<item>
+			<label>$INFO[Skin.String(AddonSetEight.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetEight.1.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetEight.1.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetEight.1.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetEight.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetEight.2.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetEight.2.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetEight.2.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetEight.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetEight.3.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetEight.3.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetEight.3.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetEight.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetEight.4.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetEight.4.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetEight.4.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetEight.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetEight.5.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetEight.5.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetEight.5.Path))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonSetNine">
+		<item>
+			<label>$INFO[Skin.String(AddonSetNine.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetNine.1.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetNine.1.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetNine.1.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetNine.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetNine.2.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetNine.2.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetNine.2.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetNine.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetNine.3.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetNine.3.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetNine.3.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetNine.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetNine.4.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetNine.4.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetNine.4.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetNine.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetNine.5.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetNine.5.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetNine.5.Path))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonSetTen">
+		<item>
+			<label>$INFO[Skin.String(AddonSetTen.1.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTen.1.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTen.1.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTen.1.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetTen.2.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTen.2.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTen.2.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTen.2.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetTen.3.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTen.3.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTen.3.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTen.3.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetTen.4.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTen.4.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTen.4.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTen.4.Path))</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(AddonSetTen.5.Label)]</label>
+			<onclick>$INFO[Skin.String(AddonSetTen.5.Path)]</onclick>
+			<icon>DefaultAddon.png</icon>
+			<thumb>$INFO[Skin.String(AddonSetTen.5.icon)]</thumb>
+			<visible>!IsEmpty(Skin.String(AddonSetTen.5.Path))</visible>
+		</item>
+	</include>
+</includes>
