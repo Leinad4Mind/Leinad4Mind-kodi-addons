@@ -5,7 +5,7 @@
   name="Confluence Customizable Mod"
   provider-name="Mudislander / Angelinas1 / Leinad4Mind">
   <requires>
-	<import addon="xbmc.gui" version="5.0.0"/>
+	<import addon="xbmc.gui" version="5.0.2"/>
 	<import addon="script.favourites" version="5.0.2"/>
 	<import addon="service.skin.widgets" version="0.0.27"/>
 	<import addon="script.randomandlastitems" version="2.2.0"/>
@@ -37,6 +37,7 @@
     <description lang="de">Ein Mod von XBMC Standardoberfläche, integriert viel der jetzt populären Optimierungen, AddOns und Skripte.</description>
     <description lang="el">Μια τροποποίηση (mod) του προεπιλεγμένου κελύφους του XBMC, που ενσωματώνει πολλές αλλαγές, πρόσθετα και εφαρμογές.</description>
     <description lang="en">A mod of XBMC's default skin, incorporating many of the now popular tweaks, addons and scripts.</description>
+    <description lang="sr">Prilagođena "XBMC"-Kodi Maska (skin), koja uključuje mnoge popularne programe, Add-one, dodatke i skripte.</description>
     <description lang="es">Una modificación del skin por defecto de XBMC, que incorpora muchos de los cambios, complementos y scripts populares.</description>
     <description lang="gl">Unha modificación do tema predefinido no XBMC, que incorpora moitos dos novos trocos, complementos e scripts.</description>
     <description lang="hr">Prilagođena zadana XBMC presvlaka, koja uključuje mnoge popularne značajke, dodatke i skripte.</description>
