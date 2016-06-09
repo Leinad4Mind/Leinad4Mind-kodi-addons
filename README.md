@@ -1,4 +1,4 @@
 Leinad4Mind-xbmc-addons
 =======================
 
-Addons from Leinad4Mind
+![alt tag](http://i.imgur.com/oiYJPZ5.png)
