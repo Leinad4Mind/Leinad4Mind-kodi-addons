@@ -1,3 +1,6 @@
+[B]v1.1.5.2 (08 de Junho de 2016):[/B]
+- Bug nas extensões corrigido
+
 [B]v1.1.5.1 (08 de Junho de 2016):[/B]
 - Correcção na expressão regular minhateca
 
