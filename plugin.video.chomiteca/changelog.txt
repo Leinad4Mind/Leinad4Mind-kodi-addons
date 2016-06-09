@@ -1,4 +1,4 @@
-[B]v1.1.5.2 (08 de Junho de 2016):[/B]
+[B]v1.1.5.2 (09 de Junho de 2016):[/B]
 - Bug nas extensões corrigido
 
 [B]v1.1.5.1 (08 de Junho de 2016):[/B]
