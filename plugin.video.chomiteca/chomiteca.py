@@ -439,7 +439,7 @@ def ReturnConteudo(conteudo,past,color,url2,deFora):
 		if not name: name = re.compile('title="(.+?)"', re.DOTALL).findall(part)
 		tituloficheiro = h.unescape(name[0][:-4])
 		print tituloficheiro
-		extensao = name[0][-4:]
+		extensao = name[0][:-4]
 		if '.' not in extensao:
 			tituloficheiro = h.unescape(name[0])
 			ext = re.compile('<span class="bold">.+?</span>(\..+?)\s+</a>', re.DOTALL).findall(part)
