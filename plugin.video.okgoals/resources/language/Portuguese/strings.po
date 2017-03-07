@@ -1,0 +1,80 @@
+ Addon Name: OKGoals
+# Addon id: plugin.video.okgoals
+# Addon Provider: Leinad4Mind
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: OKGoals v2.0.0\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Leinad4Mind <leinad4talk@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_PT\n"
+"X-Generator: Poedit 1.8.12\n"
+
+msgctxt "#30000"
+msgid "OKGoals"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Semanas Anteriores"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Procurar Jogos"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Página"
+msgstr ""
+
+msgctxt "#30004"
+msgid "indisponível"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Nenhum servidor compatível."
+msgstr ""
+
+msgctxt "#30006"
+msgid "Escolha o vídeo"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Vídeo indisponível ou removido."
+msgstr ""
+
+msgctxt "#30008"
+msgid "Pesquisar partida"
+msgstr ""
+
+msgctxt "#30009"
+msgid "A pesquisa só inclui jogos que ocorreram neste mês."
+msgstr ""
+
+msgctxt "#30010"
+msgid "Últimos Golos"
+msgstr ""
+
+msgctxt "#30011"
+msgid "Últimos Liga Portugal"
+msgstr ""
+
+msgctxt "#30012"
+msgid "Últimos Golos por Liga"
+msgstr ""
+
+msgctxt "#30013"
+msgid "Épocas Anteriores"
+msgstr ""
+
+msgctxt "#30014"
+msgid "Qualidade"
+msgstr ""
+
+msgctxt "#30015"
+msgid "Não inclui a Liga Portugal."
+msgstr ""
