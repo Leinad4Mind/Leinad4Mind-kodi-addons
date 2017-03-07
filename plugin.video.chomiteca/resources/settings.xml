@@ -10,10 +10,22 @@
 		<setting id="chomikuj-username" type="text" label="30005" default="" visible="!eq(-1,false)"/>
 		<setting id="chomikuj-password" type="text" label="30006" default="" option="hidden" visible="!eq(-2,false)"/>
 		<setting id="chomikuj-check" type="bool" label="30000" default="false" visible="false"/>
+		<setting type="sep"/>
+		<setting id="servidor-enable" type="bool" label="30023" default="false"/>
+		<setting id="servidor-cover" type="text" label="30022" default="" visible="!eq(-1,false)"/>
+		<setting type="sep"/>
+		<setting id="caminho-enable" type="bool" label="30025" default="false"/>
+		<setting type="sep"/>
+		<setting id="imagens-disable" type="bool" label="30026" default="false"/>
+		<setting id="legendas-disable" type="bool" label="30027" default="false"/>
+		<setting type="sep"/>
+		<setting id="movielibrary-enable" type="bool" label="30028" default="false"/>
+		<setting id="tvshowlibrary-enable" type="bool" label="30029" default="false"/>
+		<setting id="tvshowname-enable" type="bool" label="30030" default="false"/>
 	</category>
 	<category label="30016">
-		<setting id="filesorder" label="30007" type="enum" values="30020" default="0"/>
-		<setting id="fileasc" label="30008" type="enum" values="30021" default="0"/>
+		<setting id="filesorder" label="30007" type="enum" lvalues="30020|30021" default="0"/>
+		<setting id="fileasc" label="30008" type="enum" lvalues="30031|30032|30033|30034" default="0"/>
 		<setting type="sep"/>
 		<setting id="aviso-extensao" type="bool" label="30000" default="true"/>
 		<setting id="ultima-pesquisa" type="text" label="30009" default="" visible="false"/>
@@ -34,7 +46,7 @@
 		<setting id="min-size" type="number" label="30012" enable="!eq(-2,false)" default="0"/>
 		<setting id="max-size" type="number" label="30013" enable="!eq(-3,false)" default="0"/>
 		<setting type="sep"/>
-		<setting id="folder-type" type="enum" label="30014" default="0" values="Pasta|Diálogo"/>
+		<setting id="folder-type" type="enum" label="30014" default="0" lvalues="30035|30036"/>
 	</category>
 	<category label="30140">
 		<setting id="subtitles" type="bool" label="30143" default="false"/>

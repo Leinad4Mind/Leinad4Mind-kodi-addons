@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """ Chomiteca
-    2015-2016 fightnight/Mafarricos/Leinad4Mind"""
+    2015-2017 fightnight/Mafarricos/Leinad4Mind"""
 
 import xbmc,xbmcaddon,xbmcgui,xbmcplugin,urllib,urllib2,os,re,sys,datetime,time,xbmcvfs,HTMLParser
 from t0mm0.common.net import Net
@@ -17,6 +17,7 @@ addon_id = 'plugin.video.chomiteca'
 MainURL = 'http://minhateca.com.br/'
 ChomikMainURL = 'http://chomikuj.pl/'
 art = '/resources/art/'
+covers = '/resources/covers/'
 user_agent = 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'
 selfAddon = xbmcaddon.Addon(id=addon_id)
 wtpath = selfAddon.getAddonInfo('path').decode('utf-8')
@@ -29,6 +30,7 @@ pastaperfil = xbmc.translatePath(selfAddon.getAddonInfo('profile')).decode('utf-
 cookies = os.path.join(pastaperfil, "cookies.lwp")
 username_mt = urllib.quote(selfAddon.getSetting('minhateca-username'))
 username_ck = urllib.quote(selfAddon.getSetting('chomikuj-username'))
+servidor_ut = urllib.quote(selfAddon.getSetting('servidor-cover'))
 moviesFolder = xbmc.translatePath(selfAddon.getSetting('libraryfolder'))
 tvshowFolder = xbmc.translatePath(selfAddon.getSetting('tvshowlibraryfolder'))
 musicvideoFolder = xbmc.translatePath(selfAddon.getSetting('musicvideolibraryfolder'))
@@ -396,6 +398,7 @@ def GetThumbExt(extensao):
 	elif extensao=='.tga': return wtpath + art + 'foto/tga.png'
 	elif extensao=='.tif': return wtpath + art + 'foto/tif.png'
 	elif extensao=='.tiff': return wtpath + art + 'foto/tiff.png'
+	#elif extensao=='.webp': return wtpath + art + 'foto/webp.png'
 	
 	elif extensao=='.bin': return wtpath + art + 'img/bin.png'
 	elif extensao=='.ccd': return wtpath + art + 'img/ccd.png'
@@ -431,33 +434,94 @@ def ReturnConteudo(conteudo,past,color,url2,deFora):
 	diffItems = False
 	reslist = []
 	section = re.compile('<div class="filerow fileItemContainer">.+?<a class="expanderHeader downloadAction"(.+?)</ul></div>\s+</div>', re.DOTALL).findall(conteudo)
-	if not section: section = re.compile('<div class="filerow fileItemContainer">(.+?)</div></div>', re.DOTALL).findall(conteudo)
+	if not section: section = re.compile('fileItemContainer">(.+?)</div></div>', re.DOTALL).findall(conteudo)
 	if not section: section = re.compile('<li class="fileItemContainer">(.+?)<li><span class="date">', re.DOTALL).findall(conteudo)
 	for part in section:
 		if color=="green": name = re.compile('data-title="(.+?)"', re.DOTALL).findall(part)
-		else: name = re.compile('title="(.+?)"', re.DOTALL).findall(part)
+		if color=="blue": name = re.compile('title="(.+?)"', re.DOTALL).findall(part)
 		if not name: name = re.compile('title="(.+?)"', re.DOTALL).findall(part)
-		tituloficheiro = h.unescape(name[0][:-4])
-		print tituloficheiro
-		extensao = name[0][:-4]
-		if '.' not in extensao:
-			tituloficheiro = h.unescape(name[0])
-			ext = re.compile('<span class="bold">.+?</span>(\..+?)\s+</a>', re.DOTALL).findall(part)
-			extensao = ext[0]
+		tituloficheiro = ReplaceSpecialChar(h.unescape(name[0].decode('utf-8')))
+
+		if(
+			('.7z' in tituloficheiro[-3:]) or ('.ra' in tituloficheiro[-3:]) or ('.rm' in tituloficheiro[-3:])
+			): extensao = tituloficheiro[-3:]
+		if(
+			('.ace' in tituloficheiro[-4:]) or ('.hqx' in tituloficheiro[-4:]) or ('.jar' in tituloficheiro[-4:]) or ('.rar' in tituloficheiro[-4:]) or ('.sit' in tituloficheiro[-4:]) or ('.tar' in tituloficheiro[-4:]) or ('.zip' in tituloficheiro[-4:]) or 
+			('.aac' in tituloficheiro[-4:]) or ('.m4a' in tituloficheiro[-4:]) or ('.mp3' in tituloficheiro[-4:]) or ('.ogg' in tituloficheiro[-4:]) or ('.wav' in tituloficheiro[-4:]) or ('.wma' in tituloficheiro[-4:]) or ('.ac3' in tituloficheiro[-4:]) or ('.m3u' in tituloficheiro[-4:]) or 
+			('.bmp' in tituloficheiro[-4:]) or ('.gif' in tituloficheiro[-4:]) or ('.ico' in tituloficheiro[-4:]) or ('.jpg' in tituloficheiro[-4:]) or ('.png' in tituloficheiro[-4:]) or ('.tga' in tituloficheiro[-4:]) or ('.tif' in tituloficheiro[-4:]) or 
+			('.bin' in tituloficheiro[-4:]) or ('.ccd' in tituloficheiro[-4:]) or ('.cue' in tituloficheiro[-4:]) or ('.img' in tituloficheiro[-4:]) or ('.iso' in tituloficheiro[-4:]) or ('.mdf' in tituloficheiro[-4:]) or ('.mds' in tituloficheiro[-4:]) or 
+			('.dat' in tituloficheiro[-4:]) or ('.ifo' in tituloficheiro[-4:]) or ('.mpg' in tituloficheiro[-4:]) or ('.3gp' in tituloficheiro[-4:])or 
+			('.doc' in tituloficheiro[-4:]) or ('.pdf' in tituloficheiro[-4:]) or ('.ppt' in tituloficheiro[-4:]) or ('.rtf' in tituloficheiro[-4:]) or ('.txt' in tituloficheiro[-4:])
+			): extensao = tituloficheiro[-4:]
+		if(
+			('.sitx' in tituloficheiro[-5:]) or ('.aiff' in tituloficheiro[-5:]) or ('.midi' in tituloficheiro[-5:]) or ('.rmva' in tituloficheiro[-5:]) or ('.flac' in tituloficheiro[-5:]) or ('.jpeg' in tituloficheiro[-5:]) or ('.tiff' in tituloficheiro[-5:]) or ('.webp' in tituloficheiro[-5:]) or ('.mpeg' in tituloficheiro[-5:]) or ('.rmva' in tituloficheiro[-5:])
+			): extensao = tituloficheiro[-5:]
+		if(
+			('.torrent' in tituloficheiro[-8:])
+			): extensao = tituloficheiro[-8:]
+		if(
+			('.avi' in tituloficheiro[-4:]) or ('.mov' in tituloficheiro[-4:]) or ('.mkv' in tituloficheiro[-4:]) or ('.ogm' in tituloficheiro[-4:]) or ('.mp4' in tituloficheiro[-4:]) or ('.wmv' in tituloficheiro[-4:])
+			): extensao = tituloficheiro[-4:]
+		else:
+			if color=="green": 
+				ext = re.compile('<span class="bold">.+?</span>(\..+?)\s+</a>\s+<img', re.DOTALL).findall(part)
+				if ext: extensao = ext[0]
+			if color=="blue":
+				ext = re.compile('<span class="bold">.+?</span>(\..+?)\s+</a>\s+</h3>', re.DOTALL).findall(part)
+				if ext: extensao = ext[0]
+			if not ext: extensao = '.not'
+
+		if ( (selfAddon.getSetting('caminho-enable') == 'true') ):
+			imagem = (wtpath + covers + tituloficheiro + '.png')
+			online = str(xbmcvfs.exists(imagem))
+			if (online == '1'):
+				existe='true'
+			else:
+				existe='false'
+				online='404'
+		else:
+			existe='false'
+
+		if (existe == 'false'):
+			if ( (selfAddon.getSetting('servidor-enable') == 'true') and servidor_ut ):
+				imagem = 'https://' + servidor_ut + tituloficheiro + '.png'
+				online = str(urllib.urlopen(imagem).getcode())
+			else: online='404'
+
+		if ( (extensao == '.mkv') or (extensao == '.mp4') or (extensao == '.avi') or (extensao == '.ogm') ):
+			if (online != '404'): thumb = imagem
+			else: thumb = GetThumbExt(extensao)
+		else: thumb = GetThumbExt(extensao)
+
 		url = re.compile('href="/(.+?)"', re.DOTALL).findall(part)
-		#img = re.compile('<img src="(.+?)"', re.DOTALL).findall(part)
 		size = re.compile('<li><span>(.+?)</span></li>', re.DOTALL).findall(part)
 		if not size: size = re.compile('<li>\s+(.+?)\s+</li>', re.DOTALL).findall(part)
 		if not size: size = '0'
 		urlficheiro = url[0]
-		#if not img: thumb = GetThumbExt(extensao)
-		#else: thumb = img[0]
-		thumb = GetThumbExt(extensao)
+
 		try: tamanhoficheiro = size[0]
-		except: tamanhoficheiro = 0
-		tamanhoficheiro=tamanhoficheiro.replace(' ','')
-		tamanhoparavariavel=' (' + tamanhoficheiro + ')'
-		if tamanhoficheiro != '0': 
+		except: tamanhoficheiro = '0'
+		tamanhoficheiro=tamanhoficheiro.replace(',','.').replace(' ','')
+		num_format = re.compile("^[0-9]+.?[0-9]+?K?M?G?B")
+
+		if(selfAddon.getSetting('imagens-disable') == 'true'):
+			if( (extensao == '.bmp') or (extensao == '.gif') or (extensao == '.ico') or (extensao == '.jpg') or (extensao == '.png') or (extensao == '.tga') or (extensao == '.tif') or (extensao == '.tiff') or (extensao == '.webp') ):
+				tamanhoficheiro='0'
+
+		if(selfAddon.getSetting('legendas-disable') == 'true'):
+			if( (extensao == '.srt') or (extensao == '.ass') or (extensao == '.ssa') ):
+				tamanhoficheiro='0'
+
+		if( tamanhoficheiro != '0' and re.match(num_format,tamanhoficheiro) ): 
+			tamanhoparavariavel=' (' + tamanhoficheiro + ')'
+			if deFora: reslist = SearchResults(tamanhoficheiro,color,tituloficheiro,extensao,tamanhoparavariavel,urlficheiro,4,thumb,reslist)
+			elif foldertype == 1 and re.search('action/SearchFiles',url2): reslist = SearchResultsFora(tamanhoficheiro,tituloficheiro+extensao+tamanhoparavariavel,MainURL + urlficheiro,color,reslist)
+			else: reslist = SearchResults(tamanhoficheiro,color,tituloficheiro,extensao,tamanhoparavariavel,urlficheiro,4,thumb,reslist)
+			
+		elif re.match(num_format,tamanhoficheiro): 
+			xbmc.executebuiltin("XBMC.Notification(Chomiteca,"+tamanhoficheiro+",'500000',"+iconpequeno.encode('utf-8')+")")
+			tamanhoficheiro = '0'
+			tamanhoparavariavel=' (' + tamanhoficheiro + ')'
 			if deFora: reslist = SearchResults(tamanhoficheiro,color,tituloficheiro,extensao,tamanhoparavariavel,urlficheiro,4,thumb,reslist)
 			elif foldertype == 1 and re.search('action/SearchFiles',url2): reslist = SearchResultsFora(tamanhoficheiro,tituloficheiro+extensao+tamanhoparavariavel,MainURL + urlficheiro,color,reslist)
 			else: reslist = SearchResults(tamanhoficheiro,color,tituloficheiro,extensao,tamanhoparavariavel,urlficheiro,4,thumb,reslist)
@@ -591,14 +655,17 @@ def paginas(link):
 			  except:
 					conteudo=re.compile('<div class="paginator clear friendspager">(.+?)<div class="clear">').findall(link)[0]
 					idmode=9
-		try:
-			  pagina=re.compile('anterior.+?<a href="/(.+?)" class="right" rel="(.+?)"').findall(conteudo)[0]
+		try: 
+			  if(color=='blue'): 
+				pagina=re.compile('anterior.+?<a href="/(.+?)" class="right" rel="(.+?)"').findall(conteudo)[0]
+			  else:
+				pagina=re.compile('poprzednia.+?<a href="/(.+?)" class="right" rel="(.+?)"').findall(conteudo)[0]
 			  urlpag=pagina[0]
 			  urlpag=urlpag.replace(' ','+')
-			  addDir('[COLOR gold]' + traducao(40062) + pagina[1] + '[/COLOR] - [COLOR '+color+']' + nextname + '[/COLOR]',sitebase + urlpag,idmode,wtpath + art + 'page.png',1,True)
+			  addDir('[COLOR gold]' + traducao(40062) + pagina[1] + '[/COLOR] - [COLOR '+color+']' + nextname + '[/COLOR]',sitebase + urlpag,idmode,wtpath + art + 'seta.png',1,True)
 		except:
-			  nrpagina=re.compile('type="hidden" value="([^"]+?)" /><input type="submit" value="p.gina seguinte.+?" /></form>').findall(link)[0]
-			  addDir('[COLOR gold]' + traducao(40062) + nrpagina + '[/COLOR] - [COLOR '+color+']' + nextname + '[/COLOR]',sitebase,mode,wtpath + art + 'page.png',1,True)
+			  nrpagina=re.compile('type="hidden" value="([^"]+?)" /><input type="submit" value="p.+?gina seguinte.+?" /></form>').findall(link)[0]
+			  addDir('[COLOR gold' + traducao(40062) + nrpagina + '[/COLOR] - [COLOR '+color+']' + nextname + '[/COLOR]',sitebase,mode,wtpath + art + 'seta.png',1,True)
 	except: pass
 
 ########################################################### PLAYER ################################################
@@ -686,8 +753,8 @@ def comecarvideo(name,url,playterm,legendas=None):
 	if not playterm:
 		try: xbmc.Player().stop()
 		except: pass
-	if re.search('chomikuj.pl',url): sitename='Chomikuj - '+name
-	else: sitename='Minhateca - '+name
+	if re.search('chomikuj.pl',url): sitename='Chomikuj - '+clean_folder(name.replace(',',''))
+	else: sitename='Minhateca - '+clean_folder(name.replace(',',''))
 	playeractivo = xbmc.getCondVisibility('Player.HasMedia')
 	if playterm=='download':
 		  fazerdownload(name,url)
@@ -808,13 +875,27 @@ def add_to_library_batch(updatelibrary=True):
 	conteudo = openfile('playlist.txt')
 	playlistsearch=re.compile("\['(.+?)', '(.+?)'\]").findall(conteudo)
 	for titulo,url in playlistsearch: 
-		add_to_library(titulo,url,type,False)
+		add_to_library(titulo,url,type,'0',False)
 	if updatelibrary: xbmc.executebuiltin("XBMC.UpdateLibrary(video)")
 
 def ReplaceSpecialChar(name):
 	try: name = name.encode('utf-8')
 	except: pass
-	return name.replace('ç','c').replace('À','A').replace('Á','A').replace('á','a').replace('à','a').replace('ã','a').replace('É','E').replace('é','e').replace('ê','e').replace('ó','o').replace('ô','o').replace('õ','o').replace('í','i').replace('/','-')
+	return name.replace('/','-')
+
+def ReplaceSpecialCharExtra(name):
+	try: name = name.encode('utf-8')
+	except: pass
+	return name.replace('/','-').replace('Ç','C').replace('ç','c').replace('À','A').replace('Á','A').replace('Ã','A').replace('Â','A').replace('Ä','A').replace('à','a').replace('á','a').replace('ã','a').replace('â','a').replace('ä','a').replace('È','E').replace('É','E').replace('Ê','E').replace('Ë','E').replace('è','e').replace('é','e').replace('ê','e').replace('ë','e').replace('Ì','I').replace('Í','I').replace('Î','I').replace('Ï','I').replace('ì','i').replace('í','i').replace('î','i').replace('ï','i').replace('Ò','O').replace('Ó','O').replace('Õ','O').replace('Ô','O').replace('Ö','O').replace('ò','o').replace('ó','o').replace('õ','o').replace('ô','o').replace('ö','o').replace('Ù','U').replace('Ú','U').replace('Û','U').replace('Ü','U').replace('ù','u').replace('ú','u').replace('û','u').replace('ü','u')
+
+def clean_title(title):
+	return title.replace('+',' ').replace('%2C',',').replace('%28','(').replace('%29',')').replace('%26','&').replace('%24','$').replace('%5Cxc2%5Cxba','º').replace('%5Cxc3%5Cx87','Ç').replace('%5Cxc3%5Cxa7','ç').replace('%5Cxc3%5Cx80','À').replace('%5Cxc3%5Cx81','Á').replace('%5Cxc3%5Cx83','Ã').replace('%5Cxc3%5Cx82','Â').replace('%5Cxc3%5Cx84','Ä').replace('%5Cxc3%5Cxa0','à').replace('%5Cxc3%5Cxa1','á').replace('%5Cxc3%5Cxa3','ã').replace('%5Cxc3%5Cxa2','â').replace('%5Cxc3%5Cxa4','ä').replace('%5Cxc3%5Cx88','È').replace('%5Cxc3%5Cx89','É').replace('%5Cxc3%5Cx8a','Ê').replace('%5Cxc3%5Cx8b','Ë').replace('%5Cxc3%5Cxa8','è').replace('%5Cxc3%5Cxa9','é').replace('%5Cxc3%5Cxaa','ê').replace('%5Cxc3%5Cxab','ë').replace('%5Cxc3%5Cx8c','Ì').replace('%5Cxc3%5Cx8d','Í').replace('%5Cxc3%5Cx8e','Î').replace('%5Cxc3%5Cx8f','Ï').replace('%5Cxc3%5Cxac','ì').replace('%5Cxc3%5Cxad','í').replace('%5Cxc3%5Cxae','î').replace('%5Cxc3%5Cxaf','ï').replace('%5Cxc3%5Cx92','Ò').replace('%5Cxc3%5Cx94','Ó').replace('%5Cxc3%5Cx95','Õ').replace('%5Cxc3%5Cx93','Ô').replace('%5Cxc3%5Cx96','Ö').replace('%5Cxc3%5Cxb2','ò').replace('%5Cxc3%5Cxb3','ó').replace('%5Cxc3%5Cxb5','õ').replace('%5Cxc3%5Cxb4','ô').replace('%5Cxc3%5Cxb6','ö').replace('%5Cxc3%5Cx99','Ù').replace('%5Cxc3%5Cx9a','Ú').replace('%5Cxc3%5Cx9b','Û').replace('%5Cxc3%5Cx9c','Ü').replace('%5Cxc3%5Cxb9','ù').replace('%5Cxc3%5Cxba','ú').replace('%5Cxc3%5Cxbb','û').replace('%5Cxc3%5Cxbc','ü')
+
+def clean_folder(folder):
+	return folder.replace('\\xc3\\xa0','à').replace('\\xc3\\xa1','á').replace('\\xc3\\xa2','â').replace('\\xc3\\xa3','ã').replace('\\xc3\\xa4','ä').replace('\\xc3\\xa5','å').replace('\\xc3\\xa6','æ').replace('\\xc3\\xa7','ç').replace('\\xc3\\xa8','è').replace('\\xc3\\xa9','é').replace('\\xc3\\xaa','ê').replace('\\xc3\\xab','ë').replace('\\xc3\\xac','ì').replace('\\xc3\\xad','í').replace('\\xc3\\xae','î').replace('\\xc3\\xaf','ï').replace('\\xc3\\xb2','ò').replace('\\xc3\\xb3','ó').replace('\\xc3\\xb4','ô').replace('\\xc3\\xb5','õ').replace('\\xc3\\xb6','ö').replace('\\xc3\\xb9','ù').replace('\\xc3\\xba','ú').replace('\\xc3\\xbb','û').replace('\\xc3\\xbc','ü').replace('\\xc3\\x80','À').replace('\\xc3\\x81','Á').replace('\\xc3\\x82','Â').replace('\\xc3\\x83','Ã').replace('\\xc3\\x84','Ä').replace('\\xc3\\x85','Å').replace('\\xc3\\x86','Æ').replace('\\xc3\\x87','Ç').replace('\\xc3\\x88','È').replace('\\xc3\\x89','É').replace('\\xc3\\x8a','Ê').replace('\\xc3\\x8b','Ë').replace('\\xc3\\x8c','Ì').replace('\\xc3\\x8d','Í').replace('\\xc3\\x8e','Î').replace('\\xc3\\x8f','Ï').replace('\\xc3\\x92','Ò').replace('\\xc3\\x93','Ó').replace('\\xc3\\x94','Ô').replace('\\xc3\\x95','Õ').replace('\\xc3\\x96','Ö').replace('\\xc3\\x99','Ù').replace('\\xc3\\x9a','Ú').replace('\\xc3\\x9b','Û').replace('\\xc3\\x9c','Ü')
+
+def clean_url(url):
+	return url.replace('%C3%A0','à').replace('%C3%A1','á').replace('%C3%A2','â').replace('%C3%A3','ã').replace('%C3%A4','ä').replace('%C3%A5','å').replace('%C3%A6','æ').replace('%C3%A7','ç').replace('%C3%A8','è').replace('%C3%A9','é').replace('%C3%AA','ê').replace('%C3%AB','ë').replace('%C3%AC','ì').replace('%C3%AD','í').replace('%C3%AE','î').replace('%C3%AF','ï').replace('%C3%B2','ò').replace('%C3%B3','ó').replace('%C3%B4','ô').replace('%C3%B5','õ').replace('%C3%B6','ö').replace('%C3%B9','ù').replace('%C3%BA','ú').replace('%C3%BB','û').replace('%C3%BC','ü').replace('%C3%80','À').replace('%C3%81','Á').replace('%C3%82','Â').replace('%C3%83','Ã').replace('%C3%84','Ä').replace('%C3%85','Å').replace('%C3%86','Æ').replace('%C3%87','Ç').replace('%C3%88','È').replace('%C3%89','É').replace('%C3%8A','Ê').replace('%C3%8B','Ë').replace('%C3%8C','Ì').replace('%C3%8D','Í').replace('%C3%8E','Î').replace('%C3%8F','Ï').replace('%C3%92','Ò').replace('%C3%93','Ó').replace('%C3%94','Ô').replace('%C3%95','Õ').replace('%C3%96','Ö').replace('%C3%99','Ù').replace('%C3%9A','Ú').replace('%C3%9B','Û').replace('%C3%9C','Ü')
 
 def add_to_library_opt(name,url,updatelibrary=True):
 	source = xbmcgui.Dialog().select
@@ -823,44 +904,78 @@ def add_to_library_opt(name,url,updatelibrary=True):
 	choose=source('Tipo',selectlist)
 	if choose > -1:	type = optionlist[choose]
 	else: sys.exit(0)
-	add_to_library(name,url,type,False)
+	add_to_library(name,url,type,'1',False)
 
-def add_to_library(name,url,type,updatelibrary=True):
+def add_to_library(name,url,type,batch,updatelibrary=True):
 	episode = ''
 	tvshow = ''
 	season = ''
 	title = ''
+	
 	name2 = re.compile('\[B\]\[COLOR .+?\](.+?)\[/COLOR\]\[/B\]').findall(name)
 	if name2: 
 		name = ReplaceSpecialChar(h.unescape(name2[0]))
-		cleaned_title = re.sub('[^-a-zA-Z0-9_()\\\/ ]+', ' ', name[:-4])
+		cleaned = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇáàãâäéèêëíìîïóòõôöúùûüç&$,()\\\/ ]+', ' ', name[:-4])
+		cleaned = re.sub(' +$', '', cleaned)
+		cleaned_title = re.sub('^ +', '', cleaned)
 	else:
 		name = ReplaceSpecialChar(h.unescape(name))
-		cleaned_title = re.sub('[^-a-zA-Z0-9_()\\\/ ]+', ' ', name)
+		cleaned = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇáàãâäéèêëíìîïóòõôöúùûüç&$,()\\\/ ]+', ' ', name)
+		cleaned = re.sub(' +$', '', cleaned)
+		cleaned_title = re.sub('^ +', '', cleaned)
 	if type == 'movie': 
 		if not xbmcvfs.exists(moviesFolder): xbmcvfs.mkdir(moviesFolder)
 	elif type == 'tvshow': 
 		if not xbmcvfs.exists(tvshowFolder): xbmcvfs.mkdir(tvshowFolder)
 	elif type == 'musicvideo':
 		if not xbmcvfs.exists(musicvideoFolder): xbmcvfs.mkdir(musicvideoFolder)
-	if type == 'tvshow': tvshow,season,episode = GetTVShowNameResolved(cleaned_title)
+	if type == 'tvshow':
+		if(selfAddon.getSetting('tvshowname-enable') == 'true'):
+			tvshow,season,episode = GetTVShowNameResolved(cleaned_title)
+			titulo = clean_folder(cleaned_title)
+		else:
+			tvshow,season,episode = GetTVShowNameResolved(cleaned_title)
 	if (type == 'movie') or (type == 'musicvideo') or (type == 'tvshow' and tvshow == ''):
 		keyb = xbmc.Keyboard(cleaned_title, traducao(40053))
-		keyb.doModal()
-		if (keyb.isConfirmed()):
-			title = keyb.getText()
+		if(batch != '0'):
+			keyb.doModal()
+			if (keyb.isConfirmed()):
+				title = keyb.getText()
+				if title=='': sys.exit(0)
+			else: sys.exit(0)
+		else:
+			title = clean_folder(cleaned_title)
 			if title=='': sys.exit(0)
-		else: sys.exit(0)
-	if title <> '': title = re.sub('[^-a-zA-Z0-9_()\\\/ ]+', ' ', ReplaceSpecialChar(title))
+	if title <> '':
+		title = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇáàãâäéèêëíìîïóòõôöúùûüç&$,.()\\\/ ]+', ' ', ReplaceSpecialChar(title))
+		title = re.sub(' +$', '', cleaned)
+		title = re.sub('^ +', '', cleaned)
 	if type == 'movie': 
-		try: file_folder = os.path.join(moviesFolder,title)
-		except: file_folder = os.path.join(moviesFolder,cleaned_title)
+		try: 
+			if(selfAddon.getSetting('movielibrary-enable') == 'true'): file_folder = os.path.join(moviesFolder,title)
+			else: file_folder = os.path.join(moviesFolder,'')
+		except: 
+			if(selfAddon.getSetting('movielibrary-enable') == 'true'): file_folder = os.path.join(moviesFolder,cleaned_title)
+			else: file_folder = os.path.join(moviesFolder,'')
 	elif type == 'tvshow':
+		tvshow = clean_folder(tvshow)
 		if tvshow <> '':
 			file_folder1 = os.path.join(tvshowFolder,tvshow)
 			if not xbmcvfs.exists(file_folder1): tryFTPfolder(file_folder1)
-			file_folder = os.path.join(tvshowFolder,tvshow+'/','S'+season)
-			title =  tvshow + ' S'+season+'E'+episode
+			if(selfAddon.getSetting('tvshowlibrary-enable') == 'true'):
+				if(selfAddon.getSetting('tvshowname-enable') == 'false'):
+					file_folder = os.path.join(tvshowFolder,tvshow+'/',tvshow+' '+traducao(40073)+' '+season)
+					title = tvshow + ' S'+season+'E'+episode
+				else:
+					file_folder = os.path.join(tvshowFolder,tvshow+'/',tvshow+' '+traducao(40073)+' '+season)
+					title = titulo
+			else:
+				if(selfAddon.getSetting('tvshowname-enable') == 'false'):
+					file_folder = os.path.join(tvshowFolder,tvshow)
+					title = tvshow + ' S'+season+'E'+episode
+				else:
+					file_folder = os.path.join(tvshowFolder,tvshow)
+					title = titulo
 		else:
 			if title == '': title = cleaned_title
 			tvshow,season,episode = GetTVShowNameResolved(title)
@@ -871,9 +986,11 @@ def add_to_library(name,url,type,updatelibrary=True):
 				title =  tvshow + ' S'+season+'E'+episode
 			else: file_folder = os.path.join(tvshowFolder,title)
 	elif type == 'musicvideo': file_folder = musicvideoFolder
-	if not xbmcvfs.exists(file_folder): tryFTPfolder(file_folder) 
+	if not xbmcvfs.exists(file_folder): tryFTPfolder(file_folder)
 	strm_contents = 'plugin://plugin.video.chomiteca/?url=' + url +'&mode=25&name=' + urllib.quote_plus(title)
-	savefile(urllib.quote_plus(title)+'.strm',strm_contents,file_folder)
+	#xbmc.executebuiltin("XBMC.Notification(Chomiteca,"+title+",'500000',"+iconpequeno.encode('utf-8')+")")
+	if type == 'movie': savefile(clean_url(clean_title(urllib.quote_plus(title)))+'.strm',strm_contents,file_folder)
+	if type == 'tvshow': savefile((urllib.unquote_plus(title))+'.strm',strm_contents,file_folder)
 	if updatelibrary: xbmc.executebuiltin("XBMC.UpdateLibrary(video)")
 
 def tryFTPfolder(file_folder):
@@ -892,7 +1009,7 @@ def GetTVShowNameResolved(title):
 	episode = ''
 	tvshow = ''
 	season = ''
-	epi = re.compile('(.+?)[ ]?[Ss]?(\d{1,2})[EeXx.](\d{1,2})').findall(title)
+	epi = re.compile('(.+?)[ ]?[Ss]?(\d{1,4})[EeXx.](\d{1,4}[ab]?).+?').findall(title)
 	if epi:
 		for n,s,e in epi:
 			tvshow = n.replace('-','').strip()
@@ -901,7 +1018,7 @@ def GetTVShowNameResolved(title):
 			episode = e
 			if len(episode) == 1 : episode = '0'+episode
 	else: 
-		epi = re.compile('(.+?)[ \.]?Ep?(\d{1,3})').findall(title)
+		epi = re.compile('(.+?)[ \._]?E?p?(\d{1,4}).?[?[A-Fa-f0-9]*]?').findall(title)
 		for n,e in epi:
 			tvshow = n.replace('-','').strip()
 			season = '01'
@@ -1093,7 +1210,7 @@ def get_params():
       return param
 
 def clean(text):
-      command={'\r':'','\n':'','\t':'','&nbsp;':' ','&quot;':'"','&amp;':'&','&ntilde;':'ñ','&#35;':'#','&#39;':'\'','&#40;':'(','&#41;':')','&#44;':',','&#46;':'.','&#170;':'ª','&#178;':'²','&#179;':'³','&#192;':'À','&#193;':'Á','&#194;':'Â','&#195;':'Ã','&#199;':'Ç','&#201;':'É','&#202;':'Ê','&#205;':'Í','&#211;':'Ó','&#212;':'Ó','&#213;':'Õ','&#217;':'Ù','&#218;':'Ú','&#224;':'à','&#225;':'á','&#226;':'â','&#227;':'ã','&#231;':'ç','&#232;':'è','&#233;':'é','&#234;':'ê','&#237;':'í','&#243;':'ó','&#244;':'ô','&#245;':'õ','&#249;':'ù','&#250;':'ú'}
+      command={'\r':'','\n':'','\t':'','&nbsp;':' ','&quot;':'"','&amp;':'&','&ntilde;':'ñ','&#35;':'#','&#39;':'\'','&#40;':'(','&#41;':')','&#44;':',','&#46;':'.','&#170;':'ª','&#178;':'²','&#179;':'³','&#192;':'À','&#193;':'Á','&#194;':'Â','&#195;':'Ã','&#199;':'Ç','&#201;':'É','&#202;':'Ê','&#205;':'Í','&#211;':'Ó','&#212;':'Ô','&#213;':'Õ','&#217;':'Ù','&#218;':'Ú','&#224;':'à','&#225;':'á','&#226;':'â','&#227;':'ã','&#231;':'ç','&#232;':'è','&#233;':'é','&#234;':'ê','&#237;':'í','&#243;':'ó','&#244;':'ô','&#245;':'õ','&#249;':'ù','&#250;':'ú'}
       regex = re.compile("|".join(map(re.escape, command.keys())))
       return regex.sub(lambda mo: command[mo.group(0)], text)
 

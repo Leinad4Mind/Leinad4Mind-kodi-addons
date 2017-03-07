@@ -1,3 +1,60 @@
+[B]v1.3.8 (05 de Março de 2017):[/B]
+- Refactor nos ficheiros de linguagem, pois o método actual estava deprecated
+
+[B]v1.3.7 (05 de Março de 2017):[/B]
+- Bug na criação de .strm corrigido (Thks MustangBolt)
+
+[B]v1.3.6 (11 de Fevereiro de 2017):[/B]
+- Bug em certos caracteres nos .strm corrigido (Thks Luhan Silvério)
+- Melhoria da Playlist
+
+[B]v1.3.5 (10 de Fevereiro de 2017):[/B]
+- Bug ao adicionar certos conteúdos à biblioteca resolvido (Thks Luhan Silvério)
+- Melhoria ao guardar os nomes dos ficheiros .strm (Thks Luhan Silvério)
+- Três novas opções adicionadas que permitirá guardar os .strm a nosso gosto
+
+[B]v1.3.0 (08 de Fevereiro de 2017):[/B]
+- Acentuação dos nomes dos ficheiros foi agora totalmente resolvido
+- Bug nas pastas dos ficheiros .strm (Thks Luhan Silvério)
+- Melhoria ao adicionar conteúdos à biblioteca em modo Batch, passou a ser automático
+- Bug em Ocultar Legendas e Ocultar Imagens corrigido (Thks JesusTiag0)
+
+[B]v1.2.3 (06 de Janeiro de 2017):[/B]
+- Correcção do tamanho dos ficheiros em certos casos
+
+[B]v1.2.2 (06 de Janeiro de 2017):[/B]
+- Correcção do Bug das Páginas
+- Correcção na acentuação dos nomes dos ficheiros
+- Correcção de Bug quando se usava ficheiros fora da pasta privada (Thks pedroamorim)
+
+[B]v1.2.1 (04 de Novembro de 2016):[/B]
+- Correcção aplicada na 1.1.8 causou bug na pesquisa que foi agora totalmente resolvido
+- Outros Bugs corrigidos (Thks pedroamorim)
+
+[B]v1.2.0 (04 de Novembro de 2016):[/B]
+- Adicionado Opção para Ocultar Legendas
+
+[B]v1.1.9 (04 de Novembro de 2016):[/B]
+- Adicionado Opção para Ocultar Imagens
+
+[B]v1.1.8 (04 de Novembro de 2016):[/B]
+- Bug devido a caracteres ascii corrigido
+
+[B]v1.1.7 (03 de Novembro de 2016):[/B]
+- Bug devido a nova funcionalidade do servidor de imagens corrigido
+- Adicionado Opção de Imagens via Caminho Local
+
+>> Como utilizar as novas funcionalidades?
+-- Para utilizar as novas funcionalidades basta colocar o endereço da pasta do servidor que irá alocar as imagens das capas.
+-- Exemplo: dropbox.com/s/codigodapastaxpto/ ou omeuservidor.com/imagens/
+-- Ou no caso do Caminho Local, basta activar a opção e colocar as imagens em: %AppData%\Kodi\addons\plugin.video.chomiteca\resources\covers\
+
+[B]v1.1.6 (03 de Novembro de 2016):[/B]
+- Bug nas extensões corrigido
+- Bug no Chomikuj corrigido
+- Bug das páginas corrigido
+- Adicionado Opção de Servidor de Imagens Pessoal
+
 [B]v1.1.5.2 (09 de Junho de 2016):[/B]
 - Bug nas extensões corrigido
 
