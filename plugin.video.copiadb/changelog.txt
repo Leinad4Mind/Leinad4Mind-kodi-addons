@@ -1,4 +1,5 @@
 ﻿[B]v3.0.0 (08 de Março de 2016):[/B]
+- Refactor para CopiaDB
 - Correcção das colecções mais recentes
 - Adicionado DiskoKosmiko (México)
 - Adicionado KumpulBagi (Indonésia)
