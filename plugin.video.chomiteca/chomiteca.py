@@ -1244,7 +1244,7 @@ print "Name: "+str(name)
 print "Name: "+str(tamanhoparavariavel)
 
 if mode==None or url==None or len(url)<1:
-	if selfAddon.getSetting('minhateca-enable') == 'false' and selfAddon.getSetting('chomikuj-enable') == 'false' == 'false':
+	if selfAddon.getSetting('minhateca-enable') == 'false' and selfAddon.getSetting('chomikuj-enable') == 'false':
 		ok = mensagemok('Chomiteca','Precisa de configurar a(s) conta(s)','para aceder aos conteudos.')
 		entrarnovamente(1)
 	else:
