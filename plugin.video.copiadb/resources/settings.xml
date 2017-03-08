@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
-	<category label="Logins">
-		<setting id="copiapop-username" type="text" label="Username Copiapop" default=""/>
-		<setting id="copiapop-password" type="text" label="Password Copiapop" default="" option="hidden"/>
+	<category label="Logins do CopiaDB">
+		<setting id="copiapop-enable" type="bool" label="Activar CopiaPop" default="true"/>
+		<setting id="copiapop-username" type="text" label="Username CopiaPop" default="" visible="!eq(-1,false)"/>
+		<setting id="copiapop-password" type="text" label="Password CopiaPop" default="" option="hidden" visible="!eq(-2,false)"/>
+		<setting id="copiapop-check" type="bool" label="30000" default="false" visible="false"/>
+		<setting type="sep"/>
+		<setting id="diskokosmiko-enable" type="bool" label="Activar DiskoKosmiko" default="false"/>
+		<setting id="diskokosmiko-username" type="text" label="Username DiskoKosmiko" default="" visible="!eq(-1,false)"/>
+		<setting id="diskokosmiko-password" type="text" label="Password DiskoKosmiko" default="" option="hidden" visible="!eq(-2,false)"/>
+		<setting id="diskokosmiko-check" type="bool" label="30000" default="false" visible="false"/>
+		<setting type="sep"/>
+		<setting id="kumpulbagi-enable" type="bool" label="Activar KumpulBagi" default="false"/>
+		<setting id="kumpulbagi-username" type="text" label="Username KumpulBagi" default="" visible="!eq(-1,false)"/>
+		<setting id="kumpulbagi-password" type="text" label="Password KumpulBagi" default="" option="hidden" visible="!eq(-2,false)"/>
+		<setting id="kumpulbagi-check" type="bool" label="30000" default="false" visible="false"/>
+		<setting type="sep"/>
 		<setting id="file-subtitles" type="bool" label="Activar legendas com o mesmo nome do ficheiro" default="true"/>
 		<setting id="warning" type="bool" label="Aviso" default="true" visible="false"/>
 		<setting id="request_cookie" type="text" label="" default="" visible="false"/>

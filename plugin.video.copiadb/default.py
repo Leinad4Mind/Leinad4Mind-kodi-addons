@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" 2016 fightnight"""
+""" 2016~2017 fightnight/Leinad4Mind"""
 
 import urlparse,sys
 params = dict(urlparse.parse_qsl(sys.argv[2].replace('?','')))
@@ -25,7 +25,7 @@ elif action=='user':
 elif action=='recents':
     from resources.lib import main
     from resources.lib.variables import *
-    main.open_folder(CopiaPopURL)
+    main.open_folder_recents(SiteURL)
 
 elif action=='folder':
     from resources.lib import main

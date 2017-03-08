@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from variables import *
 
 def addDirectoryItem(name, query, thumb, icon, queue=False, isAction=True, isFolder=True):
@@ -19,7 +20,7 @@ def endDirectory(cacheToDisc=True):
 def Debug(content):
         xbmc.log(str(content), level=xbmc.LOGNOTICE)
 
-def warning_dialog(title="CopiaPop.com",text=""):
+def warning_dialog(title="CopiaDB",text=""):
         try:
                 xbmc.executebuiltin("ActivateWindow(10147)")
                 window = xbmcgui.Window(10147)

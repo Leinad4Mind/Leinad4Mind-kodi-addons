@@ -4,13 +4,15 @@ import xbmc,xbmcaddon,xbmcgui,xbmcplugin,xbmcvfs,re,os,sys,urllib,json
 import time
 from random import randint
 
-CopiaPopURL = 'http://copiapop.com'
 SearchParam = '/action/SearchFiles'
-addon_id = 'plugin.video.abelhas'
+addon_id = 'plugin.video.copiadb'
 user_agent = 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'
 lang = xbmcaddon.Addon().getLocalizedString
 setting = xbmcaddon.Addon().getSetting
 setSetting = xbmcaddon.Addon().setSetting
+if setting('copiapop-enable') == 'true': SiteURL = 'http://copiapop.com'
+if setting('diskokosmiko-enable') == 'true': SiteURL='http://diskokosmiko.mx'
+if setting('kumpulbagi-enable') == 'true': SiteURL='http://kbagi.com'
 addon = xbmcaddon.Addon
 addItem = xbmcplugin.addDirectoryItem
 item = xbmcgui.ListItem

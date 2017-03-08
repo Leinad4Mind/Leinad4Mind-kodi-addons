@@ -1,3 +1,8 @@
+ï»¿[B]v3.0.0 (08 de MarÃ§o de 2016):[/B]
+- CorrecÃ§Ã£o das colecÃ§Ãµes mais recentes
+- Adicionado DiskoKosmiko (MÃ©xico)
+- Adicionado KumpulBagi (IndonÃ©sia)
+
 [B]v2.0.3 (28 de Dezembro de 2016):[/B]
 - Login passa a ser obrigatorio no site.
 
@@ -37,28 +42,28 @@ O copiapop e um site de alojamento publico estilo abelhas. O addon esta a ser re
 abelhas improvement: better usage of portuguese chars
 
 [B]v1.1.0-beta003 (15 de Junho de 2015):[/B]
-- Opção de resumir.
+- OpÃ§Ã£o de resumir.
 
 [B]v1.1.0-beta002 (15 de Junho de 2015):[/B]
-- Pesquisa apresenta resultados únicos na combinação de nome+tamanho.
+- Pesquisa apresenta resultados Ãºnicos na combinaÃ§Ã£o de nome+tamanho.
 
 [B]v1.1.0-beta001 (14 de Junho de 2015):[/B]
 - Melhoria quando addon chamado de fora:
-- Se opção Pasta no addon abre logo o video (com melhor qualidade dependendo das opções);
-- Se opção Dialogo dá opção de escolher a qualidade.
+- Se opÃ§Ã£o Pasta no addon abre logo o video (com melhor qualidade dependendo das opÃ§Ãµes);
+- Se opÃ§Ã£o Dialogo dÃ¡ opÃ§Ã£o de escolher a qualidade.
 
 [B]v1.1.0 (14 de Junho de 2015):[/B]
 Actualizacao por Mafarricos!
 - Thumbnails do abelhas para filmes e fotos;
-- Código refeito;
+- CÃ³digo refeito;
 - Toutbox, lolabits e minhateca adicionados;
-- Adição à biblioteca;
+- AdiÃ§Ã£o Ã  biblioteca;
 - Trailer actualizado com a nova api do youtube;
 - Criar playlist refeita;
-- Play de fora refeito (integração mais simples);
-- Opções de pesquisar ordenando por tamanho;
-- Pesquisa com valor minimo e máximo de MB;
-- Opções de ordenar o conteudo das pastas como no abelhas.
+- Play de fora refeito (integraÃ§Ã£o mais simples);
+- OpÃ§Ãµes de pesquisar ordenando por tamanho;
+- Pesquisa com valor minimo e mÃ¡ximo de MB;
+- OpÃ§Ãµes de ordenar o conteudo das pastas como no abelhas.
 
 [B]v1.0.1 (5 de Abril de 2015):[/B]
 Addon em actualizacao.
@@ -90,8 +95,8 @@ Addon em actualizacao.
 [B]v0.0.13 (28 de Outubro de 2014):[/B]
 - Adicionado sistema automatico para pesquisa de legendas (ty mafarricos).
 - Corrigido legendas na mesma pasta. (ty mafarricos)
-- Adicionada opção para trailers (ty mafarricos).
-- Outras correcções.
+- Adicionada opÃ§Ã£o para trailers (ty mafarricos).
+- Outras correcÃ§Ãµes.
 
 [B]v0.0.12 (26 de Agosto de 2014):[/B]
 - Fix no espaco ocupado por cada utilizador.
