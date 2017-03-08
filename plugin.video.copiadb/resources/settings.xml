@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+	<category label="Logins">
+		<setting id="copiapop-username" type="text" label="Username Copiapop" default=""/>
+		<setting id="copiapop-password" type="text" label="Password Copiapop" default="" option="hidden"/>
+		<setting id="file-subtitles" type="bool" label="Activar legendas com o mesmo nome do ficheiro" default="true"/>
+		<setting id="warning" type="bool" label="Aviso" default="true" visible="false"/>
+		<setting id="request_cookie" type="text" label="" default="" visible="false"/>
+	</category>
+</settings>
