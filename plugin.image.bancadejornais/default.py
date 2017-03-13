@@ -21,33 +21,40 @@ addon_id = 'plugin.image.bancadejornais'
 selfAddon = xbmcaddon.Addon(id=addon_id)
 addonfolder = selfAddon.getAddonInfo('path')
 artfolder = '/resources/icons/'
-sitio = 'http://24.sapo.pt/jornais'
+sitio = 'uggc://24.fncb.cg/wbeanvf'
+sitio = sitio.decode('rot13')
+nl = 'anpvbany'.decode('rot13')
+do = 'qrfcbegb'.decode('rot13')
+ea = 'rpbabzvn'.decode('rot13')
+ll = 'ybpny'.decode('rot13')
+la = 'yhfbsbavn'.decode('rot13')
+il = 'vagreanpvbany'.decode('rot13')
+rs = 'erivfgnf'.decode('rot13')
 
 
 def CATEGORIES():
-	addDir('[B]Nacional[/B]',sitio+'/nacional/',1, addonfolder + artfolder + 'nacional.png')
-	addDir('[B]Desporto[/B]',sitio+'/desporto/',1, addonfolder + artfolder + 'desporto.png')
-	addDir('[B]Economia[/B]',sitio+'/economia/',1, addonfolder + artfolder + 'economia.png')
-	addDir('[B]Local[/B]',sitio+'/local/',1, addonfolder + artfolder + 'local.png')
-	addDir('[B]Lusofonia[/B]',sitio+'/lusofonia/',1, addonfolder + artfolder + 'local.png')
-	addDir('[B]Internacional[/B]',sitio+'/internacional/',1, addonfolder + artfolder + 'internacional.png')
-	addDir('[B]Revistas[/B]',sitio+'/revistas/',1, addonfolder + artfolder + 'revistas.png')
-		
-		
-		
+	addDir('[B]Nacional[/B]',		sitio+'/'+nl+'/',1, addonfolder + artfolder + nl + '.png')
+	addDir('[B]Desporto[/B]',		sitio+'/'+do+'/',1, addonfolder + artfolder + do + '.png')
+	addDir('[B]Economia[/B]',		sitio+'/'+ea+'/',1, addonfolder + artfolder + ea + '.png')
+	addDir('[B]Local[/B]',			sitio+'/'+ll+'/',1, addonfolder + artfolder + ll + '.png')
+	addDir('[B]Lusofonia[/B]',		sitio+'/'+la+'/',1, addonfolder + artfolder + la + '.png')
+	addDir('[B]Internacional[/B]',	sitio+'/'+il+'/',1, addonfolder + artfolder + il + '.png')
+	addDir('[B]Revistas[/B]',		sitio+'/'+rs+'/',1, addonfolder + artfolder + rs + '.png')
+
 
 def jornal_list(url):
 	link = abrir_url(url)
 	match=re.compile('img data-src="(//thumbs.web.sapo.io/\?epic=.+?)(&.+?)" src=".+?" alt="(.+?)"').findall(link)
 	totalitems = len(match)
 	for img,thumbnail,titulo in match:
-			imagem = urllib.unquote('http:'+img+'&W=1520&H=0&delay_optim=1&tv=1&crop=center')
-			thumbs = urllib.unquote('http:'+img+'&W=520&H=0&delay_optim=1&tv=1&crop=center')
-			addLink('[B]' + titulo + '[/B]',imagem,thumbs,totalitems)
+			imgmax = urllib.unquote('http:'+img+'&W=1520&H=0&delay_optim=1&tv=1&crop=center')
+			#thumb = urllib.unquote('http:'+img+thumbnail)
+			thumb = urllib.unquote('http:'+img+'&W=520&H=0&delay_optim=1&tv=1&crop=center')
+			if not re.search('McDonald',titulo):
+				addLink('[B]' + titulo + '[/B]',imgmax,thumb,totalitems)
 	xbmc.executebuiltin("Container.SetViewMode(500)")
 
 
- 
 ############################################################################################################################
 
 def abrir_url(url):
@@ -58,7 +65,7 @@ def abrir_url(url):
 	response.close()
 	return link
 
-				
+
 def get_params():
 		param=[]
 		paramstring=sys.argv[2]
@@ -76,8 +83,6 @@ def get_params():
 								param[splitparams[0]]=splitparams[1]
 								
 		return param
-
-
 
 
 def addLink(name,url,thumbs,number_of_items):
