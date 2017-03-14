@@ -225,16 +225,29 @@ def show_items(list):
                         url = '%s?action=play&url=%s' % (sysaddon, urllib.quote_plus(items['pageurl']))
                         cm = []
                         cm.append(('Info'.encode('utf-8'), 'Action(Info)'))
-                        item_ind = item(label='[B]%s[/B] (%s)' % (items['name'],items['size']), iconImage=items['thumb'], thumbnailImage=items['thumb'])
+                        name=items['name']
+                        extensao=name[-4:]
+                        tamanhoficheiro='1'
 
-                        try: item_ind.setArt({'poster': items['thumb'], 'banner': items['thumb']})
-                        except: pass
+                        if(setting('imagens-disable') == 'true'):
+                            if( (extensao == '.bmp') or (extensao == '.gif') or (extensao == '.ico') or (extensao == '.jpg') or (extensao == '.png') or (extensao == '.tga') or (extensao == '.tif') or (extensao == '.tiff') or (extensao == '.webp') ):
+                                tamanhoficheiro='0'
 
-                        item_ind.setProperty('Fanart_Image', items['thumb'])
-                        item_ind.setProperty('Video', 'true')
-                        item_ind.setProperty('IsPlayable', 'true')
-                        item_ind.addContextMenuItems(cm, replaceItems=True)
-                        addItem(handle=int(sys.argv[1]), url=url, listitem=item_ind, isFolder=False)
+                        if(setting('legendas-disable') == 'true'):
+                            if( (extensao == '.srt') or (extensao == '.ass') or (extensao == '.ssa') ):
+                                tamanhoficheiro='0'
+
+                        if( tamanhoficheiro != '0' ):
+                            item_ind = item(label='[B]%s[/B] (%s)' % (name,items['size']), iconImage=items['thumb'], thumbnailImage=items['thumb'])
+
+                            try: item_ind.setArt({'poster': items['thumb'], 'banner': items['thumb']})
+                            except: pass
+
+                            item_ind.setProperty('Fanart_Image', items['thumb'])
+                            item_ind.setProperty('Video', 'true')
+                            item_ind.setProperty('IsPlayable', 'true')
+                            item_ind.addContextMenuItems(cm, replaceItems=True)
+                            addItem(handle=int(sys.argv[1]), url=url, listitem=item_ind, isFolder=False)
                 elif items['type']=='folder':
                         url = 'folder&url=%s' % (urllib.quote_plus(items['pageurl']))
                         addDirectoryItem('[B]%s[/B] (%s ficheiros)' % (items['name'],items['length']), url, items['thumb'], items['thumb'])
@@ -281,7 +294,7 @@ def check_subtitle(original_url,original_name):
                 Debug("%s\n%s\n%s" % (etype,value,traceback))
         return subtitle_url
                         
-def play_url(url,name='CopiaPop File',thumb=None,original_url='http://www.example.com/foobar.mp4',original_filename='foobar.mp4'):
+def play_url(url,name='CopiaDB File',thumb=None,original_url='http://www.example.com/foobar.mp4',original_filename='foobar.mp4'):
         if not addonInfo('id').lower() == infoLabel('Container.PluginName').lower():
                 progress = True if setting('progress.dialog') == '1' else False
         else:
