@@ -1,3 +1,6 @@
+[B]v1.4.0 (15 de Março de 2017):[/B]
+- Melhorias no .strm (Thks Luhan Silvério)
+
 [B]v1.3.9 (15 de Março de 2017):[/B]
 - Ligeiras melhorias
 
