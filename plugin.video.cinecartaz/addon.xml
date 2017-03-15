@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.cinecartaz" name="Cinecartaz" version="0.0.4" provider-name="Mafarricos">
+	<requires>
+    <import addon="xbmc.python" version="2.14.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="main.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <language>Pt</language>
+    <platform>all</platform>
+    <summary lang="en">cinecartaz</summary>
+    <description lang="en">Ver trailers e info do site http://cinecartaz.publico.pt</description>
+    <platform>all</platform>
+  </extension>
+</addon>
