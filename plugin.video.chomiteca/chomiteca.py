@@ -509,7 +509,7 @@ def ReturnConteudo(conteudo,past,color,url2,deFora):
 				tamanhoficheiro='0'
 
 		if(selfAddon.getSetting('legendas-disable') == 'true'):
-			if( (extensao == '.srt') or (extensao == '.ass') or (extensao == '.ssa') ):
+			if( (extensao == '.srt') or (extensao == '.sub') (extensao == '.ass') or (extensao == '.ssa') ):
 				tamanhoficheiro='0'
 
 		if( tamanhoficheiro != '0' and re.match(num_format,tamanhoficheiro) ): 
@@ -567,7 +567,7 @@ def criarplaylist(url,name):
 	conteudo = openfile('playlist.txt')
 	playlistsearch=re.compile("\['(.+?)', '(.+?)'\]").findall(conteudo)
 	for titulo,url in playlistsearch: analyzer(url,subtitles='',playterm='playlist',playlistTitle=titulo)
-	xbmcPlayer = xbmc.Player(xbmc.PLAYER_CORE_AUTO)
+	xbmcPlayer = xbmc.Player()
 	xbmcPlayer.play(playlist)
 	
 def trailer(name):
@@ -857,7 +857,7 @@ def limparplaylist():
 def comecarplaylist():
         playlist = xbmc.PlayList(1)
         if playlist:
-              xbmcPlayer = xbmc.Player(xbmc.PLAYER_CORE_AUTO)
+              xbmcPlayer = xbmc.Player()
               xbmcPlayer.play(playlist)
 
 def legendas(moviefileid,url):
