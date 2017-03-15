@@ -234,7 +234,7 @@ def show_items(list):
                                 tamanhoficheiro='0'
 
                         if(setting('legendas-disable') == 'true'):
-                            if( (extensao == '.srt') or (extensao == '.ass') or (extensao == '.ssa') ):
+                            if( (extensao == '.srt') or (extensao == '.sub') or (extensao == '.ass') or (extensao == '.ssa') ):
                                 tamanhoficheiro='0'
 
                         if( tamanhoficheiro != '0' ):
