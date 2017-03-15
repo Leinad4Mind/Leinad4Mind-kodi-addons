@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-# by Mafarricos email: MafaStudios@gmail.com
+# by Mafarricos email: MafaStudios@gmail.com & Leinad4Mind
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,24 +21,44 @@ addon_id = 'plugin.video.cinecartaz'
 selfAddon = xbmcaddon.Addon(id=addon_id)
 addonfolder = selfAddon.getAddonInfo('path')
 artfolder = os.path.join(addonfolder,'resources','img')
+setting = selfAddon.getSetting
 fanart = os.path.join(addonfolder,'fanart.png')
 mainURL = 'http://cinecartaz.publico.pt'
 
 def CATEGORIES():
 	addDir('Filmes em Destaque',mainURL,1,'')
-	addDir('Estreias',mainURL+'/Estreias',5,'')
-	addDir('Brevemente',mainURL+'/Brevemente',5,'')	
+	addDir('Estreias por Data',mainURL+'/Estreias',5,'')
+	addDir('Todas as Estreias',mainURL+'/Estreias',7,'')
+	addDir('Brevemente por Data',mainURL+'/Brevemente',5,'')
+	addDir('Todos os Brevemente',mainURL+'/Brevemente',7,'')
 	addDir('Trailers',mainURL+'/Trailers',1,'')
 
 def list_trailers(url):
 	trailers = open_url(url)
-	section = re.compile('<ul class="blocklist posterlist">(.+?)</ul>', re.DOTALL).findall(trailers)
+	#section = re.compile('<h2 class="boxtitle first"><span>.*?</span></h2>(.+?)</ul>', re.DOTALL).findall(trailers)
+	section = re.compile('<ul class="blocklist\s*posterlist">(.+?)</ul>', re.DOTALL).findall(trailers)
 	for s in section:
 		trailer = re.compile('<a href="(.+?)" title="(.+?)" class=".+?">\s+<img src="(.+?)" width="\d+" height="\d+" alt=".+?" />', re.DOTALL).findall(s)
 		counttrailers = len(trailer)
 		for url,title,thumb in trailer:
 			thumb = thumb.replace('&amp;w=140&amp;h=190&amp;act=cropResize','')
-			addDir(title,mainURL+url.replace('/Filme/','/Trailer/'),3,thumb,False,counttrailers,searchmovie(mainURL+url.replace('/Trailer/','/Filme/'),thumb))
+			if ( setting('desempenho-enable') == 'true' ): addDir(title,mainURL+url.replace('/Filme/','/Trailer/'),3,thumb,False,counttrailers)
+			else: addDir(title,mainURL+url.replace('/Filme/','/Trailer/'),3,thumb,False,counttrailers,searchmovie(mainURL+url.replace('/Trailer/','/Filme/'),thumb))
+	xbmcplugin.setContent(int(sys.argv[1]), 'movies')
+	if "confluence" in xbmc.getSkinDir(): xbmc.executebuiltin('Container.SetViewMode(500)')
+
+def list_estreias_total(url):
+	estreias = open_url(url)
+	searchstring = '<h2 class="boxtitle first"><span>(.+?)</span></h2>(.+?)</ul>'
+	section = re.compile(searchstring, re.DOTALL).findall(estreias)
+	for s, s2 in section:
+		addDir(s,'',6,'',True,1)
+		trailer = re.compile('<a href="(.+?)" title="(.+?)" class=".+?">\s+<img src="(.+?)" width="\d+" height="\d+" alt=".+?" />', re.DOTALL).findall(s2)
+		counttrailers = len(trailer)
+		for url,title,thumb in trailer:
+			thumb = thumb.replace('&amp;w=140&amp;h=190&amp;act=cropResize','')
+			if ( setting('desempenho-enable') == 'true' ): addDir(title,mainURL+url.replace('/Filme/','/Trailer/'),3,thumb,False,counttrailers)
+			else: addDir(title,mainURL+url.replace('/Filme/','/Trailer/'),3,thumb,False,counttrailers,searchmovie(mainURL+url,thumb))
 	xbmcplugin.setContent(int(sys.argv[1]), 'movies')
 	if "confluence" in xbmc.getSkinDir(): xbmc.executebuiltin('Container.SetViewMode(500)')
 
@@ -58,8 +78,9 @@ def list_estreias2(name,url):
 		trailer = re.compile('<a href="(.+?)" title="(.+?)" class=".+?">\s+<img src="(.+?)" width="\d+" height="\d+" alt=".+?" />', re.DOTALL).findall(s)
 		counttrailers = len(trailer)
 		for url,title,thumb in trailer:
-			thumb = thumb.replace('&amp;w=140&amp;h=190&amp;act=cropResize','')		
-			addDir(title,mainURL+url.replace('/Filme/','/Trailer/'),3,thumb,False,counttrailers,searchmovie(mainURL+url,thumb))
+			thumb = thumb.replace('&amp;w=140&amp;h=190&amp;act=cropResize','')
+			if ( setting('desempenho-enable') == 'true' ): addDir(title,mainURL+url.replace('/Filme/','/Trailer/'),3,thumb,False,counttrailers)
+			else: addDir(title,mainURL+url.replace('/Filme/','/Trailer/'),3,thumb,False,counttrailers,searchmovie(mainURL+url,thumb))
 	xbmcplugin.setContent(int(sys.argv[1]), 'movies')
 	if "confluence" in xbmc.getSkinDir(): xbmc.executebuiltin('Container.SetViewMode(500)')
 	
@@ -68,18 +89,18 @@ def play_trailer(url):
 	trailer = re.compile('dfpVideoFile = "(.+?)";', re.DOTALL).findall(trailerpage)
 	try: 
 		url = trailer[0]
-		play(url)	
+		play(url)
 	except:
 		dialog = xbmcgui.Dialog()
-		dialog.ok("Cinecartaz", "Sem trailer disponível")	
+		dialog.ok("Cinecartaz", "Sem trailer disponível")
 
 def play(url):
 	listitem = xbmcgui.ListItem()
 	listitem.setPath(url)
-	listitem.setProperty('mimetype', 'video/x-msvideo')
+	listitem.setProperty('mimetype', 'video/mp4')
 	listitem.setProperty('IsPlayable', 'true')
 	try:
-		xbmcPlayer = xbmc.Player(xbmc.PLAYER_CORE_AUTO)
+		xbmcPlayer = xbmc.Player()
 		xbmcPlayer.play(url)
 	except:
 		dialog = xbmcgui.Dialog()
@@ -89,7 +110,7 @@ def play(url):
 def searchmovie(url,thumb):
 	listgenre = []
 	listcast = []
-	listcastr = []	
+	listcastr = []
 	genre = ''
 	title = ''
 	plot = ''
@@ -144,7 +165,7 @@ def searchmovie(url,thumb):
 	info = {
 			"genre": genre,
 			"mpaa": mpaa,
-			"originaltitle": originaltitle,	
+			"originaltitle": originaltitle,
 			"title": title,
 			"director": director,
 			"cast": listcast,
@@ -227,4 +248,5 @@ elif mode==3: play_trailer(url)
 elif mode==4: play(url)
 elif mode==5: list_estreias(url)
 elif mode==6: list_estreias2(name,url)
+elif mode==7: list_estreias_total(url)
 xbmcplugin.endOfDirectory(int(sys.argv[1]))

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.cinecartaz" name="Cinecartaz" version="0.0.4" provider-name="Mafarricos">
+<addon id="plugin.video.cinecartaz" name="Cinecartaz" version="1.0.0" provider-name="Mafarricos/Leinad4Mind">
 	<requires>
     <import addon="xbmc.python" version="2.14.0"/>
   </requires>
@@ -7,10 +7,10 @@
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <language>Pt</language>
+    <language>pt</language>
     <platform>all</platform>
-    <summary lang="en">cinecartaz</summary>
-    <description lang="en">Ver trailers e info do site http://cinecartaz.publico.pt</description>
+    <summary lang="pt_PT">Cinecartaz</summary>
+    <description lang="pt_PT">Ver trailers e informações do site cinecartaz.publico.pt</description>
     <platform>all</platform>
   </extension>
 </addon>
