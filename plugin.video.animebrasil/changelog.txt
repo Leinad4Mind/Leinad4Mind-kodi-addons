@@ -1,4 +1,8 @@
-﻿
+﻿Versão 3.0.0 - (19/03/2017)
+* Correção do addon por mudança no site
+* Otimização de código
+* Novas funcionalidades adicionadas
+
 Versão 2.1.0 - (25/08/2016)
 * Correção do addon por mudança no site
 * Otimização de código
