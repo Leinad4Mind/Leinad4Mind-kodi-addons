@@ -1,3 +1,6 @@
+[B]v2.0.0 (19 de Março de 2017):[/B]
+- Actualização do XML
+
 [B]v2.0.0 (07 de Março de 2017):[/B]
 - Fork do Projecto do fightnight
 - Correcções no addon
