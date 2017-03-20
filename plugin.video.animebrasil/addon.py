@@ -202,16 +202,15 @@ def doPlay(url, name, iconimage):
 		urls = re.compile("source: '(.*?)',").findall(link)
 		xbmc.log(str(urls))
 		
-		qlds = ['P1 SD', 'P2 HD']
 		if not urls : return
 
 		index = 0
 
 		if len(urls) > 1 :
-				index = xbmcgui.Dialog().select('Selecione a resolução desejada :', qlds)
+				if setting('qualidade-enable') == 'true': index=1
 		
 				if index == -1 : return
-
+		
 		urlVideo = urls[index]
 		
 		playlist = xbmc.PlayList(1)

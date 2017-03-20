@@ -1,4 +1,7 @@
-﻿Versão 3.0.2 - (20/03/2017)
+﻿Versão 3.0.3 - (20/03/2017)
+* Escolha de qualidade removida do play, passando a ser configurado no addon
+
+Versão 3.0.2 - (20/03/2017)
 * Correcção da função Play tornando o addon novamente funcional
 
 Versão 3.0.1 - (19/03/2017)

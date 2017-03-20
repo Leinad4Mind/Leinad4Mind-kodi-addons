@@ -11,4 +11,7 @@
 		<setting type="sep"/>
 		<setting id="tokusatsu-disable" type="bool" label="Desativar Tokusatsu" default="false"/>
 	</category>
+	<category label="Qualidade">
+		<setting id="qualidade-enable" type="bool" label="Ative para Qualidade HD e Desative para Qualidade SD" default="true"/>
+	</category>
 </settings>
