@@ -15,7 +15,8 @@ addonfolder = selfAddon.getAddonInfo('path')
 setting     = selfAddon.getSetting
 artfolder   = addonfolder + '/resources/img/'
 fanart      = addonfolder + '/fanart.jpg'
-base        = 'https://anitube.es'
+base        = 'uggcf://navghor.rf'
+base        = base.decode('rot13')
 
 def menuPrincipal():
 		if setting('genero-disable') == 'false':      addDir2('Gêneros'    , base + '/genero'            , 10, artfolder + 'categorias.jpg')
@@ -24,6 +25,7 @@ def menuPrincipal():
 		if setting('dublados-disable') == 'false':    addDir2('Dublados'   , base + '/animes-dublado'    , 30, artfolder + 'populares.jpg')
 		if setting('tokusatsu-disable') == 'false':   addDir2('Tokusatsu'  , base + '/tokusatsu'         , 30, artfolder + 'destaque.jpg')
 		addDir2('Pesquisa'   , base                        , 99, artfolder + 'pesquisa.jpg')
+		xbmc.executebuiltin('Container.SetViewMode(51)')
 
 def getGeneros(url):
 		link = openURL(url)
@@ -191,11 +193,16 @@ def getEpsLegendados(url):
 				pass
 
 def doPlay(url, name, iconimage):
-		link = openURL(url)
-
-		qlds = ['Qualidade SD', 'Qualidade HD']
-		urls = re.compile('ipadUrl: "(.*?)",').findall(link)
-
+		pagina = openURL(url)
+		video = re.compile('src=\"(.*?insertVideo.*?)&nocache=[A-Za-z0-9]*\"').findall(pagina)
+		video = str(video).replace("'","").replace("[","").replace("]","")
+		xbmc.log(video)
+		link = openURL(video)
+		xbmc.log(link)
+		urls = re.compile("source: '(.*?)',").findall(link)
+		xbmc.log(str(urls))
+		
+		qlds = ['P1 SD', 'P2 HD']
 		if not urls : return
 
 		index = 0
@@ -206,7 +213,7 @@ def doPlay(url, name, iconimage):
 				if index == -1 : return
 
 		urlVideo = urls[index]
-
+		
 		playlist = xbmc.PlayList(1)
 
 		playlist.clear()
@@ -253,7 +260,7 @@ def addDir2(name,url,mode,iconimage,pasta=True,total=1,plot=''):
 	
 def openURL(url):
 		req = urllib2.Request(url)
-		req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
+		req.add_header('User-Agent', 'UCWEB/2.0 (iPad; U; CPU OS 7_1 like Mac OS X; en; iPad3,6) U2/1.0.0 UCBrowser/9.3.1.344')
 		response = urllib2.urlopen(req)
 		link=response.read()
 		response.close()

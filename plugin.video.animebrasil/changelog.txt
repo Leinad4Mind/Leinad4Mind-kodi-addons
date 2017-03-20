@@ -1,4 +1,10 @@
-﻿Versão 3.0.0 - (19/03/2017)
+﻿Versão 3.0.2 - (20/03/2017)
+* Correcção da função Play tornando o addon novamente funcional
+
+Versão 3.0.1 - (19/03/2017)
+* Actualização do XML
+
+Versão 3.0.0 - (19/03/2017)
 * Correção do addon por mudança no site
 * Otimização de código
 * Novas funcionalidades adicionadas
