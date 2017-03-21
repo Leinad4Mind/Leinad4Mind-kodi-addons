@@ -1,4 +1,7 @@
-﻿[B]v1.0.1 (15 de Março de 2017):[/B]
+﻿[B]v1.0.2 (21 de Março de 2017):[/B]
+- Pequenas Melhorias
+
+[B]v1.0.1 (15 de Março de 2017):[/B]
 - Actualização do XML
 
 [B]v1.0.0 (15 de Março de 2017):[/B]

@@ -20,10 +20,10 @@ import urllib,urllib2,re,xbmcplugin,xbmcgui,xbmc,xbmcaddon,os,json
 addon_id = 'plugin.video.cinecartaz'
 selfAddon = xbmcaddon.Addon(id=addon_id)
 addonfolder = selfAddon.getAddonInfo('path')
-artfolder = os.path.join(addonfolder,'resources','img')
+artfolder = os.path.join(addonfolder,'resources','art')
 setting = selfAddon.getSetting
 fanart = os.path.join(addonfolder,'fanart.png')
-mainURL = 'http://cinecartaz.publico.pt'
+mainURL = 'http://www.cinecartaz.publico.pt'
 
 def CATEGORIES():
 	addDir('Filmes em Destaque',mainURL,1,'')
@@ -52,7 +52,7 @@ def list_estreias_total(url):
 	searchstring = '<h2 class="boxtitle first"><span>(.+?)</span></h2>(.+?)</ul>'
 	section = re.compile(searchstring, re.DOTALL).findall(estreias)
 	for s, s2 in section:
-		addDir(s,'',6,'',True,1)
+		addDir(s.replace("Estreias da semana de ",""),'',6,os.path.join(artfolder,'estreias.png'),True,1)
 		trailer = re.compile('<a href="(.+?)" title="(.+?)" class=".+?">\s+<img src="(.+?)" width="\d+" height="\d+" alt=".+?" />', re.DOTALL).findall(s2)
 		counttrailers = len(trailer)
 		for url,title,thumb in trailer:
@@ -67,7 +67,7 @@ def list_estreias(url):
 	section = re.compile('<h2 class="boxtitle first"><span>(.+?)</span></h2>', re.DOTALL).findall(estreias)
 	for s in section:
 		addDir(s,url,6,'',True,1)
-	#xbmcplugin.setContent(int(sys.argv[1]), 'movies')
+	xbmcplugin.setContent(int(sys.argv[1]), 'movies')
 	#if "confluence" in xbmc.getSkinDir(): xbmc.executebuiltin('Container.SetViewMode(500)')
 
 def list_estreias2(name,url):
