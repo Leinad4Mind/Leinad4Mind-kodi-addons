@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.sapo"
        name="Sapo Videos"
-       version="1.0.0"
-       provider-name="fightnight">
+       version="2.0.0"
+       provider-name="fightnight/Leinad4Mind">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/> 
 		<import addon="script.module.requests"/>
@@ -12,14 +12,12 @@
     </extension>
     <extension point="xbmc.addon.metadata">
 		<language>pt</language>
-		<platform>all</platform>
 		<summary lang="en">Sapo Videos addon for Kodi</summary>
-		<summary lang="en">Sapo Videos addon para o Kodi</summary>
+		<summary lang="pt">Sapo Vídeos addon para o Kodi</summary>
         <description lang="en">Live and On-Demand videos from Sapo Videos webpage for Kodi.</description>
-		<description lang="pt">Vídeos e transmissões ao vivo do Sapo Videos para o Kodi.</description>
+		<description lang="pt">Vídeos e transmissões ao vivo do Sapo Vídeos para o Kodi.</description>
 		<disclaimer lang="en">Independent and opensource plugin not endorsed by Sapo.</disclaimer>
-		<disclaimer lang="pt">Addon independente e opensource não afliado com o Sapo.</disclaimer>
-		<source>https://github.com/fightnight/fightnight-addons/tree/master/plugin.video.sapo</source>
+		<disclaimer lang="pt">Addon independente e opensource não afiliado com o Sapo.</disclaimer>
         <platform>all</platform>
     </extension>
 </addon>

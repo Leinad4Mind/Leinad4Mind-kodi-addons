@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """ Sapo Videos
-    2015 fightnight
+    2015~2017 fightnight & Leinad4Mind
 """
 
 import xbmc,xbmcaddon,xbmcgui,xbmcplugin,urllib,urllib2,os,re,sys
@@ -9,11 +9,12 @@ import requests,htmlentitydefs,json
 
 ####################################################### CONSTANTES #####################################################
 
-versao = '1.0.0'
+versao = '2.0.0'
 addon_id = 'plugin.video.sapo'
 MainURL = 'http://videos.sapo.pt/'
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:10.0a1) Gecko/20111029 Firefox/10.0a1'
 selfAddon = xbmcaddon.Addon(id=addon_id)
+mensagemok = xbmcgui.Dialog().ok
 pastaperfil = xbmc.translatePath(selfAddon.getAddonInfo('profile')).decode('utf-8')
 ref_data = {'User-Agent': user_agent}
 
@@ -80,7 +81,11 @@ def abrir_url(url,referencia=False):
 def captura(name,url):
       link=abrir_url(url)
       thumb=re.compile('<meta property="og:image" content="(.+?)"/>').findall(link)[0]
-      username=re.compile("var usermrec='(.+?)'").findall(link)[0]
+      if not re.search('class="not-found"',link): username=re.compile("usermrec=\'(.+?)\'").findall(link)[0]
+      else: 
+            mensagemok(translate(30001),translate(30013))
+            return
+      
       if re.search('rtmp://',link):
             chname=url.replace('http://videos.sapo.pt/','')
             filepath=re.compile('/live/(.+?)&').findall(link)[0]
@@ -113,7 +118,7 @@ def comecarvideo(titulo,url,username,thumb):
       listitem.setProperty('IsPlayable', 'true')
       playlist.add(url, listitem)
       xbmcplugin.setResolvedUrl(int(sys.argv[1]),True,listitem)
-      xbmcPlayer = xbmc.Player(xbmc.PLAYER_CORE_AUTO)
+      xbmcPlayer = xbmc.Player()
       xbmcPlayer.play(playlist)
 
 ################################################## PASTAS ################################################################

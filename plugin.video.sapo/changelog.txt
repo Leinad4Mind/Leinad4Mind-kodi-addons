@@ -1,4 +1,11 @@
-[B]v1.00 (23 March 2015):[/B]
+[B]v2.0.0 (25 Março 2017):[/B]
+- Fork da versão do Fightnight
+- Actualizado ao novo sistema de idiomas
+- Suporte ao Kodi 17
+- Pequenas melhorias
+- Novo logo
+
+[B]v1.0.0 (23 March 2015):[/B]
 - Oficial submittion to Kodi repo.
 - Some fixes and changes.
 

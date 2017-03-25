@@ -1,0 +1,71 @@
+# Addon id: plugin.video.sapo
+# Addon Provider: Leinad4Mind
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Sapo Videos v2.0\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Leinad4Mind <leinad4talk@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"X-Generator: Poedit 1.8.12\n"
+
+msgctxt "#30001"
+msgid "Sapo Videos"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Top 10"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Trending"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Live"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Categories"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Search"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Today"
+msgstr ""
+
+msgctxt "#30008"
+msgid "Last Week"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Last Month"
+msgstr ""
+
+msgctxt "#30010"
+msgid "Since All"
+msgstr ""
+
+msgctxt "#30011"
+msgid "movies"
+msgstr ""
+
+msgctxt "#30012"
+msgid "views"
+msgstr ""
+
+msgctxt "#30013"
+msgid "The video was removed."
+msgstr ""
+
+msgctxt "#30014"
+msgid "You are a frog..."
+msgstr ""
