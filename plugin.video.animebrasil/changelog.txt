@@ -1,4 +1,7 @@
-﻿Versão 3.0.3 - (20/03/2017)
+﻿Versão 3.0.4 - (25/03/2017)
+* COrrecção para o player funcionar no Kodi 17+
+
+Versão 3.0.3 - (20/03/2017)
 * Escolha de qualidade removida do play, passando a ser configurado no addon
 
 Versão 3.0.2 - (20/03/2017)

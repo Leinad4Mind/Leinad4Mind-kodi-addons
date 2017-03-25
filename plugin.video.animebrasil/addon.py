@@ -223,7 +223,7 @@ def doPlay(url, name, iconimage):
 		listitem.setProperty('IsPlayable', 'true')
 
 		playlist.add(urlVideo,listitem)
-		xbmcPlayer = xbmc.Player(xbmc.PLAYER_CORE_AUTO)
+		xbmcPlayer = xbmc.Player()
 		xbmcPlayer.play(playlist)
 
 def doPesquisa():
