@@ -1,7 +1,4 @@
-[B]v3.0.4 (06 de Junho de 2017):[/B]
-- Correcção do Login para Kodi 17+
-
-[B]v3.0.3 (15 de Março de 2017):[/B]
+﻿[B]v3.0.2 (15 de Março de 2017):[/B]
 - Actualização XML
 - Fix changelog
 

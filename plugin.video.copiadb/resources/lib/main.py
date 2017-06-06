@@ -14,12 +14,10 @@ def login():
         timestamp = str(int(time.time()))+str(randint(0,9))+str(randint(0,9))+str(randint(0,9))
         url = SiteURL + '/action/Account/Login?returnUrl=%2F&TimeStamp=' + timestamp
         headers={'Cookie':cookie,'Connection': 'keep-alive','Pragma': 'no-cache','Cache-Control': 'no-cache','Accept': '*/*','X-Requested-With': 'XMLHttpRequest','User-Agent': user_agent,'Referer': SiteURL,'Accept-Encoding': 'gzip, deflate, sdch','Accept-Language': 'pt-PT,pt;q=0.8,en-US;q=0.6,en;q=0.4'}
-        result = requester.request(url,headers=headers)
-        resdec = result.decode('ascii', 'ignore')
+        result = requester.request(url,headers=urllib.urlencode(headers))
 
         headers={'Cookie':cookie,'Accept':'*/*','Accept-Encoding':'gzip, deflate','Accept-Language':'pt-PT,pt;q=0.8,en-US;q=0.6,en;q=0.4','Cache-Control':'no-cache','Connection':'keep-alive','Content-Type':'application/x-www-form-urlencoded; charset=UTF-8','Origin':SiteURL,'Pragma':'no-cache','Referer':SiteURL,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
-        newJSON = json.loads(resdec)['Content']
-        token = requester.parseDOM(newJSON, 'input', ret='value', attrs = {'name': '__RequestVerificationToken'})[0]
+        token = requester.parseDOM(result, 'input', ret='value', attrs = {'name': '__RequestVerificationToken'})[0]
 
         if setting('copiapop-enable') == 'true': post={'UserName':setting('copiapop-username'),'Password':setting('copiapop-password'),'__RequestVerificationToken':token}
         if setting('diskokosmiko-enable') == 'true' :post={'UserName':setting('diskokosmiko-username'),'Password':setting('diskokosmiko-password'),'__RequestVerificationToken':token}
