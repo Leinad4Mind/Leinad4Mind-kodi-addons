@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+	<category label="Definições">
+		<setting id="genero-disable" type="bool" label="Desativar Gênero" default="false"/>
+		<setting type="sep"/>
+		<setting id="lancamentos-disable" type="bool" label="Desativar Lançamentos" default="false"/>
+		<setting type="sep"/>
+		<setting id="legendados-disable" type="bool" label="Desativar Legendados" default="false"/>
+		<setting type="sep"/>
+		<setting id="dublados-disable" type="bool" label="Desativar Dublados" default="false"/>
+		<setting type="sep"/>
+		<setting id="tokusatsu-disable" type="bool" label="Desativar Tokusatsu" default="false"/>
+	</category>
+	<category label="Qualidade">
+		<setting id="qualidade-enable" type="bool" label="Ative para Qualidade HD e Desative para Qualidade SD" default="true"/>
+	</category>
+</settings>

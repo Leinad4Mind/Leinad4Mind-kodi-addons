@@ -509,7 +509,7 @@ def ReturnConteudo(conteudo,past,color,url2,deFora):
 				tamanhoficheiro='0'
 
 		if(selfAddon.getSetting('legendas-disable') == 'true'):
-			if( (extensao == '.srt') or (extensao == '.ass') or (extensao == '.ssa') ):
+			if( (extensao == '.srt') or (extensao == '.sub') or (extensao == '.ass') or (extensao == '.ssa') ):
 				tamanhoficheiro='0'
 
 		if( tamanhoficheiro != '0' and re.match(num_format,tamanhoficheiro) ): 
@@ -567,7 +567,7 @@ def criarplaylist(url,name):
 	conteudo = openfile('playlist.txt')
 	playlistsearch=re.compile("\['(.+?)', '(.+?)'\]").findall(conteudo)
 	for titulo,url in playlistsearch: analyzer(url,subtitles='',playterm='playlist',playlistTitle=titulo)
-	xbmcPlayer = xbmc.Player(xbmc.PLAYER_CORE_AUTO)
+	xbmcPlayer = xbmc.Player()
 	xbmcPlayer.play(playlist)
 	
 def trailer(name):
@@ -821,11 +821,11 @@ def comecarvideo(name,url,playterm,legendas=None):
 	xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, listitem)
 	if playterm <> 'playlist':
 		  dialogWait = xbmcgui.DialogProgress()
-		  dialogWait.create('Video', 'A carregar')
+		  dialogWait.create('Video', 'A carregar...')
 	playlist.add(url, listitem)
-	if playterm <> 'playlist':		
+	if playterm <> 'playlist':
 		  dialogWait.close()
-		  del dialogWait	  
+		  del dialogWait
 	xbmcPlayer = internalPlayer.Player(title=title,dbid=dbid,content=content)
 	if not playterm and playeractivo==0: xbmcPlayer.play(playlist, listitem)
 	if legendas!=None: xbmcPlayer.setSubtitles(legendas)
@@ -857,7 +857,7 @@ def limparplaylist():
 def comecarplaylist():
         playlist = xbmc.PlayList(1)
         if playlist:
-              xbmcPlayer = xbmc.Player(xbmc.PLAYER_CORE_AUTO)
+              xbmcPlayer = xbmc.Player()
               xbmcPlayer.play(playlist)
 
 def legendas(moviefileid,url):
@@ -873,7 +873,7 @@ def add_to_library_batch(updatelibrary=True):
 	if choose > -1:	type = optionlist[choose]
 	else: sys.exit(0)
 	conteudo = openfile('playlist.txt')
-	playlistsearch=re.compile("\['(.+?)', '(.+?)'\]").findall(conteudo)
+	playlistsearch=re.compile('\[["|\'](.+?)["|\'], \'(.+?)\'\]').findall(conteudo)
 	for titulo,url in playlistsearch: 
 		add_to_library(titulo,url,type,'0',False)
 	if updatelibrary: xbmc.executebuiltin("XBMC.UpdateLibrary(video)")
@@ -889,7 +889,7 @@ def ReplaceSpecialCharExtra(name):
 	return name.replace('/','-').replace('Ç','C').replace('ç','c').replace('À','A').replace('Á','A').replace('Ã','A').replace('Â','A').replace('Ä','A').replace('à','a').replace('á','a').replace('ã','a').replace('â','a').replace('ä','a').replace('È','E').replace('É','E').replace('Ê','E').replace('Ë','E').replace('è','e').replace('é','e').replace('ê','e').replace('ë','e').replace('Ì','I').replace('Í','I').replace('Î','I').replace('Ï','I').replace('ì','i').replace('í','i').replace('î','i').replace('ï','i').replace('Ò','O').replace('Ó','O').replace('Õ','O').replace('Ô','O').replace('Ö','O').replace('ò','o').replace('ó','o').replace('õ','o').replace('ô','o').replace('ö','o').replace('Ù','U').replace('Ú','U').replace('Û','U').replace('Ü','U').replace('ù','u').replace('ú','u').replace('û','u').replace('ü','u')
 
 def clean_title(title):
-	return title.replace('+',' ').replace('%2C',',').replace('%28','(').replace('%29',')').replace('%26','&').replace('%24','$').replace('%5Cxc2%5Cxba','º').replace('%5Cxc3%5Cx87','Ç').replace('%5Cxc3%5Cxa7','ç').replace('%5Cxc3%5Cx80','À').replace('%5Cxc3%5Cx81','Á').replace('%5Cxc3%5Cx83','Ã').replace('%5Cxc3%5Cx82','Â').replace('%5Cxc3%5Cx84','Ä').replace('%5Cxc3%5Cxa0','à').replace('%5Cxc3%5Cxa1','á').replace('%5Cxc3%5Cxa3','ã').replace('%5Cxc3%5Cxa2','â').replace('%5Cxc3%5Cxa4','ä').replace('%5Cxc3%5Cx88','È').replace('%5Cxc3%5Cx89','É').replace('%5Cxc3%5Cx8a','Ê').replace('%5Cxc3%5Cx8b','Ë').replace('%5Cxc3%5Cxa8','è').replace('%5Cxc3%5Cxa9','é').replace('%5Cxc3%5Cxaa','ê').replace('%5Cxc3%5Cxab','ë').replace('%5Cxc3%5Cx8c','Ì').replace('%5Cxc3%5Cx8d','Í').replace('%5Cxc3%5Cx8e','Î').replace('%5Cxc3%5Cx8f','Ï').replace('%5Cxc3%5Cxac','ì').replace('%5Cxc3%5Cxad','í').replace('%5Cxc3%5Cxae','î').replace('%5Cxc3%5Cxaf','ï').replace('%5Cxc3%5Cx92','Ò').replace('%5Cxc3%5Cx94','Ó').replace('%5Cxc3%5Cx95','Õ').replace('%5Cxc3%5Cx93','Ô').replace('%5Cxc3%5Cx96','Ö').replace('%5Cxc3%5Cxb2','ò').replace('%5Cxc3%5Cxb3','ó').replace('%5Cxc3%5Cxb5','õ').replace('%5Cxc3%5Cxb4','ô').replace('%5Cxc3%5Cxb6','ö').replace('%5Cxc3%5Cx99','Ù').replace('%5Cxc3%5Cx9a','Ú').replace('%5Cxc3%5Cx9b','Û').replace('%5Cxc3%5Cx9c','Ü').replace('%5Cxc3%5Cxb9','ù').replace('%5Cxc3%5Cxba','ú').replace('%5Cxc3%5Cxbb','û').replace('%5Cxc3%5Cxbc','ü')
+	return title.replace('+',' ').replace('%27',"'").replace('%2C',',').replace('%28','(').replace('%29',')').replace('%26','&').replace('%24','$').replace('%5Cxc2%5Cxba','º').replace('%5Cxc3%5Cx87','Ç').replace('%5Cxc3%5Cxa7','ç').replace('%5Cxc3%5Cx80','À').replace('%5Cxc3%5Cx81','Á').replace('%5Cxc3%5Cx83','Ã').replace('%5Cxc3%5Cx82','Â').replace('%5Cxc3%5Cx84','Ä').replace('%5Cxc3%5Cxa0','à').replace('%5Cxc3%5Cxa1','á').replace('%5Cxc3%5Cxa3','ã').replace('%5Cxc3%5Cxa2','â').replace('%5Cxc3%5Cxa4','ä').replace('%5Cxc3%5Cx88','È').replace('%5Cxc3%5Cx89','É').replace('%5Cxc3%5Cx8a','Ê').replace('%5Cxc3%5Cx8b','Ë').replace('%5Cxc3%5Cxa8','è').replace('%5Cxc3%5Cxa9','é').replace('%5Cxc3%5Cxaa','ê').replace('%5Cxc3%5Cxab','ë').replace('%5Cxc3%5Cx8c','Ì').replace('%5Cxc3%5Cx8d','Í').replace('%5Cxc3%5Cx8e','Î').replace('%5Cxc3%5Cx8f','Ï').replace('%5Cxc3%5Cxac','ì').replace('%5Cxc3%5Cxad','í').replace('%5Cxc3%5Cxae','î').replace('%5Cxc3%5Cxaf','ï').replace('%5Cxc3%5Cx92','Ò').replace('%5Cxc3%5Cx94','Ó').replace('%5Cxc3%5Cx95','Õ').replace('%5Cxc3%5Cx93','Ô').replace('%5Cxc3%5Cx96','Ö').replace('%5Cxc3%5Cxb2','ò').replace('%5Cxc3%5Cxb3','ó').replace('%5Cxc3%5Cxb5','õ').replace('%5Cxc3%5Cxb4','ô').replace('%5Cxc3%5Cxb6','ö').replace('%5Cxc3%5Cx99','Ù').replace('%5Cxc3%5Cx9a','Ú').replace('%5Cxc3%5Cx9b','Û').replace('%5Cxc3%5Cx9c','Ü').replace('%5Cxc3%5Cxb9','ù').replace('%5Cxc3%5Cxba','ú').replace('%5Cxc3%5Cxbb','û').replace('%5Cxc3%5Cxbc','ü')
 
 def clean_folder(folder):
 	return folder.replace('\\xc3\\xa0','à').replace('\\xc3\\xa1','á').replace('\\xc3\\xa2','â').replace('\\xc3\\xa3','ã').replace('\\xc3\\xa4','ä').replace('\\xc3\\xa5','å').replace('\\xc3\\xa6','æ').replace('\\xc3\\xa7','ç').replace('\\xc3\\xa8','è').replace('\\xc3\\xa9','é').replace('\\xc3\\xaa','ê').replace('\\xc3\\xab','ë').replace('\\xc3\\xac','ì').replace('\\xc3\\xad','í').replace('\\xc3\\xae','î').replace('\\xc3\\xaf','ï').replace('\\xc3\\xb2','ò').replace('\\xc3\\xb3','ó').replace('\\xc3\\xb4','ô').replace('\\xc3\\xb5','õ').replace('\\xc3\\xb6','ö').replace('\\xc3\\xb9','ù').replace('\\xc3\\xba','ú').replace('\\xc3\\xbb','û').replace('\\xc3\\xbc','ü').replace('\\xc3\\x80','À').replace('\\xc3\\x81','Á').replace('\\xc3\\x82','Â').replace('\\xc3\\x83','Ã').replace('\\xc3\\x84','Ä').replace('\\xc3\\x85','Å').replace('\\xc3\\x86','Æ').replace('\\xc3\\x87','Ç').replace('\\xc3\\x88','È').replace('\\xc3\\x89','É').replace('\\xc3\\x8a','Ê').replace('\\xc3\\x8b','Ë').replace('\\xc3\\x8c','Ì').replace('\\xc3\\x8d','Í').replace('\\xc3\\x8e','Î').replace('\\xc3\\x8f','Ï').replace('\\xc3\\x92','Ò').replace('\\xc3\\x93','Ó').replace('\\xc3\\x94','Ô').replace('\\xc3\\x95','Õ').replace('\\xc3\\x96','Ö').replace('\\xc3\\x99','Ù').replace('\\xc3\\x9a','Ú').replace('\\xc3\\x9b','Û').replace('\\xc3\\x9c','Ü')
@@ -915,13 +915,15 @@ def add_to_library(name,url,type,batch,updatelibrary=True):
 	name2 = re.compile('\[B\]\[COLOR .+?\](.+?)\[/COLOR\]\[/B\]').findall(name)
 	if name2: 
 		name = ReplaceSpecialChar(h.unescape(name2[0]))
-		cleaned = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇáàãâäéèêëíìîïóòõôöúùûüç&$,()\\\/ ]+', ' ', name[:-4])
+		cleaned = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇáàãâäéèêëíìîïóòõôöúùûüç&$,.\'()\\\/ ]+', ' ', name[:-4])
 		cleaned = re.sub(' +$', '', cleaned)
+		cleaned = re.sub('\.$', '', cleaned)
 		cleaned_title = re.sub('^ +', '', cleaned)
 	else:
 		name = ReplaceSpecialChar(h.unescape(name))
-		cleaned = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇáàãâäéèêëíìîïóòõôöúùûüç&$,()\\\/ ]+', ' ', name)
+		cleaned = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇáàãâäéèêëíìîïóòõôöúùûüç&$,.\'()\\\/ ]+', ' ', name)
 		cleaned = re.sub(' +$', '', cleaned)
+		cleaned = re.sub('\.$', '', cleaned)
 		cleaned_title = re.sub('^ +', '', cleaned)
 	if type == 'movie': 
 		if not xbmcvfs.exists(moviesFolder): xbmcvfs.mkdir(moviesFolder)
@@ -947,9 +949,10 @@ def add_to_library(name,url,type,batch,updatelibrary=True):
 			title = clean_folder(cleaned_title)
 			if title=='': sys.exit(0)
 	if title <> '':
-		title = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇáàãâäéèêëíìîïóòõôöúùûüç&$,.()\\\/ ]+', ' ', ReplaceSpecialChar(title))
-		title = re.sub(' +$', '', cleaned)
-		title = re.sub('^ +', '', cleaned)
+		title = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇáàãâäéèêëíìîïóòõôöúùûüç&$,.\'()\\\/ ]+', ' ', ReplaceSpecialChar(title))
+		title = re.sub(' +$', '', title)
+		title = re.sub('\.$', '', title)
+		title = re.sub('^ +', '', title)
 	if type == 'movie': 
 		try: 
 			if(selfAddon.getSetting('movielibrary-enable') == 'true'): file_folder = os.path.join(moviesFolder,title)
@@ -959,6 +962,7 @@ def add_to_library(name,url,type,batch,updatelibrary=True):
 			else: file_folder = os.path.join(moviesFolder,'')
 	elif type == 'tvshow':
 		tvshow = clean_folder(tvshow)
+		tvshow = re.sub('\.$', '', tvshow)
 		if tvshow <> '':
 			file_folder1 = os.path.join(tvshowFolder,tvshow)
 			if not xbmcvfs.exists(file_folder1): tryFTPfolder(file_folder1)
@@ -988,7 +992,6 @@ def add_to_library(name,url,type,batch,updatelibrary=True):
 	elif type == 'musicvideo': file_folder = musicvideoFolder
 	if not xbmcvfs.exists(file_folder): tryFTPfolder(file_folder)
 	strm_contents = 'plugin://plugin.video.chomiteca/?url=' + url +'&mode=25&name=' + urllib.quote_plus(title)
-	#xbmc.executebuiltin("XBMC.Notification(Chomiteca,"+title+",'500000',"+iconpequeno.encode('utf-8')+")")
 	if type == 'movie': savefile(clean_url(clean_title(urllib.quote_plus(title)))+'.strm',strm_contents,file_folder)
 	if type == 'tvshow': savefile((urllib.unquote_plus(title))+'.strm',strm_contents,file_folder)
 	if updatelibrary: xbmc.executebuiltin("XBMC.UpdateLibrary(video)")
