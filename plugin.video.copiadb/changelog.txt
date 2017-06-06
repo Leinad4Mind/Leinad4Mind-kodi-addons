@@ -1,4 +1,7 @@
-﻿[B]v3.0.0 (08 de Março de 2016):[/B]
+﻿[B]v3.0.1 (06 de Junho de 2017):[/B]
+- Correcção do Login para Kodi 17+
+
+[B]v3.0.0 (08 de Março de 2017):[/B]
 - Refactor para CopiaDB
 - Correcção das colecções mais recentes
 - Adicionado DiskoKosmiko (México)
