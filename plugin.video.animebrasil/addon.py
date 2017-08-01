@@ -15,7 +15,7 @@ addonfolder = selfAddon.getAddonInfo('path')
 setting     = selfAddon.getSetting
 artfolder   = addonfolder + '/resources/img/'
 fanart      = addonfolder + '/fanart.jpg'
-base        = 'uggcf://navghor.rf'
+base        = 'uggcf://navghor.vasb'
 base        = base.decode('rot13')
 
 def menuPrincipal():
@@ -101,11 +101,14 @@ def getLancamentos(url):
 				pass
 
 		for episodio in episodios:
-				titE = episodio.a.img["title"].encode('utf-8', 'ignore')
-				urlE = base + episodio.a["href"]
-				imgE = base + episodio.a.img["src"]
-				addDir(titE, urlE, 100, imgE, False, totE, '')
-		
+				try :
+						titE = episodio.a.img["title"].encode('utf-8', 'ignore')
+						urlE = base + episodio.a["href"]
+						if episodio.a.img.has_key("src"): imgE = base + episodio.a.img["src"]
+						else: imgE = base + episodio.a.img["data-cfsrc"]
+						addDir(titE, urlE, 100, imgE, False, totE, '')
+				except :
+						pass
 		try :
 				ultima = re.findall('href="(.*?)">Último</a></li>', link)[0]
 				pu = re.findall('([0-9]+?)$', ultima)[0]
@@ -140,7 +143,7 @@ def getLegendados(url):
 		for i in range(totA):
 				titA = urlsA[i][1].encode('ascii', 'ignore')
 				urlA = base + urlsA[i][0]
-				imgA = base + imgsA[i]
+				imgA = imgsA[i]
 		
 				addDir(titA, urlA, 31, imgA, True, totA, '')
 		
@@ -156,10 +159,11 @@ def getLegendados(url):
 def getEpsLegendados(url):
 		link = openURL(url)
 		soup = BeautifulSoup(link, convertEntities=BeautifulSoup.HTML_ENTITIES)
-		eps  = soup.findAll("div", { "class" : "well well-sm" })
+		eps  = soup.findAll("div", { "class" : "well well-sm" }) 
 
 		plotE = re.findall('<span itemprop="description">\s*(.*?)</span>', link, re.DOTALL|re.MULTILINE)[0]
 		plotE = unicode(BeautifulStoneSoup(plotE,convertEntities=BeautifulStoneSoup.HTML_ENTITIES )).encode('utf-8')
+		plotE = BeautifulSoup(plotE.replace("<br>"," ")).text
 
 		totE = len(eps)
 
@@ -179,7 +183,8 @@ def getEpsLegendados(url):
 				try :
 						titE = ep.img["title"].encode('ascii', 'ignore')
 						urlE = base + ep.a["href"]
-						imgE = base + ep.img['src']
+						if ep.a.img.has_key("src"): imgE = ep.a.img["src"]
+						else: imgE = ep.a.img["data-cfsrc"]
 						addDir(titE, urlE, 100, imgE, False, totE, plotE)
 				except:
 						pass
