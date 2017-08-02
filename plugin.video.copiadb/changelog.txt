@@ -1,3 +1,6 @@
+[B]v3.0.5 (02 de Agosto de 2017):[/B]
+- Remoçao do CopiaPop, visto terem cessado o serviço.
+
 [B]v3.0.4 (06 de Junho de 2017):[/B]
 - Correcção do Login para Kodi 17+
 

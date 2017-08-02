@@ -21,7 +21,6 @@ def login():
         newJSON = json.loads(resdec)['Content']
         token = requester.parseDOM(newJSON, 'input', ret='value', attrs = {'name': '__RequestVerificationToken'})[0]
 
-        if setting('copiapop-enable') == 'true': post={'UserName':setting('copiapop-username'),'Password':setting('copiapop-password'),'__RequestVerificationToken':token}
         if setting('diskokosmiko-enable') == 'true' :post={'UserName':setting('diskokosmiko-username'),'Password':setting('diskokosmiko-password'),'__RequestVerificationToken':token}
         if setting('kumpulbagi-enable') == 'true' :post={'UserName':setting('kumpulbagi-username'),'Password':setting('kumpulbagi-password'),'__RequestVerificationToken':token}
 
@@ -37,25 +36,15 @@ def login():
                 sys.exit(0)
 
 def first_menu():
-    if setting('copiapop-enable') == 'false' and setting('diskokosmiko-enable') == 'false' and setting('kumpulbagi-enable') == 'false':
+    if setting('diskokosmiko-enable') == 'false' and setting('kumpulbagi-enable') == 'false':
         dialog.ok('CopiaDB','Active uma das contas')
         execute('Addon.OpenSettings(%s)' % (addon_id))
         sys.exit(0)
 
-    if (setting('copiapop-enable') == 'true' and setting('diskokosmiko-enable') == 'true' and setting('kumpulbagi-enable') == 'true') or (setting('copiapop-enable') == 'true' and setting('diskokosmiko-enable') == 'true' and setting('kumpulbagi-enable') == 'false') or (setting('copiapop-enable') == 'true' and setting('diskokosmiko-enable') == 'false' and setting('kumpulbagi-enable') == 'true') or (setting('copiapop-enable') == 'false' and setting('diskokosmiko-enable') == 'true' and setting('kumpulbagi-enable') == 'true'):
+    if ( setting('diskokosmiko-enable') == 'true' and setting('kumpulbagi-enable') == 'true' ):
         dialog.ok('CopiaDB','Apenas pode usar uma conta de cada vez')
         execute('Addon.OpenSettings(%s)' % (addon_id))
         sys.exit(0)
-
-    if setting('copiapop-enable') == 'true':
-        if setting('copiapop-username') == "":
-                dialog.ok('CopiaDB','Introduza o username do CopiaPop nas definições.')
-                execute('Addon.OpenSettings(%s)' % (addon_id))
-                sys.exit(0)
-        elif setting('copiapop-password') == "":
-                dialog.ok('CopiaDB','Introduza a password do CopiaPop nas definições.')
-                execute('Addon.OpenSettings(%s)' % (addon_id))
-                sys.exit(0)
 
     if setting('diskokosmiko-enable') == 'true':
         if setting('diskokosmiko-username') == "":
@@ -77,15 +66,13 @@ def first_menu():
                 execute('Addon.OpenSettings(%s)' % (addon_id))
                 sys.exit(0)
 
-    if setting('copiapop-enable') == 'true' or setting('diskokosmiko-enable') == 'true' or setting('kumpulbagi-enable') == 'true': login()
+    if setting('diskokosmiko-enable') == 'true' or setting('kumpulbagi-enable') == 'true': login()
 
     #addDirectoryItem("[COLOR red][B]Addon em actualização[/B][/COLOR]", 'user', 'movies.png', 'DefaultMovies.png')
-    if setting('copiapop-enable') == 'true': addDirectoryItem("[COLOR blue][B]CopiaPop[/B][/COLOR]", '', 'movies.png', 'DefaultMovies.png')
     if setting('diskokosmiko-enable') == 'true': addDirectoryItem("[COLOR darkgreen][B]DiskoKosmiko[/B][/COLOR]", '', 'movies.png', 'DefaultMovies.png')
     if setting('kumpulbagi-enable') == 'true': addDirectoryItem("[COLOR orange][B]KumpulBagi[/B][/COLOR]", '', 'movies.png', 'DefaultMovies.png')
     addDirectoryItem("Colecções mais recentes", 'recents', 'movies.png', 'DefaultMovies.png')
     addDirectoryItem("Ir para um utilizador", 'user', 'movies.png', 'DefaultMovies.png')
-    if setting('copiapop-enable') == 'true': addDirectoryItem("Ir para o meu utilizador (%s)" % setting('copiapop-username'), 'user&query=%s' % setting('copiapop-username'), 'movies.png', 'DefaultMovies.png')
     if setting('diskokosmiko-enable') == 'true': addDirectoryItem("Ir para o meu utilizador (%s)" % setting('diskokosmiko-username'), 'user&query=%s' % setting('diskokosmiko-username'), 'movies.png', 'DefaultMovies.png')
     if setting('kumpulbagi-enable') == 'true': addDirectoryItem("Ir para o meu utilizador (%s)" % setting('kumpulbagi-username'), 'user&query=%s' % setting('kumpulbagi-username'), 'movies.png', 'DefaultMovies.png')
     addDirectoryItem("Pesquisar", 'search', 'movies.png', 'DefaultMovies.png')
@@ -140,7 +127,7 @@ def go_to_user(query=None):
 def search(query=None):
         types=['Todos os ficheiros','Vídeos','Imagens','Musicas','Documentos','Ficheiros','Programas']
         params=['','Video','Image','Music','Document','Archive','Application']
-        index=dialog.select('CopiaPop', types)
+        index=dialog.select('CopiaDB', types)
         if index > -1:
                 if not infoLabel('ListItem.Title') == '':
                         query = window.getProperty('%s.search' % addonInfo('id'))

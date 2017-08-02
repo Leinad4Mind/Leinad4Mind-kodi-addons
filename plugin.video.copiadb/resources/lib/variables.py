@@ -10,7 +10,6 @@ user_agent = 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Geck
 lang = xbmcaddon.Addon().getLocalizedString
 setting = xbmcaddon.Addon().getSetting
 setSetting = xbmcaddon.Addon().setSetting
-if setting('copiapop-enable') == 'true': SiteURL = 'http://copiapop.com'
 if setting('diskokosmiko-enable') == 'true': SiteURL='http://diskokosmiko.mx'
 if setting('kumpulbagi-enable') == 'true': SiteURL='http://kbagi.com'
 addon = xbmcaddon.Addon
