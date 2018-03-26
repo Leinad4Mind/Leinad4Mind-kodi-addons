@@ -14,8 +14,8 @@ net=Net()
 
 ####################################################### CONSTANTES #####################################################
 addon_id = 'plugin.video.chomiteca'
-MainURL = 'http://minhateca.com.br/'
-ChomikMainURL = 'http://chomikuj.pl/'
+MainURL = 'https://minhateca.com.br/'
+ChomikMainURL = 'https://chomikuj.pl/'
 art = '/resources/art/'
 covers = '/resources/covers/'
 user_agent = 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'
@@ -150,7 +150,7 @@ def favoritos():
 		if name==traducao(40037):pagina=1
 		else: pagina = re.compile('\[.+?\].+? (\d) .+?').findall(name)[0]
 		form_d = {'page':pagina,'chomikName':chomikid,'__RequestVerificationToken':token}
-		ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':site[x].replace('http://','').replace('/',''),'Origin':site[x],'Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
+		ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':site[x].replace('https://','').replace('/',''),'Origin':site[x],'Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
 		endlogin=site[x] + 'action/Friends/ShowAllFriends'
 		info= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('latin-1','ignore')
 		info=info.replace('javascript:;','/javascript:;')
@@ -164,7 +164,7 @@ def proxpesquisa_mt():
     from t0mm0.common.addon import Addon
     addon=Addon(addon_id)
     form_d=addon.load_data('temp.txt')
-    ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':'minhateca.com.br','Origin':'http://minhateca.com.br','Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
+    ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':'minhateca.com.br','Origin':'https://minhateca.com.br','Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
     form_d['Page']= form_d['Page'] + 1
     endlogin=MainURL + 'action/SearchFiles/Results'
     net.set_cookies(cookies)
@@ -176,7 +176,7 @@ def proxpesquisa_ck():
     from t0mm0.common.addon import Addon
     addon=Addon(addon_id)
     form_d=addon.load_data('temp.txt')
-    ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':'chomikuj.pl','Origin':'http://chomikuj.pl','Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
+    ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':'chomikuj.pl','Origin':'https://chomikuj.pl','Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
     form_d['Page']= form_d['Page'] + 1
     endlogin=ChomikMainURL + 'action/SearchFiles/Results'
     net.set_cookies(cookies)
@@ -229,9 +229,9 @@ def pastas(url,name,formcont={},conteudo='',past=False,deFora=False,listagem=Fal
 		selectlist = []
 		urllist = []
 	sitebase,name,color,mode = returnValues(url)
-	host = sitebase.replace('http://','').replace('/','')	
+	host = sitebase.replace('https://','').replace('/','')	
 	if re.search('action/SearchFiles',url):
-		ref_data = {'Host': host, 'Connection': 'keep-alive', 'Referer': 'http://'+host+'/','Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','User-Agent':user_agent,'Referer': 'http://'+host+'/'}
+		ref_data = {'Host': host, 'Connection': 'keep-alive', 'Referer': 'https://'+host+'/','Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','User-Agent':user_agent,'Referer': 'https://'+host+'/'}
 		endlogin=sitebase + 'action/SearchFiles'
 		conteudo= net.http_POST(endlogin,form_data=formcont,headers=ref_data).content.encode('latin-1','ignore')
 		if re.search('O ficheiro n&#227;o foi encontrado',conteudo): mensagemok(host,'Sem resultados.')
@@ -246,7 +246,7 @@ def pastas(url,name,formcont={},conteudo='',past=False,deFora=False,listagem=Fal
 			  from t0mm0.common.addon import Addon
 			  addon=Addon(addon_id)
 			  addon.save_data('temp.txt',form_d)
-			  ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':host,'Origin':'http://'+host,'Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
+			  ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':host,'Origin':'https://'+host,'Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
 			  endlogin=sitebase + 'action/SearchFiles/Results'
 			  conteudo= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('latin-1','ignore')
 		except: pass          
@@ -261,7 +261,7 @@ def pastas(url,name,formcont={},conteudo='',past=False,deFora=False,listagem=Fal
 		token=re.compile('<input name="__RequestVerificationToken" type="hidden" value="(.+?)" />').findall(conteudo)[0]
 		passwordfolder=caixadetexto('password')
 		form_d = {'ChomikId':chomikid,'FolderId':folderid,'FolderName':foldername,'Password':passwordfolder,'Remember':'true','__RequestVerificationToken':token}
-		ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':host,'Origin':'http://' + host,'Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
+		ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':host,'Origin':'https://' + host,'Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
 		endlogin=sitebase + 'action/Files/LoginToFolder'
 		teste= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('latin-1','ignore')
 		teste=urllib.unquote(teste)
@@ -277,7 +277,7 @@ def pastas(url,name,formcont={},conteudo='',past=False,deFora=False,listagem=Fal
 		adultfilter=re.compile('<input id="AdultFilter" name="AdultFilter" type="hidden" value="(.+?)" />').findall(conteudo)[0]
 		passwordfolder=caixadetexto('password')
 		form_d = {'Password':passwordfolder,'OK':'OK','RemeberMe':'true','IsAdult':isadult,'Sex':sex,'AccountName':accname,'AdultFilter':adultfilter,'ChomikType':chomiktype,'TargetChomikId':chomikid}
-		ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':host,'Origin':'http://'+host,'Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
+		ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':host,'Origin':'https://'+host,'Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
 		endlogin=sitebase + 'action/UserAccess/LoginToProtectedWindow'
 		teste= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('latin-1','ignore')
 		teste=urllib.unquote(teste)
@@ -628,7 +628,7 @@ def obterlistadeficheiros():
             string=[]
             nrdepaginas=71
             for i in xrange(1,int(nrdepaginas)+1):
-                  url='http://minhateca.com.br/qqcoisa,%s' % i
+                  url='https://minhateca.com.br/qqcoisa,%s' % i
                   extra='?requestedFolderMode=filesList&fileListSortType=Name&fileListAscending=True'
                   conteudo=clean(abrir_url_cookie(url + extra))
                   items1=re.compile('<li class="fileItemContainer">\s+<p class="filename">\s+<a class="downloadAction" href=".+?">    <span class="bold">.+?</span>(.+?)</a>\s+</p>\s+<div class="thumbnail">\s+<div class="thumbnailWrapper expType" rel="Image" style=".+?">\s+<a href="(.+?)" class="thumbImg" rel="highslide" style=".+?" title="(.+?)">\s+<img src=".+?" rel=".+?" alt=".+?" style=".+?"/>\s+</a>\s+</div>\s+</div>\s+<div class="smallTab">\s+<ul>\s+<li>\s+(.+?)</li>\s+<li><span class="date">(.+?)</span></li>').findall(conteudo)         
@@ -673,7 +673,7 @@ def analyzer(url,subtitles='',playterm=False,playlistTitle='',returning=False):
 	final = ''
 	countloop = 0
 	sitebase,sitename,color,mode = returnValues(url)
-	host = sitebase.replace('http://','').replace('/','')
+	host = sitebase.replace('https://','').replace('/','')
 	if playlistTitle == '': mensagemprogresso.create(sitename, traducao(40025))
 	linkfinal=''
 	if subtitles=='sim': conteudo=abrir_url_cookie(url)
@@ -685,7 +685,7 @@ def analyzer(url,subtitles='',playterm=False,playlistTitle='',returning=False):
 		fileid=re.compile('<input type="hidden" name="FileId" value="(.+?)"/>').findall(conteudo)[0]
 		token=re.compile('<input name="__RequestVerificationToken" type="hidden" value="(.+?)" />').findall(conteudo)[0]
 		form_d = {'fileId':fileid,'__RequestVerificationToken':token}
-		ref_data = {'Accept': '*/*', 'Content-Type': 'application/x-www-form-urlencoded','Origin': 'http://' + host, 'X-Requested-With': 'XMLHttpRequest', 'Referer': 'http://'+host+'/','User-Agent':user_agent}
+		ref_data = {'Accept': '*/*', 'Content-Type': 'application/x-www-form-urlencoded','Origin': 'https://' + host, 'X-Requested-With': 'XMLHttpRequest', 'Referer': 'https://'+host+'/','User-Agent':user_agent}
 		endlogin=sitebase + 'action/License/Download'
 		while final == '' and countloop <= 3:
 			try: final= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('latin-1','ignore')
@@ -699,7 +699,7 @@ def analyzer(url,subtitles='',playterm=False,playlistTitle='',returning=False):
 			  orgfile=re.compile('<input type="hidden" name="orgFile" value="(.+?)"').findall(final)[0]
 			  userselection=re.compile('<input type="hidden" name="userSelection" value="(.+?)"').findall(final)[0]
 			  form_d = {'fileId':fileid,'orgFile':orgfile,'userSelection':userselection,'__RequestVerificationToken':token}
-			  ref_data = {'Accept': '*/*', 'Content-Type': 'application/x-www-form-urlencoded','Origin': 'http://' + sitebase, 'X-Requested-With': 'XMLHttpRequest', 'Referer': 'http://'+sitebase+'/','User-Agent':user_agent}
+			  ref_data = {'Accept': '*/*', 'Content-Type': 'application/x-www-form-urlencoded','Origin': 'https://' + sitebase, 'X-Requested-With': 'XMLHttpRequest', 'Referer': 'https://'+sitebase+'/','User-Agent':user_agent}
 			  endlogin=sitebase + 'action/License/acceptLargeTransfer'
 			  final= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('latin-1','ignore')
 	except: pass
@@ -861,9 +861,12 @@ def comecarplaylist():
               xbmcPlayer.play(playlist)
 
 def legendas(moviefileid,url):
-      url=url.replace(','+moviefileid,'').replace('.mkv','.srt').replace('.mp4','.srt').replace('.avi','.srt').replace('.wmv','.srt')[:-7]
-      legendas=analyzer(url,subtitles='sim')
-      return legendas
+	url=url.replace(','+moviefileid,'').replace('.mkv','.srt').replace('.mp4','.srt').replace('.avi','.srt').replace('.wmv','.srt')[:-7]
+	try:
+		if(urllib2.urlopen(url).getcode() == 200): legendas=analyzer(url,subtitles='sim')
+	except Exception:
+		legendas=url
+	return legendas
 
 def add_to_library_batch(updatelibrary=True):
 	source = xbmcgui.Dialog().select
@@ -1179,8 +1182,8 @@ def openfile(filename,pastafinal=pastaperfil):
 def abrir_url_cookie(url,erro=True):
       net.set_cookies(cookies)
       try:
-            if ReturnStatus('minhateca'): ref_data = {'Host': 'minhateca.com.br', 'Connection': 'keep-alive', 'Referer': 'http://minhateca.com.br/','Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','User-Agent':user_agent,'Referer': 'http://minhateca.com.br/'}
-            if ReturnStatus('chomikuj'): ref_data = {'Host': 'chomikuj.pl', 'Connection': 'keep-alive', 'Referer': 'http://chomikuj.pl','Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','User-Agent':user_agent,'Referer': 'http://chomikuj.pl'}
+            if ReturnStatus('minhateca'): ref_data = {'Host': 'minhateca.com.br', 'Connection': 'keep-alive', 'Referer': 'https://minhateca.com.br/','Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','User-Agent':user_agent,'Referer': 'https://minhateca.com.br/'}
+            if ReturnStatus('chomikuj'): ref_data = {'Host': 'chomikuj.pl', 'Connection': 'keep-alive', 'Referer': 'https://chomikuj.pl','Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','User-Agent':user_agent,'Referer': 'https://chomikuj.pl'}
             link=net.http_POST(url,ref_data).content.encode('latin-1','ignore')
             return link
       except urllib2.HTTPError, e:

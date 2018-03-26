@@ -1,3 +1,6 @@
+[B]v1.5.0 (26 de Março de 2018):[/B]
+- Correcção de BUG no Chomikuj que impedia de abrir vídeos
+
 [B]v1.4.0 (15 de Março de 2017):[/B]
 - Melhorias no .strm (Thks Luhan Silvério)
 
