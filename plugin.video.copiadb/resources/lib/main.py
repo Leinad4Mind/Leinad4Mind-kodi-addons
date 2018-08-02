@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" 2016~2017 fightnight/Leinad4Mind"""
+""" 2016~2018 fightnight/Leinad4Mind"""
 
 import cache,requester
 from functions import *
@@ -28,7 +28,7 @@ def login():
         raw=requests.post(formurl,data=post,headers=headers)
 
         success=raw.json()['Type']
-        if success == 'Redirect':
+        if success == 'Redirect' or success == 'Window':
                 setSetting('request_cookie',raw.headers['Set-Cookie'].split(';')[0])
         else:
                 dialog.ok('CopiaDB','Verifique se os dados de conta introduzidos estão correctos.')
@@ -36,7 +36,7 @@ def login():
                 sys.exit(0)
 
 def first_menu():
-    if setting('diskokosmiko-enable') == 'false' and setting('kumpulbagi-enable') == 'false':
+    if ( setting('diskokosmiko-enable') == 'false' and setting('kumpulbagi-enable') == 'false' ):
         dialog.ok('CopiaDB','Active uma das contas')
         execute('Addon.OpenSettings(%s)' % (addon_id))
         sys.exit(0)
@@ -66,7 +66,7 @@ def first_menu():
                 execute('Addon.OpenSettings(%s)' % (addon_id))
                 sys.exit(0)
 
-    if setting('diskokosmiko-enable') == 'true' or setting('kumpulbagi-enable') == 'true': login()
+    if ( setting('diskokosmiko-enable') == 'true' or setting('kumpulbagi-enable') == 'true' ): login()
 
     #addDirectoryItem("[COLOR red][B]Addon em actualização[/B][/COLOR]", 'user', 'movies.png', 'DefaultMovies.png')
     if setting('diskokosmiko-enable') == 'true': addDirectoryItem("[COLOR darkgreen][B]DiskoKosmiko[/B][/COLOR]", '', 'movies.png', 'DefaultMovies.png')
