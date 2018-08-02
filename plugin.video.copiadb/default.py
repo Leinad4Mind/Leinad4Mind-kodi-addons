@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" 2016~2017 fightnight/Leinad4Mind"""
+""" 2016~2018 fightnight/Leinad4Mind"""
 
 import urlparse,sys
 params = dict(urlparse.parse_qsl(sys.argv[2].replace('?','')))
