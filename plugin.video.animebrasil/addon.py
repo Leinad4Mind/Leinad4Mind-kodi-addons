@@ -15,7 +15,7 @@ addonfolder = selfAddon.getAddonInfo('path')
 setting     = selfAddon.getSetting
 artfolder   = addonfolder + '/resources/img/'
 fanart      = addonfolder + '/fanart.jpg'
-base        = 'uggcf://navghor.vasb'
+base        = 'uggcf://navghoroe.pbz'
 base        = base.decode('rot13')
 
 def menuPrincipal():
