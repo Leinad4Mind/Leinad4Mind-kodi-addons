@@ -1,3 +1,6 @@
+[B]v3.0.6 (02 de Agosto de 2018):[/B]
+- Correcção de Bug no Login de KumpulBagi
+
 [B]v3.0.5 (02 de Agosto de 2017):[/B]
 - Remoçao do CopiaPop, visto terem cessado o serviço.
 
