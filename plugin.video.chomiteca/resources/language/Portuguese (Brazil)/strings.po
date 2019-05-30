@@ -3,7 +3,7 @@
 # Addon Provider: Leinad4Mind
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Project-Id-Version: Chomiteca v1.6.0\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
@@ -12,19 +12,19 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_PT\n"
+"Language: pt_BR\n"
 "X-Generator: Poedit 1.8.12\n"
 
 msgctxt "#30000"
-msgid "Activar aviso sobre extensões desconhecidas."
+msgid "Ativar aviso sobre extensões desconhecidas."
 msgstr ""
 
 msgctxt "#30004"
-msgid "Activar Chomikuj.pl"
+msgid "Ativar Chomikuj.pl"
 msgstr ""
 
 msgctxt "#30005"
-msgid "Nome de Utilizador Chomikuj"
+msgid "Nome de Usuário Chomikuj"
 msgstr ""
 
 msgctxt "#30006"
@@ -40,7 +40,7 @@ msgid "Ordenação"
 msgstr ""
 
 msgctxt "#30009"
-msgid "ÿltima Pesquisa"
+msgid "Última Pesquisa"
 msgstr ""
 
 msgctxt "#30010"
@@ -92,7 +92,7 @@ msgid "Servidor de Imagens (Sem http://)"
 msgstr ""
 
 msgctxt "#30023"
-msgid "Activar Servidor para Capas"
+msgid "Ativar Servidor para Capas"
 msgstr ""
 
 msgctxt "#30024"
@@ -100,7 +100,7 @@ msgid "Caminho de Imagens"
 msgstr ""
 
 msgctxt "#30025"
-msgid "Activar Caminho para Capas"
+msgid "Ativar Caminho para Capas"
 msgstr ""
 
 msgctxt "#30026"
@@ -116,11 +116,11 @@ msgid "Biblioteca de Filmes - Separar por Pasta"
 msgstr ""
 
 msgctxt "#30029"
-msgid "Biblioteca de Séries - Separar por Temporadas"
+msgid "Biblioteca de Seriados - Separar por Temporadas"
 msgstr ""
 
 msgctxt "#30030"
-msgid "Biblioteca de Séries - Manter nome dos ficheiros"
+msgid "Biblioteca de Seriados - Manter nome dos arquivos"
 msgstr ""
 
 msgctxt "#30031"
@@ -128,7 +128,7 @@ msgid "Nome"
 msgstr ""
 
 msgctxt "#30032"
-msgid "Tipo Ficheiro"
+msgid "Tipo Arquivo"
 msgstr ""
 
 msgctxt "#30033"
@@ -147,12 +147,12 @@ msgctxt "#30036"
 msgid "Diálogo"
 msgstr ""
 
-msgctxt "#30140"
+msgctxt "#30040"
 msgid "Legendas"
 msgstr ""
 
 msgctxt "#30141"
-msgid "As legendas podem não estar disponíveis ou estarem dessincronizadas."
+msgid "As legendas podem não estar disponíveis ou fora de sincronismo."
 msgstr ""
 
 msgctxt "#30142"
@@ -180,7 +180,7 @@ msgid "Pasta para a Biblioteca de Filmes"
 msgstr ""
 
 msgctxt "#30148"
-msgid "Pasta para a Biblioteca de Séries"
+msgid "Pasta para a Biblioteca de Seriados"
 msgstr ""
 
 msgctxt "#30149"
@@ -196,7 +196,7 @@ msgid "Pasta para os Ficheiros de Resumo"
 msgstr ""
 
 msgctxt "#40000"
-msgid "Necessitas criar uma conta no Chomikuj."
+msgid "Necessita criar uma conta no Chomikuj."
 msgstr ""
 
 msgctxt "#40001"
@@ -204,11 +204,11 @@ msgid "Vai a www.chomikuj.pl."
 msgstr ""
 
 msgctxt "#40002"
-msgid "A senha está incorrecta."
+msgid "A senha está incorreta."
 msgstr ""
 
 msgctxt "#40003"
-msgid "Nome de utilizador inválido."
+msgid "Nome de usuário inválido."
 msgstr ""
 
 msgctxt "#40004"
@@ -224,11 +224,11 @@ msgid "Tentar novamente"
 msgstr ""
 
 msgctxt "#40007"
-msgid "Top Coleccionadores"
+msgid "Top Colecionadores"
 msgstr ""
 
 msgctxt "#40008"
-msgid "Contas Mais Recentes"
+msgid "Usuários Mais Recentes"
 msgstr ""
 
 msgctxt "#40009"
@@ -256,7 +256,7 @@ msgid "Pontos"
 msgstr ""
 
 msgctxt "#40015"
-msgid "Reconectar Addon"
+msgid "Reconetar Addon"
 msgstr ""
 
 msgctxt "#40016"
@@ -264,7 +264,7 @@ msgid "Versão instalada: v"
 msgstr ""
 
 msgctxt "#40017"
-msgid "ÿltima versão instalada (v"
+msgid "Última versão instalada (v"
 msgstr ""
 
 msgctxt "#40018"
@@ -272,7 +272,7 @@ msgid "Definições do addon"
 msgstr ""
 
 msgctxt "#40019"
-msgid "Actualização: v"
+msgid "Atualização: v"
 msgstr ""
 
 msgctxt "#40020"
@@ -284,7 +284,7 @@ msgid "Alterar definições"
 msgstr ""
 
 msgctxt "#40022"
-msgid "Seleccione o filtro"
+msgid "Selecione o filtro"
 msgstr ""
 
 msgctxt "#40023"
@@ -300,15 +300,15 @@ msgid "A carregar..."
 msgstr ""
 
 msgctxt "#40026"
-msgid "O ficheiro não está disponível. Tenta mais tarde."
+msgid "O arquivo não está disponível. Tente mais tarde."
 msgstr ""
 
 msgctxt "#40027"
-msgid "Não disponível. Tenta mais tarde"
+msgid "Não disponível. Tente mais tarde"
 msgstr ""
 
 msgctxt "#40028"
-msgid "Formato de ficheiro desconhecido."
+msgid "Formato de arquivo desconhecido."
 msgstr ""
 
 msgctxt "#40029"
@@ -316,7 +316,7 @@ msgid "Considere que o XBMC poderá"
 msgstr ""
 
 msgctxt "#40030"
-msgid "não reproduzir este tipo de ficheiro."
+msgid "não reproduzir este tipo de arquivo."
 msgstr ""
 
 msgctxt "#40031"
@@ -328,15 +328,15 @@ msgid "Erro na página."
 msgstr ""
 
 msgctxt "#40033"
-msgid "Tenta novamente."
+msgid "Tente novamente."
 msgstr ""
 
 msgctxt "#40034"
-msgid "Addon não conseguiu conectar ao servidor"
+msgid "O addon não conseguiu se conetar ao servidor"
 msgstr ""
 
 msgctxt "#40035"
-msgid "de actualização. Verifica a situação."
+msgid "de atualização. Verifique a situação."
 msgstr ""
 
 msgctxt "#40036"
@@ -356,7 +356,7 @@ msgid "Adicionado à playlist"
 msgstr ""
 
 msgctxt "#40040"
-msgid "Transferir Ficheiro"
+msgid "Transferir Arquivo"
 msgstr ""
 
 msgctxt "#40041"
@@ -364,7 +364,7 @@ msgid "Pasta de Download"
 msgstr ""
 
 msgctxt "#40042"
-msgid "Esse ficheiro já existe no teu disco."
+msgid "Esse arquivo já existe no seu disco."
 msgstr ""
 
 msgctxt "#40043"
@@ -468,11 +468,11 @@ msgid "Documentos"
 msgstr ""
 
 msgctxt "#40071"
-msgid "Ficheiros Comprimidos"
+msgid "Arquivados"
 msgstr ""
 
 msgctxt "#40072"
-msgid "Programas"
+msgid "Software"
 msgstr ""
 
 msgctxt "#40073"
