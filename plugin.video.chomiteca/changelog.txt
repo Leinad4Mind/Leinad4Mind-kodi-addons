@@ -1,5 +1,5 @@
 [B]v1.6.0 (30 de Maio de 2019):[/B]
-- Correcção de BUG no Chomikuj que impedia de abrir vídeos
+- Remoção do Minhateca
 
 [B]v1.5.0 (26 de Março de 2018):[/B]
 - Correcção de BUG no Chomikuj que impedia de abrir vídeos
