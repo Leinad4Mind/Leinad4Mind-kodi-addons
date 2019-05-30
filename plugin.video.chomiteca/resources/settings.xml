@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
 	<category label="30015">
-		<setting id="minhateca-enable" type="bool" label="30001" default="false"/>
-		<setting id="minhateca-username" type="text" label="30002" default="" visible="!eq(-1,false)"/>
-		<setting id="minhateca-password" type="text" label="30003" default="" option="hidden" visible="!eq(-2,false)"/>
-		<setting id="minhateca-check" type="bool" label="30000" default="false" visible="false"/>
-		<setting type="sep"/>
 		<setting id="chomikuj-enable" type="bool" label="30004" default="false"/>
 		<setting id="chomikuj-username" type="text" label="30005" default="" visible="!eq(-1,false)"/>
 		<setting id="chomikuj-password" type="text" label="30006" default="" option="hidden" visible="!eq(-2,false)"/>
