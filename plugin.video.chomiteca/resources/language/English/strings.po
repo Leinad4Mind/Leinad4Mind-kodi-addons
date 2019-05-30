@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Project-Id-Version: Chomiteca v1.3.8\n"
+"Project-Id-Version: Chomiteca v1.6.0\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
@@ -16,18 +16,6 @@ msgstr ""
 
 msgctxt "#30000"
 msgid "Enable popup about unknown file extensions."
-msgstr ""
-
-msgctxt "#30001"
-msgid "Activate Minhateca.com.br"
-msgstr ""
-
-msgctxt "#30002"
-msgid "Username Minhateca"
-msgstr ""
-
-msgctxt "#30003"
-msgid "Password Minhateca"
 msgstr ""
 
 msgctxt "#30004"
@@ -207,11 +195,11 @@ msgid "Resume Files Folder"
 msgstr ""
 
 msgctxt "#40000"
-msgid "You need to register in Minhateca or Chomikuj to access."
+msgid "You need to register in Chomikuj to access."
 msgstr ""
 
 msgctxt "#40001"
-msgid "Go to www.minhateca.com.br or www.chomikuj.pl."
+msgid "Go to www.chomikuj.pl."
 msgstr ""
 
 msgctxt "#40002"
