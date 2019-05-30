@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """ OKGoals
-    2015~2017 fightnight/Leinad4Mind
+    2015~2019 fightnight/Leinad4Mind
 """
 
 import xbmc, xbmcgui, xbmcaddon, xbmcplugin,os,re,sys, urllib, urllib2,htmlentitydefs,requests,HTMLParser
@@ -14,7 +14,7 @@ h = HTMLParser.HTMLParser()
 
 def menu_principal():
       addDir(traducao(30010),MainURL,2,os.path.join(art,'ulgolos.png'),1)
-      addDir(traducao(30011),TugaURL,7,os.path.join(art,'ligapt.png'),1)
+      '''addDir(traducao(30011),TugaURL,7,os.path.join(art,'ligapt.png'),1)'''
       addDir(traducao(30012),MainURL,3,os.path.join(art,'ugolosl2.png'),1)
       addDir(traducao(30001),MainURL,4,os.path.join(art,'semana.png'),1)
       addDir(traducao(30013),MainURL + 'seasons-archive.php',5,os.path.join(art,'epoca.png'),1)
@@ -46,13 +46,14 @@ def epocasanteriores(url):
 def request(url,special=False):
       link=abrir_url(url).replace('&nbsp;','')
       if special:
-            listagolos=re.compile('<div id=".+?"><a href="(.+?)"><img.+?src="images/(.+?)\..+?" />\s+?([0-9]{4}\.[0-9]{2}\.[0-9]{2})\s*(\([0-9]{2}h[0-9]{2}\))\s*-\s*([A-Za-z ]+?)\s*([0-9]*)\s*-\s*([0-9]*)\s*(.+?)</a></div>').findall(link)
+            listagolos=re.compile('<div id=".+?"><a href="([a-z0-9-]+?)"><img.+?src="(images/|http://www.okgoals.com/images/)([a-z]+?).png" />\s+?([0-9]{4}\.[0-9]{2}\.[0-9]{2})\s*(\([0-9]{2}h[0-9]{2}\))\s*-\s*([A-Za-z ]+?)\s*([0-9]*)\s*-\s*([0-9]*)\s*(.+?)</a></div>').findall(link)
             for endereco,thumb,data,hora,equipa1,resultado1,resultado2,equipa2 in listagolos:
                   addDir('[COLOR orange]%s[/COLOR] [COLOR darkorange]%s[/COLOR][COLOR blue] - [/COLOR][COLOR white]%s[/COLOR] [COLOR yellow]%s - %s[/COLOR] [COLOR white]%s[/COLOR]' % (data,hora,equipa1,resultado1,resultado2,equipa2),MainURL + endereco,1,os.path.join(art,'%s.png' % (thumb)),len(listagolos),pasta=False)
       else:
-            listagolos=re.compile('<div id=".+?"><a href="(.+?)"><img.+?src="images/(.+?)\..+?" />\s+?([0-9]{4}\.[0-9]{2}\.[0-9]{2})\s*(\([0-9]{2}h[0-9]{2}\))\s*-\s*([A-Za-z ]+?)\s*([0-9]*)\s*-\s*([0-9]*)\s*(.+?)</a></div>').findall(link)
-            for endereco,thumb,data,hora,equipa1,resultado1,resultado2,equipa2 in listagolos:
-                  addDir('[COLOR orange]%s[/COLOR] [COLOR darkorange]%s[/COLOR][COLOR blue] - [/COLOR][COLOR white]%s[/COLOR] [COLOR yellow]%s - %s[/COLOR] [COLOR white]%s[/COLOR]' % (data,hora,equipa1,resultado1,resultado2,equipa2),MainURL + endereco,1,os.path.join(art,'%s.png' % (thumb)),len(listagolos),pasta=False)
+            listagolos=re.compile('<div id=".+?"><a href="([a-z0-9-]+?)"><img.+?src="(images/|http://www.okgoals.com/images/)([a-z]+?).png" />\s+?([0-9]{4}\.[0-9]{2}\.[0-9]{2})\s*(\([0-9]{2}h[0-9]{2}\))\s*-\s*([A-Za-z ]+?)\s*([0-9]*)\s*-\s*([0-9]*)\s*(.+?)</a></div>').findall(link)
+            for endereco,trash,thumb,data,hora,equipa1,resultado1,resultado2,equipa2 in listagolos:
+				if(thumb == ''): thumb=pt
+				addDir('[COLOR orange]%s[/COLOR] [COLOR darkorange]%s[/COLOR][COLOR blue] - [/COLOR][COLOR white]%s[/COLOR] [COLOR yellow]%s - %s[/COLOR] [COLOR white]%s[/COLOR]' % (data,hora,equipa1,resultado1,resultado2,equipa2),MainURL + endereco,1,os.path.join(art,'%s.png' % (thumb)),len(listagolos),pasta=False)
 
       if re.search('page-start', link):
             try:
