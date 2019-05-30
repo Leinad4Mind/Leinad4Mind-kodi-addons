@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Project-Id-Version: Chomiteca v1.3.8\n"
+"Project-Id-Version: Chomiteca v1.6.0\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
@@ -16,19 +16,7 @@ msgstr ""
 "X-Generator: Poedit 1.8.12\n"
 
 msgctxt "#30000"
-msgid "Activar aviso sobre extensıes desconhecidas."
-msgstr ""
-
-msgctxt "#30001"
-msgid "Activar Minhateca.com.br"
-msgstr ""
-
-msgctxt "#30002"
-msgid "Nome de Utilizador Minhateca"
-msgstr ""
-
-msgctxt "#30003"
-msgid "Senha Minhateca"
+msgid "Activar aviso sobre extens√µes desconhecidas."
 msgstr ""
 
 msgctxt "#30004"
@@ -44,15 +32,15 @@ msgid "Senha Chomikuj"
 msgstr ""
 
 msgctxt "#30007"
-msgid "OrdenaÁ„o Ficheiros"
+msgid "Ordena√ß√£o Ficheiros"
 msgstr ""
 
 msgctxt "#30008"
-msgid "OrdenaÁ„o"
+msgid "Ordena√ß√£o"
 msgstr ""
 
 msgctxt "#30009"
-msgid "ˇltima Pesquisa"
+msgid "√øltima Pesquisa"
 msgstr ""
 
 msgctxt "#30010"
@@ -64,11 +52,11 @@ msgid "Limitar Tamanho"
 msgstr ""
 
 msgctxt "#30012"
-msgid "Tamanho MÌnimo (MB)"
+msgid "Tamanho M√≠nimo (MB)"
 msgstr ""
 
 msgctxt "#30013"
-msgid "Tamanho M·ximo (MB)"
+msgid "Tamanho M√°ximo (MB)"
 msgstr ""
 
 msgctxt "#30014"
@@ -80,7 +68,7 @@ msgid "Logins"
 msgstr ""
 
 msgctxt "#30016"
-msgid "ConfiguraÁıes Gerais"
+msgid "Configura√ß√µes Gerais"
 msgstr ""
 
 msgctxt "#30017"
@@ -128,11 +116,11 @@ msgid "Biblioteca de Filmes - Separar por Pasta"
 msgstr ""
 
 msgctxt "#30029"
-msgid "Biblioteca de SÈries - Separar por Temporadas"
+msgid "Biblioteca de S√©ries - Separar por Temporadas"
 msgstr ""
 
 msgctxt "#30030"
-msgid "Biblioteca de SÈries - Manter nome dos ficheiros"
+msgid "Biblioteca de S√©ries - Manter nome dos ficheiros"
 msgstr ""
 
 msgctxt "#30031"
@@ -156,7 +144,7 @@ msgid "Pasta"
 msgstr ""
 
 msgctxt "#30036"
-msgid "Di·logo"
+msgid "Di√°logo"
 msgstr ""
 
 msgctxt "#30140"
@@ -164,11 +152,11 @@ msgid "Legendas"
 msgstr ""
 
 msgctxt "#30141"
-msgid "As legendas podem n„o estar disponÌveis ou estarem dessincronizadas."
+msgid "As legendas podem n√£o estar dispon√≠veis ou estarem dessincronizadas."
 msgstr ""
 
 msgctxt "#30142"
-msgid "Utilizar legendas prÛprias nesse caso."
+msgid "Utilizar legendas pr√≥prias nesse caso."
 msgstr ""
 
 msgctxt "#30143"
@@ -180,11 +168,11 @@ msgid "Idioma Principal"
 msgstr ""
 
 msgctxt "#30145"
-msgid "Idioma Secund·rio"
+msgid "Idioma Secund√°rio"
 msgstr ""
 
 msgctxt "#30146"
-msgid "Tempo mÌnimo do vÌdeo para procurar legendas (em Minutos)"
+msgid "Tempo m√≠nimo do v√≠deo para procurar legendas (em Minutos)"
 msgstr ""
 
 msgctxt "#30147"
@@ -192,7 +180,7 @@ msgid "Pasta para a Biblioteca de Filmes"
 msgstr ""
 
 msgctxt "#30148"
-msgid "Pasta para a Biblioteca de SÈries"
+msgid "Pasta para a Biblioteca de S√©ries"
 msgstr ""
 
 msgctxt "#30149"
@@ -200,7 +188,7 @@ msgid "Resumir"
 msgstr ""
 
 msgctxt "#30150"
-msgid "Pasta para a Biblioteca de VÌdeos Musicais"
+msgid "Pasta para a Biblioteca de V√≠deos Musicais"
 msgstr ""
 
 msgctxt "#30151"
@@ -208,27 +196,27 @@ msgid "Pasta para os Ficheiros de Resumo"
 msgstr ""
 
 msgctxt "#40000"
-msgid "Necessitas criar uma conta no Minhateca ou Chomikuj."
+msgid "Necessitas criar uma conta no Chomikuj."
 msgstr ""
 
 msgctxt "#40001"
-msgid "Vai a www.minhateca.com.br ou www.chomikuj.pl."
+msgid "Vai a www.chomikuj.pl."
 msgstr ""
 
 msgctxt "#40002"
-msgid "A senha est· incorrecta."
+msgid "A senha est√° incorrecta."
 msgstr ""
 
 msgctxt "#40003"
-msgid "Nome de utilizador inv·lido."
+msgid "Nome de utilizador inv√°lido."
 msgstr ""
 
 msgctxt "#40004"
-msgid "Sess„o iniciada com sucesso."
+msgid "Sess√£o iniciada com sucesso."
 msgstr ""
 
 msgctxt "#40005"
-msgid "Sem ligaÁ„o ‡ Internet."
+msgid "Sem liga√ß√£o √† Internet."
 msgstr ""
 
 msgctxt "#40006"
@@ -252,7 +240,7 @@ msgid "Ir para uma "
 msgstr ""
 
 msgctxt "#40011"
-msgid "Pesquisar Conte˙do"
+msgid "Pesquisar Conte√∫do"
 msgstr ""
 
 msgctxt "#40012"
@@ -260,7 +248,7 @@ msgid "Mensagens"
 msgstr ""
 
 msgctxt "#40013"
-msgid "TransferÍncia"
+msgid "Transfer√™ncia"
 msgstr ""
 
 msgctxt "#40014"
@@ -272,19 +260,19 @@ msgid "Reconectar Addon"
 msgstr ""
 
 msgctxt "#40016"
-msgid "Vers„o instalada: v"
+msgid "Vers√£o instalada: v"
 msgstr ""
 
 msgctxt "#40017"
-msgid "ˇltima vers„o instalada (v"
+msgid "√øltima vers√£o instalada (v"
 msgstr ""
 
 msgctxt "#40018"
-msgid "DefiniÁıes do addon"
+msgid "Defini√ß√µes do addon"
 msgstr ""
 
 msgctxt "#40019"
-msgid "ActualizaÁ„o: v"
+msgid "Actualiza√ß√£o: v"
 msgstr ""
 
 msgctxt "#40020"
@@ -292,7 +280,7 @@ msgid "Entrar no addon"
 msgstr ""
 
 msgctxt "#40021"
-msgid "Alterar definiÁıes"
+msgid "Alterar defini√ß√µes"
 msgstr ""
 
 msgctxt "#40022"
@@ -312,11 +300,11 @@ msgid "A carregar..."
 msgstr ""
 
 msgctxt "#40026"
-msgid "O ficheiro n„o est· disponÌvel. Tenta mais tarde."
+msgid "O ficheiro n√£o est√° dispon√≠vel. Tenta mais tarde."
 msgstr ""
 
 msgctxt "#40027"
-msgid "N„o disponÌvel. Tenta mais tarde"
+msgid "N√£o dispon√≠vel. Tenta mais tarde"
 msgstr ""
 
 msgctxt "#40028"
@@ -324,11 +312,11 @@ msgid "Formato de ficheiro desconhecido."
 msgstr ""
 
 msgctxt "#40029"
-msgid "Considere que o XBMC poder·"
+msgid "Considere que o XBMC poder√°"
 msgstr ""
 
 msgctxt "#40030"
-msgid "n„o reproduzir este tipo de ficheiro."
+msgid "n√£o reproduzir este tipo de ficheiro."
 msgstr ""
 
 msgctxt "#40031"
@@ -336,7 +324,7 @@ msgid "Pesquisa"
 msgstr ""
 
 msgctxt "#40032"
-msgid "Erro na p·gina."
+msgid "Erro na p√°gina."
 msgstr ""
 
 msgctxt "#40033"
@@ -344,11 +332,11 @@ msgid "Tenta novamente."
 msgstr ""
 
 msgctxt "#40034"
-msgid "Addon n„o conseguiu conectar ao servidor"
+msgid "Addon n√£o conseguiu conectar ao servidor"
 msgstr ""
 
 msgctxt "#40035"
-msgid "de actualizaÁ„o. Verifica a situaÁ„o."
+msgid "de actualiza√ß√£o. Verifica a situa√ß√£o."
 msgstr ""
 
 msgctxt "#40036"
@@ -360,11 +348,11 @@ msgid "Amigos"
 msgstr ""
 
 msgctxt "#40038"
-msgid "Adicionar ‡ playlist"
+msgid "Adicionar √† playlist"
 msgstr ""
 
 msgctxt "#40039"
-msgid "Adicionado ‡ playlist"
+msgid "Adicionado √† playlist"
 msgstr ""
 
 msgctxt "#40040"
@@ -376,7 +364,7 @@ msgid "Pasta de Download"
 msgstr ""
 
 msgctxt "#40042"
-msgid "Esse ficheiro j· existe no teu disco."
+msgid "Esse ficheiro j√° existe no teu disco."
 msgstr ""
 
 msgctxt "#40043"
@@ -392,7 +380,7 @@ msgid "Tempo restante"
 msgstr ""
 
 msgctxt "#40046"
-msgid "ComeÁar Playlist"
+msgid "Come√ßar Playlist"
 msgstr ""
 
 msgctxt "#40047"
@@ -400,7 +388,7 @@ msgid "Limpar Playlist"
 msgstr ""
 
 msgctxt "#40048"
-msgid "A Playlist est· limpa"
+msgid "A Playlist est√° limpa"
 msgstr ""
 
 msgctxt "#40049"
@@ -412,7 +400,7 @@ msgid "Criar Playlist"
 msgstr ""
 
 msgctxt "#40051"
-msgid "Adicionar ‡ Biblioteca"
+msgid "Adicionar √† Biblioteca"
 msgstr ""
 
 msgctxt "#40053"
@@ -444,7 +432,7 @@ msgid "Privada"
 msgstr ""
 
 msgctxt "#40060"
-msgid "Uma pasta atr·s"
+msgid "Uma pasta atr√°s"
 msgstr ""
 
 msgctxt "#40061"
@@ -452,7 +440,7 @@ msgid "Password da Pasta"
 msgstr ""
 
 msgctxt "#40062"
-msgid "P·gina "
+msgid "P√°gina "
 msgstr ""
 
 msgctxt "#40065"
@@ -464,7 +452,7 @@ msgid "Todos"
 msgstr ""
 
 msgctxt "#40067"
-msgid "VÌdeos"
+msgid "V√≠deos"
 msgstr ""
 
 msgctxt "#40068"
@@ -472,7 +460,7 @@ msgid "Imagens"
 msgstr ""
 
 msgctxt "#40069"
-msgid "M˙sicas"
+msgid "M√∫sicas"
 msgstr ""
 
 msgctxt "#40070"
