@@ -1,3 +1,8 @@
+[B]v2.0.3 (30 de Maio de 2019):[/B]
+- Remoção da liga portuguesa no menu principal
+- Adicionado liga portuguesa nos últimos golos
+- Correcção de bug nas bandeiras
+
 [B]v2.0.2 (21 de Março de 2017):[/B]
 - Correcção dos ficheiros de idioma.
 
