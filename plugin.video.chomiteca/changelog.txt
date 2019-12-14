@@ -1,3 +1,6 @@
+[B]v1.6.1 (14 de Dezembro de 2019):[/B]
+- Correcção dos nomes dos ficheiros
+
 [B]v1.6.0 (30 de Maio de 2019):[/B]
 - Remoção do Minhateca
 
