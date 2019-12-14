@@ -406,8 +406,8 @@ def ReturnConteudo(conteudo,past,color,url2,deFora):
     for part in section:
         if color=="green": name = re.compile('data-title="(.+?)"', re.DOTALL).findall(part)
         if color=="blue": name = re.compile('title="(.+?)"', re.DOTALL).findall(part)
-        if not name: name = re.compile('title="(.+?)"', re.DOTALL).findall(part)
-        tituloficheiro = ReplaceSpecialChar(h.unescape(name[0].decode('utf-8')))
+        if not name: name = re.compile('<span class="bold">(.+?)</span>.{4}\s+</a>', re.DOTALL).findall(part)
+        tituloficheiro = ReplaceSpecialChar(h.unescape(name[0].decode('utf-8').replace('<span class="e">','').replace(' </span>','')))
 
         if(
             ('.7z' in tituloficheiro[-3:]) or ('.ra' in tituloficheiro[-3:]) or ('.rm' in tituloficheiro[-3:])
@@ -618,7 +618,7 @@ def paginas(link):
                 pagina=re.compile('poprzednia.+?<a href="/(.+?)" class="right" rel="(.+?)"').findall(conteudo)[0]
               urlpag=pagina[0]
               urlpag=urlpag.replace(' ','+')
-              addDir('[COLOR gold]' + traducao(40062) + pagina[1] + '[/COLOR] - [COLOR '+color+']' + nextname + '[/COLOR]',sitebase + urlpag,idmode,wtpath + art + 'seta.png',1,True)
+              addDir('[COLOR gold]' + traducao(40062) + pagina[1] + '[/COLOR] - [COLOR '+color+']' + nextname + '[/COLOR]',sitebase + urlpag,idmode,wtpath + art + 'page.png',1,True)
         except:
               nrpagina=re.compile('type="hidden" value="([^"]+?)" /><input type="submit" value="p.+?gina seguinte.+?" /></form>').findall(link)[0]
               addDir('[COLOR gold' + traducao(40062) + nrpagina + '[/COLOR] - [COLOR '+color+']' + nextname + '[/COLOR]',sitebase,mode,wtpath + art + 'seta.png',1,True)
