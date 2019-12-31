@@ -20,13 +20,13 @@ art = '/resources/art/'
 covers = '/resources/covers/'
 user_agent = 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'
 selfAddon = xbmcaddon.Addon(id=addon_id)
-wtpath = selfAddon.getAddonInfo('path').decode('utf-8')
+wtpath = selfAddon.getAddonInfo('path')
 iconpequeno=wtpath + art + 'iconpq.png'
 traducaoma= selfAddon.getLocalizedString
 mensagemok = xbmcgui.Dialog().ok
 mensagemprogresso = xbmcgui.DialogProgress()
-downloadPath = selfAddon.getSetting('download-folder').decode('utf-8')
-pastaperfil = xbmc.translatePath(selfAddon.getAddonInfo('profile')).decode('utf-8')
+downloadPath = selfAddon.getSetting('download-folder')
+pastaperfil = xbmc.translatePath(selfAddon.getAddonInfo('profile'))
 cookies = os.path.join(pastaperfil, "cookies.lwp")
 username_ck = urllib.quote(selfAddon.getSetting('chomikuj-username'))
 servidor_ut = urllib.quote(selfAddon.getSetting('servidor-cover'))
@@ -48,7 +48,7 @@ def login(defora=False):
             form_d = {'RedirectUrl':'','Redirect':'True','FileId':0,'Login':username[x],'Password':password[x],'RememberMe':'true','__RequestVerificationToken':token}
             ref_data = {'Accept': '*/*', 'Content-Type': 'application/x-www-form-urlencoded','Origin': site[x], 'X-Requested-With': 'XMLHttpRequest', 'Referer': site[x],'User-Agent':user_agent}
             endlogin=site[x] + 'action/login/login'
-            try: logintest= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('latin-1','ignore')
+            try: logintest= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('utf-8','ignore')
             except: logintest='Erro'
         except:
             link='Erro'
@@ -133,7 +133,7 @@ def favoritos():
         form_d = {'page':pagina,'chomikName':chomikid,'__RequestVerificationToken':token}
         ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':site[x].replace('https://','').replace('/',''),'Origin':site[x],'Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
         endlogin=site[x] + 'action/Friends/ShowAllFriends'
-        info= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('latin-1','ignore')
+        info= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('utf-8','ignore')
         info=info.replace('javascript:;','/javascript:;')
         users=re.compile('<div class="friend avatar".+?<a href="/(.+?)" title="(.+?)"><img alt=".+?" src="(.+?)" />').findall(info)
         for urluser,nomeuser,thumbuser in users: addDir(nomeuser,site[x] + urluser,3,thumbuser,len(users),True)
@@ -149,7 +149,7 @@ def proxpesquisa_ck():
     form_d['Page']= form_d['Page'] + 1
     endlogin=MainURL + 'action/SearchFiles/Results'
     net.set_cookies(cookies)
-    conteudo= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('latin-1','ignore')
+    conteudo= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('utf-8','ignore')
     addon.save_data('temp.txt',form_d)
     pastas(MainURL + 'action/nada','coco',conteudo=conteudo)
 
@@ -202,7 +202,7 @@ def pastas(url,name,formcont={},conteudo='',past=False,deFora=False,listagem=Fal
     if re.search('action/SearchFiles',url):
         ref_data = {'Host': host, 'Connection': 'keep-alive', 'Referer': 'https://'+host+'/','Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','User-Agent':user_agent,'Referer': 'https://'+host+'/'}
         endlogin=sitebase + 'action/SearchFiles'
-        conteudo= net.http_POST(endlogin,form_data=formcont,headers=ref_data).content.encode('latin-1','ignore')
+        conteudo= net.http_POST(endlogin,form_data=formcont,headers=ref_data).content.encode('utf-8','ignore')
         if re.search('O ficheiro n&#227;o foi encontrado',conteudo): mensagemok(host,'Sem resultados.')
         try:
               filename=re.compile('<input name="FileName" type="hidden" value="(.+?)" />').findall(conteudo)[0]
@@ -217,12 +217,13 @@ def pastas(url,name,formcont={},conteudo='',past=False,deFora=False,listagem=Fal
               addon.save_data('temp.txt',form_d)
               ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':host,'Origin':'https://'+host,'Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
               endlogin=sitebase + 'action/SearchFiles/Results'
-              conteudo= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('latin-1','ignore')
+              conteudo= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('utf-8','ignore')
         except: pass
     else:
         if conteudo=='':
               extra=returnExtra()
               conteudo=clean(abrir_url_cookie(url + extra))
+              print conteudo
     if re.search('ProtectedFolderChomikLogin',conteudo):
         chomikid=re.compile('<input id="ChomikId" name="ChomikId" type="hidden" value="(.+?)" />').findall(conteudo)[0]
         folderid=re.compile('<input id="FolderId" name="FolderId" type="hidden" value="(.+?)" />').findall(conteudo)[0]
@@ -232,7 +233,7 @@ def pastas(url,name,formcont={},conteudo='',past=False,deFora=False,listagem=Fal
         form_d = {'ChomikId':chomikid,'FolderId':folderid,'FolderName':foldername,'Password':passwordfolder,'Remember':'true','__RequestVerificationToken':token}
         ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':host,'Origin':'https://' + host,'Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
         endlogin=sitebase + 'action/Files/LoginToFolder'
-        teste= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('latin-1','ignore')
+        teste= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('utf-8','ignore')
         teste=urllib.unquote(teste)
         if re.search('IsSuccess":false',teste):
               mensagemok('Erro',traducao(40002))
@@ -248,7 +249,7 @@ def pastas(url,name,formcont={},conteudo='',past=False,deFora=False,listagem=Fal
         form_d = {'Password':passwordfolder,'OK':'OK','RemeberMe':'true','IsAdult':isadult,'Sex':sex,'AccountName':accname,'AdultFilter':adultfilter,'ChomikType':chomiktype,'TargetChomikId':chomikid}
         ref_data = {'Accept':'*/*','Content-Type':'application/x-www-form-urlencoded','Host':host,'Origin':'https://'+host,'Referer':url,'User-Agent':user_agent,'X-Requested-With':'XMLHttpRequest'}
         endlogin=sitebase + 'action/UserAccess/LoginToProtectedWindow'
-        teste= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('latin-1','ignore')
+        teste= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('utf-8','ignore')
         teste=urllib.unquote(teste)
         if re.search('<div class="ui-tooltip-titlebar">',teste): mensagemok('Chomikuj',traducao(40002))
         else: pastas_ref(url)
@@ -384,6 +385,7 @@ def GetThumbExt(extensao):
     elif extensao=='.mkv': return wtpath + art + 'video.png' #Estes todos estão a faltar
     elif extensao=='.ogm': return wtpath + art + 'video.png'
     elif extensao=='.mp4': return wtpath + art + 'video.png'
+    elif extensao=='.m4v': return wtpath + art + 'video.png'
     elif extensao=='.3gp': return wtpath + art + 'video.png'
     elif extensao=='.rm': return wtpath + art + 'video/rm.png'
     elif extensao=='.rmvb': return wtpath + art + 'video/rm.png'
@@ -407,7 +409,8 @@ def ReturnConteudo(conteudo,past,color,url2,deFora):
         if color=="green": name = re.compile('data-title="(.+?)"', re.DOTALL).findall(part)
         if color=="blue": name = re.compile('title="(.+?)"', re.DOTALL).findall(part)
         if not name: name = re.compile('<span class="bold">(.+?)</span>.{4}\s+</a>', re.DOTALL).findall(part)
-        tituloficheiro = ReplaceSpecialChar(h.unescape(name[0].decode('utf-8').replace('<span class="e">','').replace(' </span>','')))
+        # tituloficheiro = ReplaceSpecialChar(h.unescape(name[0].decode('utf-8').replace('<span class="e">','').replace(' </span>','')))
+        tituloficheiro = h.unescape(name[0].replace('<span class="e">','').replace(' </span>',''))
 
         if(
             ('.7z' in tituloficheiro[-3:]) or ('.ra' in tituloficheiro[-3:]) or ('.rm' in tituloficheiro[-3:])
@@ -427,7 +430,7 @@ def ReturnConteudo(conteudo,past,color,url2,deFora):
             ('.torrent' in tituloficheiro[-8:])
             ): extensao = tituloficheiro[-8:]
         if(
-            ('.avi' in tituloficheiro[-4:]) or ('.mov' in tituloficheiro[-4:]) or ('.mkv' in tituloficheiro[-4:]) or ('.ogm' in tituloficheiro[-4:]) or ('.mp4' in tituloficheiro[-4:]) or ('.wmv' in tituloficheiro[-4:])
+            ('.avi' in tituloficheiro[-4:]) or ('.mov' in tituloficheiro[-4:]) or ('.mkv' in tituloficheiro[-4:]) or ('.ogm' in tituloficheiro[-4:]) or ('.mp4' in tituloficheiro[-4:]) or ('.wmv' in tituloficheiro[-4:]) or ('.m4v' in tituloficheiro[-4:])
             ): extensao = tituloficheiro[-4:]
         else:
             if color=="green":
@@ -644,7 +647,7 @@ def analyzer(url,subtitles='',playterm=False,playlistTitle='',returning=False):
         ref_data = {'Accept': '*/*', 'Content-Type': 'application/x-www-form-urlencoded','Origin': 'https://' + host, 'X-Requested-With': 'XMLHttpRequest', 'Referer': 'https://'+host+'/','User-Agent':user_agent}
         endlogin=sitebase + 'action/License/Download'
         while final == '' and countloop <= 3:
-            try: final= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('latin-1','ignore')
+            try: final= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('utf-8','ignore')
             except: pass
             countloop = countloop + 1
         final=final.replace('\u0026','&').replace('\u003c','<').replace('\u003e','>').replace('\\','')
@@ -657,7 +660,7 @@ def analyzer(url,subtitles='',playterm=False,playlistTitle='',returning=False):
               form_d = {'fileId':fileid,'orgFile':orgfile,'userSelection':userselection,'__RequestVerificationToken':token}
               ref_data = {'Accept': '*/*', 'Content-Type': 'application/x-www-form-urlencoded','Origin': 'https://' + sitebase, 'X-Requested-With': 'XMLHttpRequest', 'Referer': 'https://'+sitebase+'/','User-Agent':user_agent}
               endlogin=sitebase + 'action/License/acceptLargeTransfer'
-              final= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('latin-1','ignore')
+              final= net.http_POST(endlogin,form_data=form_d,headers=ref_data).content.encode('utf-8','ignore')
     except: pass
     try:
         if re.search('causar problemas com o uso de aceleradores de download',final):linkfinal=re.compile('a href=\"(.+?)\"').findall(final)[0]
@@ -842,18 +845,16 @@ def ReplaceSpecialChar(name):
     return name.replace('/','-')
 
 def ReplaceSpecialCharExtra(name):
-    try: name = name.encode('utf-8')
-    except: pass
-    return name.replace('/','-').replace('Ç','C').replace('ç','c').replace('À','A').replace('Á','A').replace('Ã','A').replace('Â','A').replace('Ä','A').replace('à','a').replace('á','a').replace('ã','a').replace('â','a').replace('ä','a').replace('È','E').replace('É','E').replace('Ê','E').replace('Ë','E').replace('è','e').replace('é','e').replace('ê','e').replace('ë','e').replace('Ì','I').replace('Í','I').replace('Î','I').replace('Ï','I').replace('ì','i').replace('í','i').replace('î','i').replace('ï','i').replace('Ò','O').replace('Ó','O').replace('Õ','O').replace('Ô','O').replace('Ö','O').replace('ò','o').replace('ó','o').replace('õ','o').replace('ô','o').replace('ö','o').replace('Ù','U').replace('Ú','U').replace('Û','U').replace('Ü','U').replace('ù','u').replace('ú','u').replace('û','u').replace('ü','u')
+    return name.replace('/','-').replace('Ç','C').replace('ç','c').replace('À','A').replace('Á','A').replace('Ã','A').replace('Â','A').replace('Ä','A').replace('à','a').replace('á','a').replace('ã','a').replace('â','a').replace('ä','a').replace('È','E').replace('É','E').replace('Ê','E').replace('Ë','E').replace('è','e').replace('é','e').replace('ê','e').replace('ë','e').replace('Ì','I').replace('Í','I').replace('Î','I').replace('Ï','I').replace('ì','i').replace('í','i').replace('î','i').replace('ï','i').replace('Ò','O').replace('Ó','O').replace('Õ','O').replace('Ô','O').replace('Ö','O').replace('ò','o').replace('ó','o').replace('õ','o').replace('ô','o').replace('ö','o').replace('Ù','U').replace('Ú','U').replace('Û','U').replace('Ü','U').replace('ù','u').replace('ú','u').replace('û','u').replace('ü','u').replace('Ñ','n').replace('ñ','n')
 
 def clean_title(title):
-    return title.replace('+',' ').replace('%27',"'").replace('%2C',',').replace('%28','(').replace('%29',')').replace('%26','&').replace('%24','$').replace('%5Cxc2%5Cxba','º').replace('%5Cxc3%5Cx87','Ç').replace('%5Cxc3%5Cxa7','ç').replace('%5Cxc3%5Cx80','À').replace('%5Cxc3%5Cx81','Á').replace('%5Cxc3%5Cx83','Ã').replace('%5Cxc3%5Cx82','Â').replace('%5Cxc3%5Cx84','Ä').replace('%5Cxc3%5Cxa0','à').replace('%5Cxc3%5Cxa1','á').replace('%5Cxc3%5Cxa3','ã').replace('%5Cxc3%5Cxa2','â').replace('%5Cxc3%5Cxa4','ä').replace('%5Cxc3%5Cx88','È').replace('%5Cxc3%5Cx89','É').replace('%5Cxc3%5Cx8a','Ê').replace('%5Cxc3%5Cx8b','Ë').replace('%5Cxc3%5Cxa8','è').replace('%5Cxc3%5Cxa9','é').replace('%5Cxc3%5Cxaa','ê').replace('%5Cxc3%5Cxab','ë').replace('%5Cxc3%5Cx8c','Ì').replace('%5Cxc3%5Cx8d','Í').replace('%5Cxc3%5Cx8e','Î').replace('%5Cxc3%5Cx8f','Ï').replace('%5Cxc3%5Cxac','ì').replace('%5Cxc3%5Cxad','í').replace('%5Cxc3%5Cxae','î').replace('%5Cxc3%5Cxaf','ï').replace('%5Cxc3%5Cx92','Ò').replace('%5Cxc3%5Cx94','Ó').replace('%5Cxc3%5Cx95','Õ').replace('%5Cxc3%5Cx93','Ô').replace('%5Cxc3%5Cx96','Ö').replace('%5Cxc3%5Cxb2','ò').replace('%5Cxc3%5Cxb3','ó').replace('%5Cxc3%5Cxb5','õ').replace('%5Cxc3%5Cxb4','ô').replace('%5Cxc3%5Cxb6','ö').replace('%5Cxc3%5Cx99','Ù').replace('%5Cxc3%5Cx9a','Ú').replace('%5Cxc3%5Cx9b','Û').replace('%5Cxc3%5Cx9c','Ü').replace('%5Cxc3%5Cxb9','ù').replace('%5Cxc3%5Cxba','ú').replace('%5Cxc3%5Cxbb','û').replace('%5Cxc3%5Cxbc','ü')
+    return title.replace('+',' ').replace('%27',"'").replace('%2C',',').replace('%28','(').replace('%29',')').replace('%26','&').replace('%24','$').replace('%5Cxc2%5Cxba','º').replace('%5Cxc3%5Cx87','Ç').replace('%5Cxc3%5Cxa7','ç').replace('%5Cxc3%5Cx80','À').replace('%5Cxc3%5Cx81','Á').replace('%5Cxc3%5Cx83','Ã').replace('%5Cxc3%5Cx82','Â').replace('%5Cxc3%5Cx84','Ä').replace('%5Cxc3%5Cxa0','à').replace('%5Cxc3%5Cxa1','á').replace('%5Cxc3%5Cxa3','ã').replace('%5Cxc3%5Cxa2','â').replace('%5Cxc3%5Cxa4','ä').replace('%5Cxc3%5Cx88','È').replace('%5Cxc3%5Cx89','É').replace('%5Cxc3%5Cx8a','Ê').replace('%5Cxc3%5Cx8b','Ë').replace('%5Cxc3%5Cxa8','è').replace('%5Cxc3%5Cxa9','é').replace('%5Cxc3%5Cxaa','ê').replace('%5Cxc3%5Cxab','ë').replace('%5Cxc3%5Cx8c','Ì').replace('%5Cxc3%5Cx8d','Í').replace('%5Cxc3%5Cx8e','Î').replace('%5Cxc3%5Cx8f','Ï').replace('%5Cxc3%5Cxac','ì').replace('%5Cxc3%5Cxad','í').replace('%5Cxc3%5Cxae','î').replace('%5Cxc3%5Cxaf','ï').replace('%5Cxc3%5Cx92','Ò').replace('%5Cxc3%5Cx94','Ó').replace('%5Cxc3%5Cx95','Õ').replace('%5Cxc3%5Cx93','Ô').replace('%5Cxc3%5Cx96','Ö').replace('%5Cxc3%5Cxb2','ò').replace('%5Cxc3%5Cxb3','ó').replace('%5Cxc3%5Cxb5','õ').replace('%5Cxc3%5Cxb4','ô').replace('%5Cxc3%5Cxb6','ö').replace('%5Cxc3%5Cx99','Ù').replace('%5Cxc3%5Cx9a','Ú').replace('%5Cxc3%5Cx9b','Û').replace('%5Cxc3%5Cx9c','Ü').replace('%5Cxc3%5Cxb9','ù').replace('%5Cxc3%5Cxba','ú').replace('%5Cxc3%5Cxbb','û').replace('%5Cxc3%5Cxbc','ü').replace('%5Cxc3%5Cx91','Ñ').replace('%5Cxc3%5Cxb1','ñ')
 
 def clean_folder(folder):
-    return folder.replace('\\xc3\\xa0','à').replace('\\xc3\\xa1','á').replace('\\xc3\\xa2','â').replace('\\xc3\\xa3','ã').replace('\\xc3\\xa4','ä').replace('\\xc3\\xa5','å').replace('\\xc3\\xa6','æ').replace('\\xc3\\xa7','ç').replace('\\xc3\\xa8','è').replace('\\xc3\\xa9','é').replace('\\xc3\\xaa','ê').replace('\\xc3\\xab','ë').replace('\\xc3\\xac','ì').replace('\\xc3\\xad','í').replace('\\xc3\\xae','î').replace('\\xc3\\xaf','ï').replace('\\xc3\\xb2','ò').replace('\\xc3\\xb3','ó').replace('\\xc3\\xb4','ô').replace('\\xc3\\xb5','õ').replace('\\xc3\\xb6','ö').replace('\\xc3\\xb9','ù').replace('\\xc3\\xba','ú').replace('\\xc3\\xbb','û').replace('\\xc3\\xbc','ü').replace('\\xc3\\x80','À').replace('\\xc3\\x81','Á').replace('\\xc3\\x82','Â').replace('\\xc3\\x83','Ã').replace('\\xc3\\x84','Ä').replace('\\xc3\\x85','Å').replace('\\xc3\\x86','Æ').replace('\\xc3\\x87','Ç').replace('\\xc3\\x88','È').replace('\\xc3\\x89','É').replace('\\xc3\\x8a','Ê').replace('\\xc3\\x8b','Ë').replace('\\xc3\\x8c','Ì').replace('\\xc3\\x8d','Í').replace('\\xc3\\x8e','Î').replace('\\xc3\\x8f','Ï').replace('\\xc3\\x92','Ò').replace('\\xc3\\x93','Ó').replace('\\xc3\\x94','Ô').replace('\\xc3\\x95','Õ').replace('\\xc3\\x96','Ö').replace('\\xc3\\x99','Ù').replace('\\xc3\\x9a','Ú').replace('\\xc3\\x9b','Û').replace('\\xc3\\x9c','Ü')
+    return folder.replace('\\xc3\\xa0','à').replace('\\xc3\\xa1','á').replace('\\xc3\\xa2','â').replace('\\xc3\\xa3','ã').replace('\\xc3\\xa4','ä').replace('\\xc3\\xa5','å').replace('\\xc3\\xa6','æ').replace('\\xc3\\xa7','ç').replace('\\xc3\\xa8','è').replace('\\xc3\\xa9','é').replace('\\xc3\\xaa','ê').replace('\\xc3\\xab','ë').replace('\\xc3\\xac','ì').replace('\\xc3\\xad','í').replace('\\xc3\\xae','î').replace('\\xc3\\xaf','ï').replace('\\xc3\\xb2','ò').replace('\\xc3\\xb3','ó').replace('\\xc3\\xb4','ô').replace('\\xc3\\xb5','õ').replace('\\xc3\\xb6','ö').replace('\\xc3\\xb9','ù').replace('\\xc3\\xba','ú').replace('\\xc3\\xbb','û').replace('\\xc3\\xbc','ü').replace('\\xc3\\x80','À').replace('\\xc3\\x81','Á').replace('\\xc3\\x82','Â').replace('\\xc3\\x83','Ã').replace('\\xc3\\x84','Ä').replace('\\xc3\\x85','Å').replace('\\xc3\\x86','Æ').replace('\\xc3\\x87','Ç').replace('\\xc3\\x88','È').replace('\\xc3\\x89','É').replace('\\xc3\\x8a','Ê').replace('\\xc3\\x8b','Ë').replace('\\xc3\\x8c','Ì').replace('\\xc3\\x8d','Í').replace('\\xc3\\x8e','Î').replace('\\xc3\\x8f','Ï').replace('\\xc3\\x92','Ò').replace('\\xc3\\x93','Ó').replace('\\xc3\\x94','Ô').replace('\\xc3\\x95','Õ').replace('\\xc3\\x96','Ö').replace('\\xc3\\x99','Ù').replace('\\xc3\\x9a','Ú').replace('\\xc3\\x9b','Û').replace('\\xc3\\x9c','Ü').replace('\\xc3\\x91','Ñ').replace('\\xc3\\xb1','ñ')
 
 def clean_url(url):
-    return url.replace('%C3%A0','à').replace('%C3%A1','á').replace('%C3%A2','â').replace('%C3%A3','ã').replace('%C3%A4','ä').replace('%C3%A5','å').replace('%C3%A6','æ').replace('%C3%A7','ç').replace('%C3%A8','è').replace('%C3%A9','é').replace('%C3%AA','ê').replace('%C3%AB','ë').replace('%C3%AC','ì').replace('%C3%AD','í').replace('%C3%AE','î').replace('%C3%AF','ï').replace('%C3%B2','ò').replace('%C3%B3','ó').replace('%C3%B4','ô').replace('%C3%B5','õ').replace('%C3%B6','ö').replace('%C3%B9','ù').replace('%C3%BA','ú').replace('%C3%BB','û').replace('%C3%BC','ü').replace('%C3%80','À').replace('%C3%81','Á').replace('%C3%82','Â').replace('%C3%83','Ã').replace('%C3%84','Ä').replace('%C3%85','Å').replace('%C3%86','Æ').replace('%C3%87','Ç').replace('%C3%88','È').replace('%C3%89','É').replace('%C3%8A','Ê').replace('%C3%8B','Ë').replace('%C3%8C','Ì').replace('%C3%8D','Í').replace('%C3%8E','Î').replace('%C3%8F','Ï').replace('%C3%92','Ò').replace('%C3%93','Ó').replace('%C3%94','Ô').replace('%C3%95','Õ').replace('%C3%96','Ö').replace('%C3%99','Ù').replace('%C3%9A','Ú').replace('%C3%9B','Û').replace('%C3%9C','Ü')
+    return url.replace('%C3%A0','à').replace('%C3%A1','á').replace('%C3%A2','â').replace('%C3%A3','ã').replace('%C3%A4','ä').replace('%C3%A5','å').replace('%C3%A6','æ').replace('%C3%A7','ç').replace('%C3%A8','è').replace('%C3%A9','é').replace('%C3%AA','ê').replace('%C3%AB','ë').replace('%C3%AC','ì').replace('%C3%AD','í').replace('%C3%AE','î').replace('%C3%AF','ï').replace('%C3%B2','ò').replace('%C3%B3','ó').replace('%C3%B4','ô').replace('%C3%B5','õ').replace('%C3%B6','ö').replace('%C3%B9','ù').replace('%C3%BA','ú').replace('%C3%BB','û').replace('%C3%BC','ü').replace('%C3%80','À').replace('%C3%81','Á').replace('%C3%82','Â').replace('%C3%83','Ã').replace('%C3%84','Ä').replace('%C3%85','Å').replace('%C3%86','Æ').replace('%C3%87','Ç').replace('%C3%88','È').replace('%C3%89','É').replace('%C3%8A','Ê').replace('%C3%8B','Ë').replace('%C3%8C','Ì').replace('%C3%8D','Í').replace('%C3%8E','Î').replace('%C3%8F','Ï').replace('%C3%92','Ò').replace('%C3%93','Ó').replace('%C3%94','Ô').replace('%C3%95','Õ').replace('%C3%96','Ö').replace('%C3%99','Ù').replace('%C3%9A','Ú').replace('%C3%9B','Û').replace('%C3%9C','Ü').replace('%C3%91','Ñ').replace('%C3%B1','ñ')
 
 def add_to_library_opt(name,url,updatelibrary=True):
     source = xbmcgui.Dialog().select
@@ -873,13 +874,13 @@ def add_to_library(name,url,type,batch,updatelibrary=True):
     name2 = re.compile('\[B\]\[COLOR .+?\](.+?)\[/COLOR\]\[/B\]').findall(name)
     if name2:
         name = ReplaceSpecialChar(h.unescape(name2[0]))
-        cleaned = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇáàãâäéèêëíìîïóòõôöúùûüç&$,.\'()\\\/ ]+', ' ', name[:-4])
+        cleaned = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇÑáàãâäéèêëíìîïóòõôöúùûüçñ&$,.\'()\\\/ ]+', ' ', name[:-4])
         cleaned = re.sub(' +$', '', cleaned)
         cleaned = re.sub('\.$', '', cleaned)
         cleaned_title = re.sub('^ +', '', cleaned)
     else:
         name = ReplaceSpecialChar(h.unescape(name))
-        cleaned = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇáàãâäéèêëíìîïóòõôöúùûüç&$,.\'()\\\/ ]+', ' ', name)
+        cleaned = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇÑáàãâäéèêëíìîïóòõôöúùûüçñ&$,.\'()\\\/ ]+', ' ', name)
         cleaned = re.sub(' +$', '', cleaned)
         cleaned = re.sub('\.$', '', cleaned)
         cleaned_title = re.sub('^ +', '', cleaned)
@@ -907,7 +908,7 @@ def add_to_library(name,url,type,batch,updatelibrary=True):
             title = clean_folder(cleaned_title)
             if title=='': sys.exit(0)
     if title <> '':
-        title = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇáàãâäéèêëíìîïóòõôöúùûüç&$,.\'()\\\/ ]+', ' ', ReplaceSpecialChar(title))
+        title = re.sub('[^-a-zA-Z0-9ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇÑáàãâäéèêëíìîïóòõôöúùûüçñ&$,.\'()\\\/ ]+', ' ', ReplaceSpecialChar(title))
         title = re.sub(' +$', '', title)
         title = re.sub('\.$', '', title)
         title = re.sub('^ +', '', title)
@@ -1133,7 +1134,7 @@ def abrir_url_cookie(url,erro=True):
     net.set_cookies(cookies)
     try:
         if ReturnStatus('chomikuj'): ref_data = {'Host': 'chomikuj.pl', 'Connection': 'keep-alive', 'Referer': 'https://chomikuj.pl','Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','User-Agent':user_agent,'Referer': 'https://chomikuj.pl'}
-        link=net.http_POST(url,ref_data).content.encode('latin-1','ignore')
+        link=net.http_POST(url,ref_data).content.encode('utf-8','ignore')
         return link
     except urllib2.HTTPError, e:
         if erro==True: mensagemok('Chomiteca',str(urllib2.HTTPError(e.url, e.code, traducao(40032), e.hdrs, e.fp)),traducao(40033))
@@ -1165,7 +1166,7 @@ def get_params():
     return param
 
 def clean(text):
-    command={'\r':'','\n':'','\t':'','&nbsp;':' ','&quot;':'"','&amp;':'&','&ntilde;':'ñ','&#35;':'#','&#39;':'\'','&#40;':'(','&#41;':')','&#44;':',','&#46;':'.','&#170;':'ª','&#178;':'²','&#179;':'³','&#192;':'À','&#193;':'Á','&#194;':'Â','&#195;':'Ã','&#199;':'Ç','&#201;':'É','&#202;':'Ê','&#205;':'Í','&#211;':'Ó','&#212;':'Ô','&#213;':'Õ','&#217;':'Ù','&#218;':'Ú','&#224;':'à','&#225;':'á','&#226;':'â','&#227;':'ã','&#231;':'ç','&#232;':'è','&#233;':'é','&#234;':'ê','&#237;':'í','&#243;':'ó','&#244;':'ô','&#245;':'õ','&#249;':'ù','&#250;':'ú'}
+    command={'\r':'','\n':'','\t':'','&nbsp;':' ','&quot;':'"','&amp;':'&','&ntilde;':'ñ','&#35;':'#','&#39;':'\'','&#40;':'(','&#41;':')','&#44;':',','&#46;':'.','&#164;':'ñ','&#165;':'Ñ','&#170;':'ª','&#178;':'²','&#179;':'³','&#192;':'À','&#193;':'Á','&#194;':'Â','&#195;':'Ã','&#199;':'Ç','&#201;':'É','&#202;':'Ê','&#205;':'Í','&#211;':'Ó','&#212;':'Ô','&#213;':'Õ','&#217;':'Ù','&#218;':'Ú','&#224;':'à','&#225;':'á','&#226;':'â','&#227;':'ã','&#231;':'ç','&#232;':'è','&#233;':'é','&#234;':'ê','&#237;':'í','&#243;':'ó','&#244;':'ô','&#245;':'õ','&#249;':'ù','&#250;':'ú'}
     regex = re.compile("|".join(map(re.escape, command.keys())))
     return regex.sub(lambda mo: command[mo.group(0)], text)
 
