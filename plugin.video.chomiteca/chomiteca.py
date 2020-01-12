@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """ Chomiteca
-    2015-2019 fightnight/Mafarricos/Leinad4Mind"""
+    2015-2020 fightnight/Mafarricos/Leinad4Mind"""
 
 import xbmc,xbmcaddon,xbmcgui,xbmcplugin,urllib,urllib2,os,re,sys,datetime,time,xbmcvfs,HTMLParser
 from t0mm0.common.net import Net
@@ -387,6 +387,7 @@ def GetThumbExt(extensao):
     elif extensao=='.mp4': return wtpath + art + 'video.png'
     elif extensao=='.m4v': return wtpath + art + 'video.png'
     elif extensao=='.3gp': return wtpath + art + 'video.png'
+    elif extensao=='.m2ts': return wtpath + art + 'video.png'
     elif extensao=='.rm': return wtpath + art + 'video/rm.png'
     elif extensao=='.rmvb': return wtpath + art + 'video/rm.png'
     elif extensao=='.wmv': return wtpath + art + 'video/wmv.png'
@@ -424,7 +425,7 @@ def ReturnConteudo(conteudo,past,color,url2,deFora):
             ('.doc' in tituloficheiro[-4:]) or ('.pdf' in tituloficheiro[-4:]) or ('.ppt' in tituloficheiro[-4:]) or ('.rtf' in tituloficheiro[-4:]) or ('.txt' in tituloficheiro[-4:])
             ): extensao = tituloficheiro[-4:]
         if(
-            ('.sitx' in tituloficheiro[-5:]) or ('.aiff' in tituloficheiro[-5:]) or ('.midi' in tituloficheiro[-5:]) or ('.rmva' in tituloficheiro[-5:]) or ('.flac' in tituloficheiro[-5:]) or ('.jpeg' in tituloficheiro[-5:]) or ('.tiff' in tituloficheiro[-5:]) or ('.webp' in tituloficheiro[-5:]) or ('.mpeg' in tituloficheiro[-5:]) or ('.rmva' in tituloficheiro[-5:])
+            ('.sitx' in tituloficheiro[-5:]) or ('.aiff' in tituloficheiro[-5:]) or ('.midi' in tituloficheiro[-5:]) or ('.rmva' in tituloficheiro[-5:]) or ('.flac' in tituloficheiro[-5:]) or ('.jpeg' in tituloficheiro[-5:]) or ('.tiff' in tituloficheiro[-5:]) or ('.webp' in tituloficheiro[-5:]) or ('.mpeg' in tituloficheiro[-5:]) or ('.rmva' in tituloficheiro[-5:]) or ('.m2ts' in tituloficheiro[-5:])
             ): extensao = tituloficheiro[-5:]
         if(
             ('.torrent' in tituloficheiro[-8:])
@@ -458,7 +459,7 @@ def ReturnConteudo(conteudo,past,color,url2,deFora):
                 online = str(urllib.urlopen(imagem).getcode())
             else: online='404'
 
-        if ( (extensao == '.mkv') or (extensao == '.mp4') or (extensao == '.avi') or (extensao == '.ogm') ):
+        if ( (extensao == '.mkv') or (extensao == '.mp4') or (extensao == '.avi') or (extensao == '.ogm') or (extensao == '.m4v') or (extensao == '.m2ts') ):
             if (online != '404'): thumb = imagem
             else: thumb = GetThumbExt(extensao)
         else: thumb = GetThumbExt(extensao)
@@ -692,7 +693,7 @@ def analyzer(url,subtitles='',playterm=False,playlistTitle='',returning=False):
         if playterm=="download":fazerdownload(extfic,linkfinal)
         else:fazerdownload(extfic,linkfinal,tipo="fotos")
         xbmc.executebuiltin("SlideShow("+pastaperfil+")")
-    elif re.search('.mkv',url) or re.search('.ogm',url) or re.search('.avi',url) or re.search('.wmv',url) or re.search('.mp4',url) or re.search('.mpg',url) or re.search('.mpeg',url):
+    elif re.search('.mkv',url) or re.search('.ogm',url) or re.search('.avi',url) or re.search('.wmv',url) or re.search('.mp4',url) or re.search('.m4v',url) or re.search('.mpg',url) or re.search('.mpeg',url) or re.search('.m2ts',url):
         endereco=legendas(fileid,url)
         if playlistTitle <> '': comecarvideo(playlistTitle,linkfinal,playterm=playterm,legendas=endereco)
         else: comecarvideo(name,linkfinal,playterm=playterm,legendas=endereco)
@@ -819,7 +820,7 @@ def comecarplaylist():
             xbmcPlayer.play(playlist)
 
 def legendas(moviefileid,url):
-    url=url.replace(','+moviefileid,'').replace('.mkv','.srt').replace('.mp4','.srt').replace('.avi','.srt').replace('.wmv','.srt')[:-7]
+    url=url.replace(','+moviefileid,'').replace('.mkv','.srt').replace('.mp4','.srt').replace('.m4v','.srt').replace('.avi','.srt').replace('.wmv','.srt').replace('.ogm','.srt')[:-7]
     try:
         if(urllib2.urlopen(url).getcode() == 200): legendas=analyzer(url,subtitles='sim')
     except Exception:

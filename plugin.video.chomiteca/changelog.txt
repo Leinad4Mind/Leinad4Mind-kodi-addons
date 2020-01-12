@@ -1,3 +1,6 @@
+[B]v1.6.3 (12 de Janeiro de 2020):[/B]
+- Compatível com .m2ts
+
 [B]v1.6.2 (31 de Dezembro de 2019):[/B]
 - Correcção dos nomes dos ficheiros
 
