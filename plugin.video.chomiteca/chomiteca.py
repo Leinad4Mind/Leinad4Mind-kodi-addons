@@ -403,13 +403,12 @@ def GetThumbExt(extensao):
 def ReturnConteudo(conteudo,past,color,url2,deFora):
     diffItems = False
     reslist = []
-    section = re.compile('<div class="filerow fileItemContainer">.+?<a class="expanderHeader downloadAction"(.+?)</ul></div>\s+</div>', re.DOTALL).findall(conteudo)
-    if not section: section = re.compile('fileItemContainer">(.+?)</div></div>', re.DOTALL).findall(conteudo)
-    if not section: section = re.compile('<li class="fileItemContainer">(.+?)<li><span class="date">', re.DOTALL).findall(conteudo)
+    section = re.compile('\sfileItemContainer">.+?<a class="expanderHeader downloadAction"(.+?)</ul></div>\s+</div>', re.DOTALL).findall(conteudo)
+    if not section: section = re.compile('\sfileItemContainer">(.+?)</h3>\s+</div>', re.DOTALL).findall(conteudo)
+    if not section: section = re.compile('\sfileItemContainer">(.+?)<li><span class="date">', re.DOTALL).findall(conteudo)
     for part in section:
-        if color=="green": name = re.compile('data-title="(.+?)"', re.DOTALL).findall(part)
-        if color=="blue": name = re.compile('title="(.+?)"', re.DOTALL).findall(part)
-        if not name: name = re.compile('<span class="bold">(.+?)</span>.{4}\s+</a>', re.DOTALL).findall(part)
+        name = re.compile('data-title="(.+?)"', re.DOTALL).findall(part)
+        if not name: name = re.compile('<span class="bold">(.+?)</span>\..+?\s+</a>\s+<img', re.DOTALL).findall(part)
         # tituloficheiro = ReplaceSpecialChar(h.unescape(name[0].decode('utf-8').replace('<span class="e">','').replace(' </span>','')))
         tituloficheiro = h.unescape(name[0].replace('<span class="e">','').replace(' </span>',''))
 
@@ -425,21 +424,17 @@ def ReturnConteudo(conteudo,past,color,url2,deFora):
             ('.doc' in tituloficheiro[-4:]) or ('.pdf' in tituloficheiro[-4:]) or ('.ppt' in tituloficheiro[-4:]) or ('.rtf' in tituloficheiro[-4:]) or ('.txt' in tituloficheiro[-4:])
             ): extensao = tituloficheiro[-4:]
         if(
-            ('.sitx' in tituloficheiro[-5:]) or ('.aiff' in tituloficheiro[-5:]) or ('.midi' in tituloficheiro[-5:]) or ('.rmva' in tituloficheiro[-5:]) or ('.flac' in tituloficheiro[-5:]) or ('.jpeg' in tituloficheiro[-5:]) or ('.tiff' in tituloficheiro[-5:]) or ('.webp' in tituloficheiro[-5:]) or ('.mpeg' in tituloficheiro[-5:]) or ('.rmva' in tituloficheiro[-5:]) or ('.m2ts' in tituloficheiro[-5:])
+            ('.sitx' in tituloficheiro[-5:]) or ('.aiff' in tituloficheiro[-5:]) or ('.midi' in tituloficheiro[-5:]) or ('.rmva' in tituloficheiro[-5:]) or ('.flac' in tituloficheiro[-5:]) or ('.jpeg' in tituloficheiro[-5:]) or ('.tiff' in tituloficheiro[-5:]) or ('.webp' in tituloficheiro[-5:]) or ('.mpeg' in tituloficheiro[-5:]) or ('.m2ts' in tituloficheiro[-5:]) or ('.rmva' in tituloficheiro[-5:])
             ): extensao = tituloficheiro[-5:]
         if(
             ('.torrent' in tituloficheiro[-8:])
             ): extensao = tituloficheiro[-8:]
         if(
-            ('.avi' in tituloficheiro[-4:]) or ('.mov' in tituloficheiro[-4:]) or ('.mkv' in tituloficheiro[-4:]) or ('.ogm' in tituloficheiro[-4:]) or ('.mp4' in tituloficheiro[-4:]) or ('.wmv' in tituloficheiro[-4:]) or ('.m4v' in tituloficheiro[-4:])
+            ('.avi' in tituloficheiro[-4:]) or ('.mov' in tituloficheiro[-4:]) or ('.mkv' in tituloficheiro[-4:]) or ('.ogm' in tituloficheiro[-4:]) or ('.mp4' in tituloficheiro[-4:]) or ('.m4v' in tituloficheiro[-4:]) or ('.wmv' in tituloficheiro[-4:])
             ): extensao = tituloficheiro[-4:]
         else:
-            if color=="green":
-                ext = re.compile('<span class="bold">.+?</span>(\..+?)\s+</a>\s+<img', re.DOTALL).findall(part)
-                if ext: extensao = ext[0]
-            if color=="blue":
-                ext = re.compile('<span class="bold">.+?</span>(\..+?)\s+</a>\s+</h3>', re.DOTALL).findall(part)
-                if ext: extensao = ext[0]
+            ext = re.compile('<span class="bold">.+?</span>(\..+?)\s+</a>\s+<img', re.DOTALL).findall(part)
+            if ext: extensao = ext[0]
             if not ext: extensao = '.not'
 
         if ( (selfAddon.getSetting('caminho-enable') == 'true') ):
@@ -459,7 +454,7 @@ def ReturnConteudo(conteudo,past,color,url2,deFora):
                 online = str(urllib.urlopen(imagem).getcode())
             else: online='404'
 
-        if ( (extensao == '.mkv') or (extensao == '.mp4') or (extensao == '.avi') or (extensao == '.ogm') or (extensao == '.m4v') or (extensao == '.m2ts') ):
+        if ( (extensao == '.mkv') or (extensao == '.mp4') or (extensao == '.m4v') or (extensao == '.ogm') or (extensao == '.avi') or (extensao == '.wmv') or (extensao == '.m2ts') ):
             if (online != '404'): thumb = imagem
             else: thumb = GetThumbExt(extensao)
         else: thumb = GetThumbExt(extensao)
@@ -600,7 +595,6 @@ def obterlistadeficheiros():
                               conteudo=clean(conteudo)
                               items3=re.compile('<li class="fileItemContainer">.+?<span class="bold">.+?</span>(.+?)</a>.+?<div class="thumbnail">.+?<a href="(.+?)".+?title="(.+?)">\s+<img.+?<div class="smallTab">.+?<li>(.+?)</li>.+?<span class="date">(.+?)</span>').findall(conteudo)
                               for extensao,urlficheiro,tituloficheiro,tamanhoficheiro,dataficheiro in items3: string.append(tituloficheiro)
-            print string
 
 def pastas_ref(url):
       pastas(url,name)
@@ -616,10 +610,7 @@ def paginas(link):
                     conteudo=re.compile('<div class="paginator clear friendspager">(.+?)<div class="clear">').findall(link)[0]
                     idmode=9
         try:
-              if(color=='blue'):
-                pagina=re.compile('anterior.+?<a href="/(.+?)" class="right" rel="(.+?)"').findall(conteudo)[0]
-              else:
-                pagina=re.compile('poprzednia.+?<a href="/(.+?)" class="right" rel="(.+?)"').findall(conteudo)[0]
+              pagina=re.compile('poprzednia.+?<a href="/(.+?)" class="right" rel="(.+?)"').findall(conteudo)[0]
               urlpag=pagina[0]
               urlpag=urlpag.replace(' ','+')
               addDir('[COLOR gold]' + traducao(40062) + pagina[1] + '[/COLOR] - [COLOR '+color+']' + nextname + '[/COLOR]',sitebase + urlpag,idmode,wtpath + art + 'page.png',1,True)
@@ -820,7 +811,7 @@ def comecarplaylist():
             xbmcPlayer.play(playlist)
 
 def legendas(moviefileid,url):
-    url=url.replace(','+moviefileid,'').replace('.mkv','.srt').replace('.mp4','.srt').replace('.m4v','.srt').replace('.avi','.srt').replace('.wmv','.srt').replace('.ogm','.srt')[:-7]
+    url=url.replace(','+moviefileid,'').replace('.mkv','.srt').replace('.mp4','.srt').replace('.m4v','.srt').replace('.ogm','.srt').replace('.avi','.srt').replace('.wmv','.srt')[:-7]
     try:
         if(urllib2.urlopen(url).getcode() == 200): legendas=analyzer(url,subtitles='sim')
     except Exception:
@@ -1198,7 +1189,7 @@ except: pass
 print "Mode: "+str(mode)
 print "URL: "+str(url)
 print "Name: "+str(name)
-print "Name: "+str(tamanhoparavariavel)
+print "Size: "+str(tamanhoparavariavel)
 
 if mode==None or url==None or len(url)<1:
     if (selfAddon.getSetting('chomikuj-enable') == 'false'):
